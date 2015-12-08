@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		615C63951C16DC5600FD4082 /* BModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 615C63941C16DC5600FD4082 /* BModel.m */; };
+		615C63981C16DC7500FD4082 /* BUntil.m in Sources */ = {isa = PBXBuildFile; fileRef = 615C63971C16DC7500FD4082 /* BUntil.m */; };
+		615C639B1C16DCD400FD4082 /* BHttpActionMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 615C639A1C16DCD400FD4082 /* BHttpActionMgr.m */; };
+		615C639E1C16DCE400FD4082 /* BResponeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 615C639D1C16DCE400FD4082 /* BResponeResult.m */; };
+		615C63A21C16DD1700FD4082 /* BActionBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 615C63A11C16DD1700FD4082 /* BActionBase.m */; };
 		61B28B7D1C165EA6009731FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B28B7C1C165EA6009731FE /* main.m */; };
 		61B28B801C165EA6009731FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B28B7F1C165EA6009731FE /* AppDelegate.m */; };
 		61B28B831C165EA6009731FE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B28B821C165EA6009731FE /* ViewController.m */; };
@@ -17,6 +22,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		615C63931C16DC5600FD4082 /* BModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BModel.h; sourceTree = "<group>"; };
+		615C63941C16DC5600FD4082 /* BModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BModel.m; sourceTree = "<group>"; };
+		615C63961C16DC7500FD4082 /* BUntil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BUntil.h; sourceTree = "<group>"; };
+		615C63971C16DC7500FD4082 /* BUntil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BUntil.m; sourceTree = "<group>"; };
+		615C63991C16DCD400FD4082 /* BHttpActionMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHttpActionMgr.h; sourceTree = "<group>"; };
+		615C639A1C16DCD400FD4082 /* BHttpActionMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHttpActionMgr.m; sourceTree = "<group>"; };
+		615C639C1C16DCE400FD4082 /* BResponeResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BResponeResult.h; sourceTree = "<group>"; };
+		615C639D1C16DCE400FD4082 /* BResponeResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BResponeResult.m; sourceTree = "<group>"; };
+		615C63A01C16DD1700FD4082 /* BActionBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BActionBase.h; sourceTree = "<group>"; };
+		615C63A11C16DD1700FD4082 /* BActionBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BActionBase.m; sourceTree = "<group>"; };
 		61B28B781C165EA6009731FE /* Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Box.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61B28B7C1C165EA6009731FE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		61B28B7E1C165EA6009731FE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -45,6 +60,94 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		615C638A1C16DBA800FD4082 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				615C638B1C16DBA800FD4082 /* Controllers */,
+				615C638C1C16DBA800FD4082 /* Global */,
+				615C638D1C16DBA800FD4082 /* Model */,
+				615C638E1C16DBA800FD4082 /* Service */,
+				615C638F1C16DBA800FD4082 /* Views */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		615C638B1C16DBA800FD4082 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		615C638C1C16DBA800FD4082 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				615C63961C16DC7500FD4082 /* BUntil.h */,
+				615C63971C16DC7500FD4082 /* BUntil.m */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		615C638D1C16DBA800FD4082 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				615C63931C16DC5600FD4082 /* BModel.h */,
+				615C63941C16DC5600FD4082 /* BModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		615C638E1C16DBA800FD4082 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				615C639F1C16DCFF00FD4082 /* Actions */,
+				615C63991C16DCD400FD4082 /* BHttpActionMgr.h */,
+				615C639A1C16DCD400FD4082 /* BHttpActionMgr.m */,
+				615C639C1C16DCE400FD4082 /* BResponeResult.h */,
+				615C639D1C16DCE400FD4082 /* BResponeResult.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		615C638F1C16DBA800FD4082 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		615C63901C16DBB300FD4082 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				615C63911C16DBE100FD4082 /* bg */,
+				615C63921C16DBE100FD4082 /* icon */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		615C63911C16DBE100FD4082 /* bg */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = bg;
+			sourceTree = "<group>";
+		};
+		615C63921C16DBE100FD4082 /* icon */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = icon;
+			sourceTree = "<group>";
+		};
+		615C639F1C16DCFF00FD4082 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				615C63A01C16DD1700FD4082 /* BActionBase.h */,
+				615C63A11C16DD1700FD4082 /* BActionBase.m */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
 		61B28B6F1C165EA6009731FE = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +169,8 @@
 		61B28B7A1C165EA6009731FE /* Box */ = {
 			isa = PBXGroup;
 			children = (
+				615C63901C16DBB300FD4082 /* Resources */,
+				615C638A1C16DBA800FD4082 /* Classes */,
 				61B28B7E1C165EA6009731FE /* AppDelegate.h */,
 				61B28B7F1C165EA6009731FE /* AppDelegate.m */,
 				61B28B811C165EA6009731FE /* ViewController.h */,
@@ -133,6 +238,7 @@
 		61B28B701C165EA6009731FE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = B;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = lk;
 				TargetAttributes = {
@@ -210,8 +316,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				615C63981C16DC7500FD4082 /* BUntil.m in Sources */,
+				615C639B1C16DCD400FD4082 /* BHttpActionMgr.m in Sources */,
 				61B28B831C165EA6009731FE /* ViewController.m in Sources */,
+				615C63A21C16DD1700FD4082 /* BActionBase.m in Sources */,
 				61B28B801C165EA6009731FE /* AppDelegate.m in Sources */,
+				615C639E1C16DCE400FD4082 /* BResponeResult.m in Sources */,
+				615C63951C16DC5600FD4082 /* BModel.m in Sources */,
 				61B28B7D1C165EA6009731FE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
