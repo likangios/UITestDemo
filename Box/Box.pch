@@ -1,0 +1,58 @@
+//
+//  Box.pch
+//  Box
+//
+//  Created by FengLing on 15/12/8.
+//  Copyright © 2015年 lk. All rights reserved.
+//
+
+#ifndef Box_pch
+#define Box_pch
+//lib
+#import <IHKeyboardAvoiding.h>
+#import <AFNetworking.h>
+#import <MBProgressHUD.h>
+#import <Masonry.h>
+#import <BlocksKit.h>
+#import <BlocksKit+UIKit.h>
+#import <JSONModel.h>
+#import <TTTAttributedLabel.h>
+#import <SDWebImage/SDImageCache.h>
+#import <CocoaLumberjack/CocoaLumberjack.h>
+#import <MWPhotoBrowser.h>
+
+
+#define BOX_UAT
+
+// 本地开发环境(局域网环境)
+#if defined(BOX_DEVELOPMENT)
+#define Limit_count [NSNumber numberWithInt:10]
+#define Version_TXT @"(dev)"
+static const int ddLogLevel = DDLogLevelVerbose;
+// 测试环境（外网测试服务器）
+#elif defined(BOX_TEST)
+#define Limit_count [NSNumber numberWithInt:10]
+#define Version_TXT @"(test)"
+static const int ddLogLevel = DDLogLevelVerbose;
+
+#elif defined(BOX_UAT)
+#define Limit_count [NSNumber numberWithInt:10]
+#define Version_TXT @"(UAT)"
+static const int ddLogLevel = DDLogLevelVerbose;
+
+// 生产环境 （外网生产服务器)
+#elif defined(BOX_PRODUCTION)
+#define Limit_count [NSNumber numberWithInt:20]
+#define Version_TXT @""
+static const int ddLogLevel = DDLogLevelInfo;
+#else
+
+#error "can't detemted mode"
+
+#endif
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* Box_pch */

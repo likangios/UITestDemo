@@ -17,6 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [self initSDImageCache];
+
+    
     return YES;
 }
 
@@ -41,5 +45,18 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
+#pragma mark - private
+- (void)initSDImageCache{
+    NSString *bundledPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"DownloadImages"];
+    [[SDImageCache sharedImageCache] addReadOnlyCachePath:bundledPath];
+    
+#if defined(BOX_DEVELOPMENT)
+    [[SDImageCache sharedImageCache] cleanDisk];
+#else
+    if( [[SDImageCache sharedImageCache] getDiskCount] > 100 )
+    {
+        [[SDImageCache sharedImageCache] clearDisk];
+    }
+#endif
+}
 @end

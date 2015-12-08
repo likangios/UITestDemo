@@ -27,6 +27,7 @@
 		61B28B871C165EA6009731FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		61B28B8A1C165EA6009731FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		61B28B8C1C165EA6009731FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61B28B931C1662A5009731FE /* Box.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box.pch; sourceTree = "<group>"; };
 		A9C80705F4D1FA262F3B80E5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BA44CC5CA4F887541AA8DD8A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C5B244B8D7CF7FC87B279E78 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +70,7 @@
 				61B28B7F1C165EA6009731FE /* AppDelegate.m */,
 				61B28B811C165EA6009731FE /* ViewController.h */,
 				61B28B821C165EA6009731FE /* ViewController.m */,
+				61B28B931C1662A5009731FE /* Box.pch */,
 				61B28B841C165EA6009731FE /* Main.storyboard */,
 				61B28B871C165EA6009731FE /* Assets.xcassets */,
 				61B28B891C165EA6009731FE /* LaunchScreen.storyboard */,
@@ -321,6 +323,7 @@
 			baseConfigurationReference = BA44CC5CA4F887541AA8DD8A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = Box/Box.pch;
 				INFOPLIST_FILE = Box/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lk.com.Box;
@@ -333,6 +336,7 @@
 			baseConfigurationReference = A9C80705F4D1FA262F3B80E5 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = Box/Box.pch;
 				INFOPLIST_FILE = Box/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lk.com.Box;
