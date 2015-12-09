@@ -31,9 +31,83 @@
 
 - (BOOL)DoActionWithSuccess:(ActionSuccessBlock)success Failure:(ActionFailureBlock)failure{
     
-    return YES;
+    return NO;
     
 }
 
+@end
+
+@implementation BActionGetBase
+
+-(BOOL)DoActionWithSuccess:(ActionSuccessBlock)success Failure:(ActionFailureBlock)failure{
+    AFHTTPRequestOperationManager *manager = [[BHttpActionMgr shared] getHttpRequestMgr];
+    if (!manager) {
+        return NO;
+    }
+    [manager GET:self.url parameters:self.parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        success(self,responseObject,operation);
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        failure(self,error,operation);
+    }];
+    return YES;
+}
 
 @end
+@implementation BActionPostBase
+
+
+-(BOOL)DoActionWithSuccess:(ActionSuccessBlock)success Failure:(ActionFailureBlock)failure
+{
+    AFHTTPRequestOperationManager *manager = [[BHttpActionMgr shared] getHttpRequestMgr];
+    
+    if (!manager) {
+        return NO;
+    }
+    [manager POST:self.url parameters:self.parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        success(self,responseObject,operation);
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        failure(self,error,operation);
+    }];
+
+    return YES;
+}
+
+@end
+
+@implementation BActionDeleteBase
+
+-(BOOL)DoActionWithSuccess:(ActionSuccessBlock)success Failure:(ActionFailureBlock)failure{
+    AFHTTPRequestOperationManager *manager = [[BHttpActionMgr shared] getHttpRequestMgr];
+    
+    if (!manager) {
+        return NO;
+    }
+    
+    [manager DELETE:self.url parameters:self.parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        success(self,responseObject,operation);
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        failure(self,error,operation);
+    }];
+    
+    return YES;
+}
+
+@end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "BHttpActionMgr.h"
 @class BActionBase;
 
 typedef void(^ActionSuccessBlock)(BActionBase *action,id responseObject,AFHTTPRequestOperation *operation);

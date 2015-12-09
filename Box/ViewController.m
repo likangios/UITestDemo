@@ -19,6 +19,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+   __block int a = 10;
+    
+    void(^printA)(void) = ^void(){
+        a = 20;
+    };
+    a = 15;
+    printA();
+    NSLog(@"a %d",a);
     // Do any additional setup after loading the view, typically from a nib.
 }
 

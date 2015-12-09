@@ -18,6 +18,10 @@
 		61B28B861C165EA6009731FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61B28B841C165EA6009731FE /* Main.storyboard */; };
 		61B28B881C165EA6009731FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61B28B871C165EA6009731FE /* Assets.xcassets */; };
 		61B28B8B1C165EA6009731FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61B28B891C165EA6009731FE /* LaunchScreen.storyboard */; };
+		61CC09C31C17B66E0038349A /* BBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CC09C11C17B66E0038349A /* BBaseViewController.m */; };
+		61CC09C41C17B66E0038349A /* BBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61CC09C21C17B66E0038349A /* BBaseViewController.xib */; };
+		61CC09C81C17BF1E0038349A /* BBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CC09C61C17BF1E0038349A /* BBaseTableViewController.m */; };
+		61CC09C91C17BF1E0038349A /* BBaseTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61CC09C71C17BF1E0038349A /* BBaseTableViewController.xib */; };
 		A23AB41730D7622E432E8C30 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B244B8D7CF7FC87B279E78 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +47,12 @@
 		61B28B8A1C165EA6009731FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		61B28B8C1C165EA6009731FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61B28B931C1662A5009731FE /* Box.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box.pch; sourceTree = "<group>"; };
+		61CC09C01C17B66E0038349A /* BBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBaseViewController.h; sourceTree = "<group>"; };
+		61CC09C11C17B66E0038349A /* BBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBaseViewController.m; sourceTree = "<group>"; };
+		61CC09C21C17B66E0038349A /* BBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBaseViewController.xib; sourceTree = "<group>"; };
+		61CC09C51C17BF1E0038349A /* BBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBaseTableViewController.h; sourceTree = "<group>"; };
+		61CC09C61C17BF1E0038349A /* BBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBaseTableViewController.m; sourceTree = "<group>"; };
+		61CC09C71C17BF1E0038349A /* BBaseTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBaseTableViewController.xib; sourceTree = "<group>"; };
 		A9C80705F4D1FA262F3B80E5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BA44CC5CA4F887541AA8DD8A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C5B244B8D7CF7FC87B279E78 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +85,7 @@
 		615C638B1C16DBA800FD4082 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				61CC09BF1C17B64D0038349A /* Base */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -193,6 +204,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		61CC09BF1C17B64D0038349A /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				61CC09C01C17B66E0038349A /* BBaseViewController.h */,
+				61CC09C11C17B66E0038349A /* BBaseViewController.m */,
+				61CC09C21C17B66E0038349A /* BBaseViewController.xib */,
+				61CC09C51C17BF1E0038349A /* BBaseTableViewController.h */,
+				61CC09C61C17BF1E0038349A /* BBaseTableViewController.m */,
+				61CC09C71C17BF1E0038349A /* BBaseTableViewController.xib */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
 		C7A7CED3701A9DA0446C2C6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,7 +294,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61CC09C41C17B66E0038349A /* BBaseViewController.xib in Resources */,
 				61B28B8B1C165EA6009731FE /* LaunchScreen.storyboard in Resources */,
+				61CC09C91C17BF1E0038349A /* BBaseTableViewController.xib in Resources */,
 				61B28B881C165EA6009731FE /* Assets.xcassets in Resources */,
 				61B28B861C165EA6009731FE /* Main.storyboard in Resources */,
 			);
@@ -318,12 +344,14 @@
 			files = (
 				615C63981C16DC7500FD4082 /* BUntil.m in Sources */,
 				615C639B1C16DCD400FD4082 /* BHttpActionMgr.m in Sources */,
+				61CC09C31C17B66E0038349A /* BBaseViewController.m in Sources */,
 				61B28B831C165EA6009731FE /* ViewController.m in Sources */,
 				615C63A21C16DD1700FD4082 /* BActionBase.m in Sources */,
 				61B28B801C165EA6009731FE /* AppDelegate.m in Sources */,
 				615C639E1C16DCE400FD4082 /* BResponeResult.m in Sources */,
 				615C63951C16DC5600FD4082 /* BModel.m in Sources */,
 				61B28B7D1C165EA6009731FE /* main.m in Sources */,
+				61CC09C81C17BF1E0038349A /* BBaseTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +462,7 @@
 			baseConfigurationReference = BA44CC5CA4F887541AA8DD8A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = Box/Box.pch;
 				INFOPLIST_FILE = Box/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -447,6 +476,7 @@
 			baseConfigurationReference = A9C80705F4D1FA262F3B80E5 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = Box/Box.pch;
 				INFOPLIST_FILE = Box/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
