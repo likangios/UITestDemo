@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 
+#import "BCustomNaViewController.h"
+#import "BWelcomViewController.h"
+#import "BMainViewController.h"
+#import "ViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -18,11 +22,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [self initSDImageCache];
-
+    
+    self.window = [[UIWindow alloc]initWithFrame:ScreenBounds];
+    BCustomNaViewController *nav = [[BCustomNaViewController alloc]initWithRootViewController:[[ViewController alloc]init]];
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
     
     return YES;
 }
-
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -57,5 +64,16 @@
         [[SDImageCache sharedImageCache] clearDisk];
     }
 #endif
+}
+-(void) OnSignInSuccessful:(NSString * )acc WithPassword:(NSString *) password{
+    DDLogError(@"登录成功");
+    BCustomNaViewController *nav = [[BCustomNaViewController alloc]initWithRootViewController:[[BMainViewController alloc]initWithNibName:@"BMainViewController" bundle:nil]];
+    self.window.rootViewController = nav;
+}
+-(void) OnSignoutSuccessful{
+    DDLogError(@"登出");
+    BCustomNaViewController *nav = [[BCustomNaViewController alloc]initWithRootViewController:[[BWelcomViewController alloc]initWithNibName:@"BWelcomViewController" bundle:nil]];
+    nav.navigationBarHidden = YES;
+    self.window.rootViewController = nav;
 }
 @end

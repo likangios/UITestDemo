@@ -13,9 +13,20 @@
 @end
 
 @implementation BBaseViewController
-
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        
+    }
+    return self;
+}
+- (instancetype)initWithNib{
+    return [self initWithNibName:NSStringFromClass(self.class) bundle:nil];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title  = (NSString *)NSStringFromClass([self class]);
+
     
     if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
         self.edgesForExtendedLayout = UIRectEdgeNone;

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BWelcomViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jaW-eu-KIK">
+                    <rect key="frame" x="195" y="591" width="150" height="44"/>
+                    <color key="backgroundColor" red="1" green="0.062745098039215685" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="登录">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="22"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="LoginBtnClick:" destination="-1" eventType="touchUpInside" id="hDA-yI-r5j"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bA8-G9-DEb">
+                    <rect key="frame" x="30" y="591" width="150" height="44"/>
+                    <color key="backgroundColor" red="0.72156862745098038" green="0.72156862745098038" blue="0.72156862745098038" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="6vZ-7O-QV7"/>
+                        <constraint firstAttribute="height" constant="44" id="HWR-kk-mdS"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="注册">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="22"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="RegisterBtnClick:" destination="-1" eventType="touchUpInside" id="sgp-2U-tzC"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="jaW-eu-KIK" firstAttribute="centerY" secondItem="bA8-G9-DEb" secondAttribute="centerY" id="8wt-G9-nSt"/>
+                <constraint firstItem="jaW-eu-KIK" firstAttribute="bottom" secondItem="bA8-G9-DEb" secondAttribute="bottom" id="DOJ-al-QJl"/>
+                <constraint firstAttribute="bottom" secondItem="bA8-G9-DEb" secondAttribute="bottom" constant="32" id="JK0-x9-9Lv"/>
+                <constraint firstItem="jaW-eu-KIK" firstAttribute="leading" secondItem="bA8-G9-DEb" secondAttribute="trailing" constant="15" id="LoV-dc-jCk"/>
+                <constraint firstItem="bA8-G9-DEb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="als-JD-6fq"/>
+                <constraint firstItem="jaW-eu-KIK" firstAttribute="width" secondItem="bA8-G9-DEb" secondAttribute="width" id="qXo-9l-nGM"/>
+                <constraint firstItem="jaW-eu-KIK" firstAttribute="top" secondItem="bA8-G9-DEb" secondAttribute="top" id="r0w-5n-SCe"/>
+                <constraint firstAttribute="trailing" secondItem="jaW-eu-KIK" secondAttribute="trailing" constant="30" id="zHS-Nm-810"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="230" y="322"/>
+        </view>
+    </objects>
+</document>

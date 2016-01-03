@@ -10,4 +10,6 @@
 
 @interface BBaseViewController : UIViewController
 
+- (instancetype)initWithNib;
+
 @end

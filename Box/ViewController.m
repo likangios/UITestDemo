@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-
+#import "AppDelegate.h"
 
 
 @interface ViewController ()
@@ -19,6 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title  = (NSString *)NSStringFromClass([self class]);
+    
    __block int a = 10;
     
     void(^printA)(void) = ^void(){
@@ -28,6 +30,19 @@
     printA();
     NSLog(@"a %d",a);
     // Do any additional setup after loading the view, typically from a nib.
+}
+- (IBAction)mainBtn:(id)sender {
+    
+    AppDelegate *appdele = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    
+    [appdele OnSignInSuccessful:@"username" WithPassword:@"password"];
+    
+}
+- (IBAction)welcomBtn:(id)sender {
+    
+    AppDelegate *appdele = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    
+    [appdele OnSignoutSuccessful];
 }
 
 - (void)didReceiveMemoryWarning {

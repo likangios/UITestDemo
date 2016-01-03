@@ -10,4 +10,6 @@
 
 @interface BBaseTableViewController : BBaseViewController
 
+@property (nonatomic,weak) IBOutlet UITableView *tableView;
+
 @end

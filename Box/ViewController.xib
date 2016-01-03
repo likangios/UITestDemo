@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="gVO-2I-bPL"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bn9-Qd-h9B">
+                    <rect key="frame" x="10" y="266" width="355" height="50"/>
+                    <color key="backgroundColor" red="0.40918656490447136" green="0.97372208118698722" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Iai-iM-cCn"/>
+                    </constraints>
+                    <state key="normal" title="main"/>
+                    <connections>
+                        <action selector="mainBtn:" destination="-1" eventType="touchUpInside" id="XWN-5z-h2M"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCR-d6-EhY">
+                    <rect key="frame" x="10" y="157" width="355" height="50"/>
+                    <color key="backgroundColor" red="0.1525736064443689" green="1" blue="0.14566819019638633" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="ACT-Ay-5Ee"/>
+                    </constraints>
+                    <state key="normal" title="welcom"/>
+                    <connections>
+                        <action selector="welcomBtn:" destination="-1" eventType="touchUpInside" id="0lo-gD-m58"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="ZCR-d6-EhY" secondAttribute="trailing" constant="10" id="5DK-w0-oge"/>
+                <constraint firstItem="bn9-Qd-h9B" firstAttribute="top" secondItem="ZCR-d6-EhY" secondAttribute="bottom" constant="59" id="5lt-Q2-Rwu"/>
+                <constraint firstItem="bn9-Qd-h9B" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Krp-vp-Hr9"/>
+                <constraint firstAttribute="trailing" secondItem="bn9-Qd-h9B" secondAttribute="trailing" constant="10" id="Pex-O4-Npt"/>
+                <constraint firstItem="ZCR-d6-EhY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="157" id="X40-xv-qDO"/>
+                <constraint firstItem="ZCR-d6-EhY" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="b3y-oe-8M3"/>
+                <constraint firstItem="ZCR-d6-EhY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="b4j-MF-vJF"/>
+                <constraint firstItem="bn9-Qd-h9B" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="jkm-Ua-aWe"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+        </view>
+    </objects>
+</document>
