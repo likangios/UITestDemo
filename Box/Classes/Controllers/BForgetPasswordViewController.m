@@ -1,30 +1,22 @@
 //
-//  BMainViewController.m
+//  BForgetPasswordViewController.m
 //  Box
 //
-//  Created by 哈哈哈 on 16/1/2.
+//  Created by 哈哈哈 on 16/1/4.
 //  Copyright © 2016年 lk. All rights reserved.
 //
 
-#import "BMainViewController.h"
-#import "BQRCodeViewController.h"
-#import "AppDelegate.h"
-@interface BMainViewController ()
+#import "BForgetPasswordViewController.h"
+
+@interface BForgetPasswordViewController ()
 
 @end
 
-@implementation BMainViewController
+@implementation BForgetPasswordViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-}
-- (IBAction)tuichu:(id)sender {
-    
-//    [(AppDelegate *)[UIApplication sharedApplication].delegate  OnSignoutSuccessful];
-    
-    [self.navigationController pushViewController:[[BQRCodeViewController alloc]initWithNib] animated:YES];
-    
 }
 
 - (void)didReceiveMemoryWarning {

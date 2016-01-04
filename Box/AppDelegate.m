@@ -32,8 +32,11 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
     [self initGeTui:launchOptions];
     
     self.window = [[UIWindow alloc]initWithFrame:ScreenBounds];
-    BCustomNaViewController *nav = [[BCustomNaViewController alloc]initWithRootViewController:[[ViewController alloc]init]];
+    
+    BCustomNaViewController *nav = [[BCustomNaViewController alloc]initWithRootViewController:[[BWelcomViewController alloc]initWithNibName:@"BWelcomViewController" bundle:nil]];
+    nav.navigationBarHidden = YES;
     self.window.rootViewController = nav;
+
     [self.window makeKeyAndVisible];
     
     return YES;

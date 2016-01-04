@@ -37,8 +37,12 @@
     
     _captureSession = nil;
     _isReading = NO;
+    
 }
-
+- (void)awakeFromNib{
+    [super awakeFromNib];
+    [self startReading];
+}
 - (BOOL)startReading {
     NSError *error;
     
@@ -106,13 +110,12 @@
 //    
 //    [timer fire];
     
-    Preview *preview = [[[NSBundle mainBundle] loadNibNamed:@"Preview" owner:self options:nil] lastObject];
+    Preview *preview = [Preview loadSelfWithNibOwner:self];
     preview.frame = _viewPreview.bounds;
     [_viewPreview addSubview:preview];
-    
+
     //10.开始扫描
     [_captureSession startRunning];
-    
     
     return YES;
 }

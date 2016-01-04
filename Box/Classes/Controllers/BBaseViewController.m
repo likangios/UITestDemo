@@ -50,7 +50,7 @@
 - (UIBarButtonItem *)getBackItem{
     
     UIButton *backBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
-    [backBtn setBackgroundImage:[UIImage imageNamed:@"icon_ma_back.png"] forState:UIControlStateNormal];
+    [backBtn setImage:[UIImage imageNamed:@"icon_back_black_"] forState:UIControlStateNormal];
     [backBtn addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
     
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
@@ -60,7 +60,8 @@
 - (UIBarButtonItem *)getRedBackItem{
     
     UIButton *backBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
-    [backBtn setBackgroundImage:[UIImage imageNamed:@"icon_ma_back.png"] forState:UIControlStateNormal];
+    [backBtn setImage:[UIImage imageNamed:@"img_logo_B_"] forState:UIControlStateNormal];
+    
     [backBtn addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
     
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];

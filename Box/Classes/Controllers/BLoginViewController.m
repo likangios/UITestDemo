@@ -7,18 +7,45 @@
 //
 
 #import "BLoginViewController.h"
+#import "BRegisterViewController.h"
+#import "BForgetPasswordViewController.h"
 
 @interface BLoginViewController ()
-
+@property (nonatomic,strong) IBOutlet UITextField *phoneTextField;
+@property (nonatomic,strong) IBOutlet UITextField *passwordTextField;
+@property (nonatomic,strong) IBOutlet UIButton *loginBtn;
+@property (nonatomic,strong) IBOutlet UIButton *wxloginBtn;
+@property (nonatomic,strong) IBOutlet UIButton *forgetPasswordBtn;
+@property (nonatomic,strong) IBOutlet UIButton *xinUserBtn;
 @end
 
 @implementation BLoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self addBackItem];
     // Do any additional setup after loading the view from its nib.
 }
-
+- (void)awakeFromNib{
+    [super awakeFromNib];
+    self.phoneTextField.layer.borderColor = [UIColor redColor].CGColor;
+    self.phoneTextField.layer.borderWidth = 2.0;
+}
+#pragma mark - aciton -
+- (IBAction)loginBtnClick:(id)sender{
+    DDLogError(@"登录");
+}
+- (IBAction)wxloginBtnClick:(id)sender{
+    DDLogError(@"微信登录");
+}
+- (IBAction)forgetPasswordBtnClick:(id)sender{
+        DDLogError(@"忘记密码");
+    [self.navigationController pushViewController:[[BForgetPasswordViewController alloc]initWithNib] animated:YES];
+}
+- (IBAction)xinUserBtnClick:(id)sender{
+        DDLogError(@"新用户");
+    [self.navigationController pushViewController:[[BRegisterViewController alloc]initWithNib] animated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
