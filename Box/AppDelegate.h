@@ -12,6 +12,9 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+-(void) OnSignInSuccessful:(NSString * )acc WithPassword:(NSString *) password;
+
+-(void) OnSignoutSuccessful;
 
 @end
 

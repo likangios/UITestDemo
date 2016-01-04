@@ -23,6 +23,12 @@
 #import <CocoaLumberjack/CocoaLumberjack.h>
 #import <MWPhotoBrowser.h>
 
+#define UMtongji        @"5689310867e58eee0f002fb4"
+
+#define AppID           @"XdfwxPk5q48aKZf4jaCLZ5"
+#define AppKey          @"6VQzYgLANT8EdyTkq6QdqA"
+#define AppSecret       @"RmUyguJuxl5GsCMr1xii93"
+#define MasterSecret    @"lwpxSlKKcD8jWEtJanmI16"
 
 #define BOX_DEVELOPMENT
 
@@ -52,6 +58,10 @@ static const int ddLogLevel = DDLogLevelOff;
 #error "can't detemted mode"
 
 #endif
+
+#define ScreenBounds [UIScreen mainScreen].bounds
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
 
 
 // Include any system framework and library headers here that should be included in all compilation units.
