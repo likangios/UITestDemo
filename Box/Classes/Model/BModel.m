@@ -9,5 +9,14 @@
 #import "BModel.h"
 
 @implementation BModel
-
+/**
+ *  属性可选
+ *
+ *  @param propertyName <#propertyName description#>
+ *
+ *  @return <#return value description#>
+ */
++(BOOL)propertyIsOptional:(NSString *)propertyName{
+    return YES;
+}
 @end

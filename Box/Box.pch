@@ -24,7 +24,7 @@
 #import <MWPhotoBrowser.h>
 
 
-#define BOX_UAT
+#define BOX_DEVELOPMENT
 
 // 本地开发环境(局域网环境)
 #if defined(BOX_DEVELOPMENT)
@@ -46,7 +46,7 @@ static const int ddLogLevel = DDLogLevelVerbose;
 #elif defined(BOX_PRODUCTION)
 #define Limit_count [NSNumber numberWithInt:20]
 #define Version_TXT @""
-static const int ddLogLevel = DDLogLevelInfo;
+static const int ddLogLevel = DDLogLevelOff;
 #else
 
 #error "can't detemted mode"

@@ -47,6 +47,15 @@ static BHttpActionMgr *shareMgr = nil;
     });
     return shareMgr;
 }
+- (AFHTTPRequestOperationManager *)getHttpRequestMgr{
+    shareMgr.httpRequestMgr.securityPolicy.allowInvalidCertificates = NO;
+    return shareMgr.httpRequestMgr;
+}
+
+- (AFHTTPRequestOperationManager *)getHttpsRequestMgr{
+    shareMgr.httpRequestMgr.securityPolicy.allowInvalidCertificates = NO;
+    return shareMgr.httpRequestMgr;
+}
 -(void) ClearCookies
 {
     NSURL * base_url = [NSURL URLWithString:[shareMgr getBaseUrlString]];

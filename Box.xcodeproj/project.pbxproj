@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61244EB71C33B50000E2ED3A /* BActionLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 61244EB61C33B50000E2ED3A /* BActionLogin.m */; };
 		615C63951C16DC5600FD4082 /* BModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 615C63941C16DC5600FD4082 /* BModel.m */; };
 		615C63981C16DC7500FD4082 /* BUntil.m in Sources */ = {isa = PBXBuildFile; fileRef = 615C63971C16DC7500FD4082 /* BUntil.m */; };
 		615C639B1C16DCD400FD4082 /* BHttpActionMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 615C639A1C16DCD400FD4082 /* BHttpActionMgr.m */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		61244EB51C33B50000E2ED3A /* BActionLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BActionLogin.h; sourceTree = "<group>"; };
+		61244EB61C33B50000E2ED3A /* BActionLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BActionLogin.m; sourceTree = "<group>"; };
 		615C63931C16DC5600FD4082 /* BModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BModel.h; sourceTree = "<group>"; };
 		615C63941C16DC5600FD4082 /* BModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BModel.m; sourceTree = "<group>"; };
 		615C63961C16DC7500FD4082 /* BUntil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BUntil.h; sourceTree = "<group>"; };
@@ -155,6 +158,8 @@
 			children = (
 				615C63A01C16DD1700FD4082 /* BActionBase.h */,
 				615C63A11C16DD1700FD4082 /* BActionBase.m */,
+				61244EB51C33B50000E2ED3A /* BActionLogin.h */,
+				61244EB61C33B50000E2ED3A /* BActionLogin.m */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -348,6 +353,7 @@
 				61B28B831C165EA6009731FE /* ViewController.m in Sources */,
 				615C63A21C16DD1700FD4082 /* BActionBase.m in Sources */,
 				61B28B801C165EA6009731FE /* AppDelegate.m in Sources */,
+				61244EB71C33B50000E2ED3A /* BActionLogin.m in Sources */,
 				615C639E1C16DCE400FD4082 /* BResponeResult.m in Sources */,
 				615C63951C16DC5600FD4082 /* BModel.m in Sources */,
 				61B28B7D1C165EA6009731FE /* main.m in Sources */,
@@ -466,7 +472,7 @@
 				GCC_PREFIX_HEADER = Box/Box.pch;
 				INFOPLIST_FILE = Box/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lk.com.Box;
+				PRODUCT_BUNDLE_IDENTIFIER = com.XueXueCanBox.xuexuecanbox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -480,7 +486,7 @@
 				GCC_PREFIX_HEADER = Box/Box.pch;
 				INFOPLIST_FILE = Box/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lk.com.Box;
+				PRODUCT_BUNDLE_IDENTIFIER = com.XueXueCanBox.xuexuecanbox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

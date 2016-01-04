@@ -23,6 +23,12 @@
  */
 - (AFHTTPRequestOperationManager *)getHttpRequestMgr;
 /**
+ *  获取https操作管理器
+ *
+ *  @return
+ */
+- (AFHTTPRequestOperationManager *)getHttpsRequestMgr;
+/**
  *  清除缓存
  */
 - (void)ClearCookies;
