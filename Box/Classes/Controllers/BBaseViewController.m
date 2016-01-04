@@ -7,7 +7,7 @@
 //
 
 #import "BBaseViewController.h"
-
+#import "UINavigationItem+BMargin.h"
 @interface BBaseViewController ()
 
 @end
@@ -38,7 +38,44 @@
     self.navigationController.navigationBar.translucent = NO;
     }
 }
+#pragma mark - layout
+- (void)addBackItem{
+    
+    [self.navigationItem addLeftBarButtonItem:[self getBackItem]];
+}
+- (void)addRedBackItem{
+    
+    [self.navigationItem addLeftBarButtonItem:[self getRedBackItem]];
+}
+- (UIBarButtonItem *)getBackItem{
+    
+    UIButton *backBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    [backBtn setBackgroundImage:[UIImage imageNamed:@"icon_ma_back.png"] forState:UIControlStateNormal];
+    [backBtn addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
+    
+    return backItem;
+}
+- (UIBarButtonItem *)getRedBackItem{
+    
+    UIButton *backBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    [backBtn setBackgroundImage:[UIImage imageNamed:@"icon_ma_back.png"] forState:UIControlStateNormal];
+    [backBtn addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
+    
+    return backItem;
+}
 
+- (void)backAction:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+- (void)dismissAction:(id)sender{
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

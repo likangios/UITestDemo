@@ -25,10 +25,14 @@
 
 #define UMtongji        @"5689310867e58eee0f002fb4"
 
-#define AppID           @"XdfwxPk5q48aKZf4jaCLZ5"
-#define AppKey          @"6VQzYgLANT8EdyTkq6QdqA"
-#define AppSecret       @"RmUyguJuxl5GsCMr1xii93"
+#define kGtAppId           @"XdfwxPk5q48aKZf4jaCLZ5"
+#define kGtAppKey          @"6VQzYgLANT8EdyTkq6QdqA"
+#define kGtAppSecret       @"RmUyguJuxl5GsCMr1xii93"
+
 #define MasterSecret    @"lwpxSlKKcD8jWEtJanmI16"
+
+
+
 
 #define BOX_DEVELOPMENT
 

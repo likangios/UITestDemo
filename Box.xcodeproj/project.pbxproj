@@ -13,6 +13,10 @@
 		615C639B1C16DCD400FD4082 /* BHttpActionMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 615C639A1C16DCD400FD4082 /* BHttpActionMgr.m */; };
 		615C639E1C16DCE400FD4082 /* BResponeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 615C639D1C16DCE400FD4082 /* BResponeResult.m */; };
 		615C63A21C16DD1700FD4082 /* BActionBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 615C63A11C16DD1700FD4082 /* BActionBase.m */; };
+		618A53301C3A6A8D00CD6DF7 /* BQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 618A532E1C3A6A8D00CD6DF7 /* BQRCodeViewController.m */; };
+		618A53311C3A6A8D00CD6DF7 /* BQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 618A532F1C3A6A8D00CD6DF7 /* BQRCodeViewController.xib */; };
+		618A53331C3A77B400CD6DF7 /* Preview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 618A53321C3A77B400CD6DF7 /* Preview.xib */; };
+		618A53361C3A782C00CD6DF7 /* Preview.m in Sources */ = {isa = PBXBuildFile; fileRef = 618A53351C3A782C00CD6DF7 /* Preview.m */; };
 		61B28B7D1C165EA6009731FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B28B7C1C165EA6009731FE /* main.m */; };
 		61B28B801C165EA6009731FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B28B7F1C165EA6009731FE /* AppDelegate.m */; };
 		61B28B831C165EA6009731FE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B28B821C165EA6009731FE /* ViewController.m */; };
@@ -22,6 +26,16 @@
 		61CC09C41C17B66E0038349A /* BBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61CC09C21C17B66E0038349A /* BBaseViewController.xib */; };
 		61CC09C81C17BF1E0038349A /* BBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CC09C61C17BF1E0038349A /* BBaseTableViewController.m */; };
 		61CC09C91C17BF1E0038349A /* BBaseTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61CC09C71C17BF1E0038349A /* BBaseTableViewController.xib */; };
+		61E6D3C61C39FA2700A55C34 /* UINavigationItem+BMargin.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E6D3C51C39FA2700A55C34 /* UINavigationItem+BMargin.m */; };
+		61E6D3CB1C3A4F8D00A55C34 /* libGeTuiSdk-1.3.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E6D3CA1C3A4F8D00A55C34 /* libGeTuiSdk-1.3.2.a */; };
+		61E6D3CD1C3A4FDD00A55C34 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E6D3CC1C3A4FDD00A55C34 /* CFNetwork.framework */; };
+		61E6D3CF1C3A4FE600A55C34 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E6D3CE1C3A4FE600A55C34 /* SystemConfiguration.framework */; };
+		61E6D3D11C3A4FED00A55C34 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E6D3D01C3A4FED00A55C34 /* CoreTelephony.framework */; };
+		61E6D3D31C3A4FF400A55C34 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E6D3D21C3A4FF400A55C34 /* AVFoundation.framework */; };
+		61E6D3D51C3A4FFC00A55C34 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E6D3D41C3A4FFC00A55C34 /* CoreLocation.framework */; };
+		61E6D3D71C3A500300A55C34 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E6D3D61C3A500300A55C34 /* CoreBluetooth.framework */; };
+		61E6D3D91C3A500F00A55C34 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E6D3D81C3A500F00A55C34 /* libz.tbd */; };
+		61E6D3DB1C3A501B00A55C34 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E6D3DA1C3A501B00A55C34 /* libsqlite3.tbd */; };
 		A23AB41730D7622E432E8C30 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B244B8D7CF7FC87B279E78 /* libPods.a */; };
 		C8EA7EAB1C36D21A00F0FB39 /* BCustomNaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EA7EA91C36D21A00F0FB39 /* BCustomNaViewController.m */; };
 		C8EA7EAC1C36D21A00F0FB39 /* BCustomNaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8EA7EAA1C36D21A00F0FB39 /* BCustomNaViewController.xib */; };
@@ -50,6 +64,12 @@
 		615C639D1C16DCE400FD4082 /* BResponeResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BResponeResult.m; sourceTree = "<group>"; };
 		615C63A01C16DD1700FD4082 /* BActionBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BActionBase.h; sourceTree = "<group>"; };
 		615C63A11C16DD1700FD4082 /* BActionBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BActionBase.m; sourceTree = "<group>"; };
+		618A532D1C3A6A8D00CD6DF7 /* BQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQRCodeViewController.h; sourceTree = "<group>"; };
+		618A532E1C3A6A8D00CD6DF7 /* BQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQRCodeViewController.m; sourceTree = "<group>"; };
+		618A532F1C3A6A8D00CD6DF7 /* BQRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BQRCodeViewController.xib; sourceTree = "<group>"; };
+		618A53321C3A77B400CD6DF7 /* Preview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preview.xib; sourceTree = "<group>"; };
+		618A53341C3A782C00CD6DF7 /* Preview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preview.h; sourceTree = "<group>"; };
+		618A53351C3A782C00CD6DF7 /* Preview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preview.m; sourceTree = "<group>"; };
 		61B28B781C165EA6009731FE /* Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Box.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61B28B7C1C165EA6009731FE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		61B28B7E1C165EA6009731FE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -66,6 +86,18 @@
 		61CC09C51C17BF1E0038349A /* BBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBaseTableViewController.h; sourceTree = "<group>"; };
 		61CC09C61C17BF1E0038349A /* BBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBaseTableViewController.m; sourceTree = "<group>"; };
 		61CC09C71C17BF1E0038349A /* BBaseTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBaseTableViewController.xib; sourceTree = "<group>"; };
+		61E6D3C41C39FA2700A55C34 /* UINavigationItem+BMargin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+BMargin.h"; sourceTree = "<group>"; };
+		61E6D3C51C39FA2700A55C34 /* UINavigationItem+BMargin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+BMargin.m"; sourceTree = "<group>"; };
+		61E6D3C91C3A4F8D00A55C34 /* GeTuiSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeTuiSdk.h; sourceTree = "<group>"; };
+		61E6D3CA1C3A4F8D00A55C34 /* libGeTuiSdk-1.3.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libGeTuiSdk-1.3.2.a"; sourceTree = "<group>"; };
+		61E6D3CC1C3A4FDD00A55C34 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		61E6D3CE1C3A4FE600A55C34 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		61E6D3D01C3A4FED00A55C34 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		61E6D3D21C3A4FF400A55C34 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		61E6D3D41C3A4FFC00A55C34 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		61E6D3D61C3A500300A55C34 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		61E6D3D81C3A500F00A55C34 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		61E6D3DA1C3A501B00A55C34 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		A9C80705F4D1FA262F3B80E5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BA44CC5CA4F887541AA8DD8A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C5B244B8D7CF7FC87B279E78 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +126,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61E6D3DB1C3A501B00A55C34 /* libsqlite3.tbd in Frameworks */,
+				61E6D3D91C3A500F00A55C34 /* libz.tbd in Frameworks */,
+				61E6D3D71C3A500300A55C34 /* CoreBluetooth.framework in Frameworks */,
+				61E6D3D51C3A4FFC00A55C34 /* CoreLocation.framework in Frameworks */,
+				61E6D3D31C3A4FF400A55C34 /* AVFoundation.framework in Frameworks */,
+				61E6D3D11C3A4FED00A55C34 /* CoreTelephony.framework in Frameworks */,
+				61E6D3CF1C3A4FE600A55C34 /* SystemConfiguration.framework in Frameworks */,
+				61E6D3CD1C3A4FDD00A55C34 /* CFNetwork.framework in Frameworks */,
+				61E6D3CB1C3A4F8D00A55C34 /* libGeTuiSdk-1.3.2.a in Frameworks */,
 				A23AB41730D7622E432E8C30 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -117,6 +158,7 @@
 		615C638B1C16DBA800FD4082 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				618A532C1C3A6A6B00CD6DF7 /* QRCode */,
 				C8EA7EC41C37D05F00F0FB39 /* login */,
 				C8EA7EC31C37CFE600F0FB39 /* register */,
 				C8EA7EAE1C3773A300F0FB39 /* main */,
@@ -172,6 +214,19 @@
 				61244EB61C33B50000E2ED3A /* BActionLogin.m */,
 			);
 			path = Actions;
+			sourceTree = "<group>";
+		};
+		618A532C1C3A6A6B00CD6DF7 /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				618A532D1C3A6A8D00CD6DF7 /* BQRCodeViewController.h */,
+				618A532E1C3A6A8D00CD6DF7 /* BQRCodeViewController.m */,
+				618A532F1C3A6A8D00CD6DF7 /* BQRCodeViewController.xib */,
+				618A53321C3A77B400CD6DF7 /* Preview.xib */,
+				618A53341C3A782C00CD6DF7 /* Preview.h */,
+				618A53351C3A782C00CD6DF7 /* Preview.m */,
+			);
+			name = QRCode;
 			sourceTree = "<group>";
 		};
 		61B28B6F1C165EA6009731FE = {
@@ -235,9 +290,35 @@
 			name = Base;
 			sourceTree = "<group>";
 		};
+		61E6D3C71C3A39ED00A55C34 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				61E6D3C81C3A4F8D00A55C34 /* GtSdkLib */,
+			);
+			name = lib;
+			path = Box/Resources/lib;
+			sourceTree = SOURCE_ROOT;
+		};
+		61E6D3C81C3A4F8D00A55C34 /* GtSdkLib */ = {
+			isa = PBXGroup;
+			children = (
+				61E6D3C91C3A4F8D00A55C34 /* GeTuiSdk.h */,
+				61E6D3CA1C3A4F8D00A55C34 /* libGeTuiSdk-1.3.2.a */,
+			);
+			path = GtSdkLib;
+			sourceTree = "<group>";
+		};
 		C7A7CED3701A9DA0446C2C6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				61E6D3DA1C3A501B00A55C34 /* libsqlite3.tbd */,
+				61E6D3D81C3A500F00A55C34 /* libz.tbd */,
+				61E6D3D61C3A500300A55C34 /* CoreBluetooth.framework */,
+				61E6D3D41C3A4FFC00A55C34 /* CoreLocation.framework */,
+				61E6D3D21C3A4FF400A55C34 /* AVFoundation.framework */,
+				61E6D3D01C3A4FED00A55C34 /* CoreTelephony.framework */,
+				61E6D3CE1C3A4FE600A55C34 /* SystemConfiguration.framework */,
+				61E6D3CC1C3A4FDD00A55C34 /* CFNetwork.framework */,
 				C5B244B8D7CF7FC87B279E78 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -268,6 +349,8 @@
 			children = (
 				C8EA7EB91C377A4A00F0FB39 /* UIViewController+Tracking.h */,
 				C8EA7EBA1C377A4A00F0FB39 /* UIViewController+Tracking.m */,
+				61E6D3C41C39FA2700A55C34 /* UINavigationItem+BMargin.h */,
+				61E6D3C51C39FA2700A55C34 /* UINavigationItem+BMargin.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -295,9 +378,9 @@
 		C8F10A9A1C396CB800BFBBDC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				61E6D3C71C3A39ED00A55C34 /* lib */,
 				C8F10A9B1C396CB800BFBBDC /* bg */,
 				C8F10A9C1C396CB800BFBBDC /* icon */,
-				C8F10A9D1C396CB800BFBBDC /* lib */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -314,13 +397,6 @@
 			children = (
 			);
 			path = icon;
-			sourceTree = "<group>";
-		};
-		C8F10A9D1C396CB800BFBBDC /* lib */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = lib;
 			sourceTree = "<group>";
 		};
 		D770324F6D45E73D3576AE0A /* Pods */ = {
@@ -367,6 +443,11 @@
 					61B28B771C165EA6009731FE = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = GDGZ2H4K6A;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -395,6 +476,7 @@
 			files = (
 				61CC09C41C17B66E0038349A /* BBaseViewController.xib in Resources */,
 				C8EA7EAC1C36D21A00F0FB39 /* BCustomNaViewController.xib in Resources */,
+				618A53331C3A77B400CD6DF7 /* Preview.xib in Resources */,
 				C8EA7EC21C37CB6300F0FB39 /* ViewController.xib in Resources */,
 				61B28B8B1C165EA6009731FE /* LaunchScreen.storyboard in Resources */,
 				C8EA7EC91C37F63000F0FB39 /* BRegisterViewController.xib in Resources */,
@@ -402,6 +484,7 @@
 				C8EA7EC01C37CAB000F0FB39 /* BMainViewController.xib in Resources */,
 				61CC09C91C17BF1E0038349A /* BBaseTableViewController.xib in Resources */,
 				61B28B881C165EA6009731FE /* Assets.xcassets in Resources */,
+				618A53311C3A6A8D00CD6DF7 /* BQRCodeViewController.xib in Resources */,
 				C8EA7EB31C3773D400F0FB39 /* BWelcomViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,6 +532,7 @@
 				615C63981C16DC7500FD4082 /* BUntil.m in Sources */,
 				615C639B1C16DCD400FD4082 /* BHttpActionMgr.m in Sources */,
 				61CC09C31C17B66E0038349A /* BBaseViewController.m in Sources */,
+				61E6D3C61C39FA2700A55C34 /* UINavigationItem+BMargin.m in Sources */,
 				61B28B831C165EA6009731FE /* ViewController.m in Sources */,
 				C8EA7EBF1C37CAB000F0FB39 /* BMainViewController.m in Sources */,
 				C8EA7EC81C37F63000F0FB39 /* BRegisterViewController.m in Sources */,
@@ -458,6 +542,8 @@
 				61244EB71C33B50000E2ED3A /* BActionLogin.m in Sources */,
 				C8EA7EAB1C36D21A00F0FB39 /* BCustomNaViewController.m in Sources */,
 				615C639E1C16DCE400FD4082 /* BResponeResult.m in Sources */,
+				618A53301C3A6A8D00CD6DF7 /* BQRCodeViewController.m in Sources */,
+				618A53361C3A782C00CD6DF7 /* Preview.m in Sources */,
 				C8EA7ECD1C37F63D00F0FB39 /* BLoginViewController.m in Sources */,
 				615C63951C16DC5600FD4082 /* BModel.m in Sources */,
 				61B28B7D1C165EA6009731FE /* main.m in Sources */,
@@ -570,10 +656,15 @@
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = Box/Box.pch;
 				INFOPLIST_FILE = Box/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Box/Resources/lib/GtSdkLib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.XueXueCanBox.xuexuecanbox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2c2d73b1-c174-49f4-80e9-a4dd8c03cda7";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -587,10 +678,15 @@
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = Box/Box.pch;
 				INFOPLIST_FILE = Box/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Box/Resources/lib/GtSdkLib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.XueXueCanBox.xuexuecanbox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2c2d73b1-c174-49f4-80e9-a4dd8c03cda7";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -9,5 +9,20 @@
 #import "JSONModel.h"
 
 @interface BModel : JSONModel
-
+/**
+ *  归档
+ *
+ *  @param path 路径
+ *
+ *  @return 成功YES 失败NO
+ */
+- (BOOL)archiveRootObjectWithPath:(NSString *)path;
+/**
+ *  解档
+ *
+ *  @param path 路径
+ *
+ *  @return 成功YES 失败NO
+ */
+- (id)unarchiveObjectWithFileWithPath:(NSString *)path;
 @end

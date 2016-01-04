@@ -9,7 +9,7 @@
 #import "BWelcomViewController.h"
 #import "BLoginViewController.h"
 #import "BRegisterViewController.h"
-
+#import "BQRCodeViewController.h"
 @interface BWelcomViewController ()
 
 @end
@@ -18,6 +18,10 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBarHidden = NO;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,7 +36,7 @@
 }
 - (IBAction)LoginBtnClick:(id)sender {
     DDLogError(@"登录");
-    [self.navigationController pushViewController:[[BLoginViewController alloc]initWithNib] animated:YES];
+    [self.navigationController pushViewController:[[BQRCodeViewController alloc]initWithNib] animated:YES];
 }
 #pragma mark private
 

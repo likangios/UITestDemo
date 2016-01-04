@@ -12,4 +12,12 @@
 
 - (instancetype)initWithNib;
 
+- (void)backAction:(id)sender;
+
+- (void)dismissAction:(id)sender;
+
+- (void)addBackItem;
+
+- (void)addRedBackItem;
+
 @end
