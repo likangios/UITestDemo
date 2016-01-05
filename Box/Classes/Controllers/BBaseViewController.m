@@ -8,11 +8,8 @@
 
 #import "BBaseViewController.h"
 #import "UINavigationItem+BMargin.h"
-#import "BCustonNavBar.h"
 @interface BBaseViewController ()
-{
-    BCustonNavBar *_navBar;
-}
+
 @end
 
 @implementation BBaseViewController
@@ -50,16 +47,56 @@
         make.height.mas_equalTo(CustomNavigationBarHeight+20);
     }];
 }
-
 #pragma mark - layout
+
+- (void)setBarImage:(UIImage *)barImage{
+    if (_navBar) {
+        _navBar.barImage = barImage;
+    }
+}
+- (void)setBarTitle:(NSString *)barTitle{
+    if (_navBar) {
+        _navBar.barTitle = barTitle;
+    }
+}
 - (void)addBackItem{
     if (_navBar) {
     [_navBar addLeftBarButtonItem:[self getBackItem]];
     }
 }
+
 - (void)addRedBackItem{
     if (_navBar) {
     [_navBar addLeftBarButtonItem:[self getRedBackItem]];
+    }
+}
+
+- (void)addTitleView:(UIView *)titView{
+    if (_navBar) {
+        [_navBar addTitleView:titView];
+    }
+}
+- (void)addRightViewWithImage:(UIImage *)img{
+    UIButton *RightBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, CustomNavigationBarHeight)];
+    [RightBtn setImage:img forState:UIControlStateNormal];
+    [RightBtn addTarget:self action:@selector(rightAction:) forControlEvents:UIControlEventTouchUpInside];
+    if (_navBar) {
+        [_navBar addRightBarButtonItem:RightBtn];
+    }
+}
+- (void)addRightViewWithTitle:(NSString *)title{
+    UIButton *RightBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, CustomNavigationBarHeight)];
+    [RightBtn setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
+    [RightBtn setTitle:title forState:UIControlStateNormal];
+    [RightBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [RightBtn addTarget:self action:@selector(rightAction:) forControlEvents:UIControlEventTouchUpInside];
+    if (_navBar) {
+        [_navBar addRightBarButtonItem:RightBtn];
+    }
+}
+- (void)addRightViewWithCustomView:(UIView *)view{
+    if (_navBar) {
+        [_navBar addRightBarButtonItem:view];
     }
 }
 - (UIButton *)getBackItem{
@@ -112,6 +149,9 @@
 
 - (void)backAction:(id)sender{
     [self.navigationController popViewControllerAnimated:YES];
+}
+- (void)rightAction:(id)sender{
+    DDLogDebug(@"右边按钮点击");
 }
 - (void)dismissAction:(id)sender{
     [self dismissViewControllerAnimated:YES completion:^{

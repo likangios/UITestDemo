@@ -26,7 +26,8 @@
     [super viewDidLoad];
     [self addCustomNavBar];
     [self addBackItem];
-    // Do any additional setup after loading the view from its nib.
+    [self addRightViewWithImage:[UIImage imageNamed:@"icon_add_black_"]];
+    self.barTitle = @"login";
 }
 - (void)awakeFromNib{
     [super awakeFromNib];
