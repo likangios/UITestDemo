@@ -22,6 +22,7 @@
     self = [super init];
     if (self) {
         self.url = str_url;
+        self.isValid = NO;
     }
     return self;
 }

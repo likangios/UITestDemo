@@ -8,7 +8,7 @@
 
 #import "BCustomNaViewController.h"
 
-@interface BCustomNaViewController ()
+@interface BCustomNaViewController ()<UIGestureRecognizerDelegate>
 
 @end
 
@@ -16,6 +16,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setNavigationBarHidden:YES];
+    __weak typeof (self) weakSelf = self;
+    if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.interactivePopGestureRecognizer.delegate = weakSelf;
+    }
     // Do any additional setup after loading the view from its nib.
 }
 

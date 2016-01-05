@@ -12,14 +12,16 @@
 #import <AVFoundation/AVFoundation.h>
 
 @interface BQRCodeViewController ()<AVCaptureMetadataOutputObjectsDelegate>
+{
+    Preview *_preview;
+}
 @property (weak, nonatomic) IBOutlet UIView *viewPreview;
-@property (weak, nonatomic) IBOutlet UILabel *lblStatus;
-@property (weak, nonatomic) IBOutlet UIButton *startBtn;
-- (IBAction)startStopReading:(id)sender;
 
 @property (strong, nonatomic) UIView *boxView;
+
+
+
 @property (nonatomic) BOOL isReading;
-@property (strong, nonatomic) CALayer *scanLayer;
 
 -(BOOL)startReading;
 -(void)stopReading;
@@ -34,13 +36,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self addRedBackItem];
     _captureSession = nil;
     _isReading = NO;
-    
+    [self performSelector:@selector(startReadCode) withObject:nil afterDelay:0.2];
 }
 - (void)awakeFromNib{
     [super awakeFromNib];
+//    [self initAVCaptureSession];
+}
+- (void)startReadCode{
     [self startReading];
 }
 - (BOOL)startReading {
@@ -73,109 +78,63 @@
     dispatchQueue = dispatch_queue_create("myQueue", NULL);
     //5.1.设置代理
     [captureMetadataOutput setMetadataObjectsDelegate:self queue:dispatchQueue];
-    
     //5.2.设置输出媒体数据类型为QRCode
     [captureMetadataOutput setMetadataObjectTypes:[NSArray arrayWithObject:AVMetadataObjectTypeQRCode]];
-    
     //6.实例化预览图层
     _videoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:_captureSession];
-    
     //7.设置预览图层填充方式
     [_videoPreviewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
-    
     //8.设置图层的frame
     [_videoPreviewLayer setFrame:_viewPreview.layer.bounds];
-    
     //9.将图层添加到预览view的图层上
     [_viewPreview.layer addSublayer:_videoPreviewLayer];
-    
     //10.设置扫描范围
     captureMetadataOutput.rectOfInterest = CGRectMake(0.2f, 0.2f, 0.8f, 0.8f);
-    
-//    //10.1.扫描框
-//    _boxView = [[UIView alloc] initWithFrame:CGRectMake(_viewPreview.bounds.size.width * 0.2f, _viewPreview.bounds.size.height * 0.2f, _viewPreview.bounds.size.width - _viewPreview.bounds.size.width * 0.4f, _viewPreview.bounds.size.height - _viewPreview.bounds.size.height * 0.4f)];
-//    _boxView.layer.borderColor = [UIColor greenColor].CGColor;
-//    _boxView.layer.borderWidth = 1.0f;
-//    
-//    [_viewPreview addSubview:_boxView];
-//    
-//    //10.2.扫描线
-//    _scanLayer = [[CALayer alloc] init];
-//    _scanLayer.frame = CGRectMake(0, 0, _boxView.bounds.size.width, 1);
-//    _scanLayer.backgroundColor = [UIColor brownColor].CGColor;
-//    
-//    [_boxView.layer addSublayer:_scanLayer];
-//    
-//    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:0.2f target:self selector:@selector(moveScanLayer:) userInfo:nil repeats:YES];
-//    
-//    [timer fire];
-    
-    Preview *preview = [Preview loadSelfWithNibOwner:self];
-    preview.frame = _viewPreview.bounds;
-    [_viewPreview addSubview:preview];
-
+//    扫描框
+    _preview = [Preview loadSelfWithNibOwner:self];
+    _preview.frame = _viewPreview.bounds;
+    [_viewPreview addSubview:_preview];
     //10.开始扫描
     [_captureSession startRunning];
-    
     return YES;
 }
-
-- (IBAction)startStopReading:(id)sender {
+- (void)startStopReading:(id)sender {
     if (!_isReading) {
         if ([self startReading]) {
-            [_startBtn setTitle:@"Stop" forState:UIControlStateNormal];
-            [_lblStatus setText:@"Scanning for QR Code"];
         }
     }
     else{
         [self stopReading];
-        [_startBtn setTitle:@"Start!" forState:UIControlStateNormal];
     }
-    
     _isReading = !_isReading;
 }
-
 -(void)stopReading{
     [_captureSession stopRunning];
     _captureSession = nil;
-    [_scanLayer removeFromSuperlayer];
     [_videoPreviewLayer removeFromSuperlayer];
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
-
 #pragma mark - AVCaptureMetadataOutputObjectsDelegate
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
 {
+    DDLogError(@"metadataObjects -- %@",metadataObjects);
     //判断是否有数据
     if (metadataObjects != nil && [metadataObjects count] > 0) {
         AVMetadataMachineReadableCodeObject *metadataObj = [metadataObjects objectAtIndex:0];
         //判断回传的数据类型
         if ([[metadataObj type] isEqualToString:AVMetadataObjectTypeQRCode]) {
-            [_lblStatus performSelectorOnMainThread:@selector(setText:) withObject:[metadataObj stringValue] waitUntilDone:NO];
-            
             [self performSelectorOnMainThread:@selector(stopReading) withObject:nil waitUntilDone:NO];
             _isReading = NO;
+            NSLog(@" metadataObj %@",[metadataObj stringValue]);
         }
     }
 }
-
-- (void)moveScanLayer:(NSTimer *)timer
-{
-    CGRect frame = _scanLayer.frame;
-    if (_boxView.frame.size.height < _scanLayer.frame.origin.y) {
-        frame.origin.y = 0;
-        _scanLayer.frame = frame;
-    }else{
-        
-        frame.origin.y += 5;
-        
-        [UIView animateWithDuration:0.1 animations:^{
-            _scanLayer.frame = frame;
-        }];
-    }
-}
-
 - (BOOL)shouldAutorotate
 {
     return NO;
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [_preview removeFromSuperview];
 }
 @end

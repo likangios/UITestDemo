@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n8P-fO-ahU">
-                    <rect key="frame" x="35" y="160" width="305" height="50"/>
+                    <rect key="frame" x="35" y="210" width="305" height="50"/>
                     <color key="backgroundColor" red="1" green="0.062745098039215685" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="dNW-o2-jm2"/>
@@ -40,7 +40,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1r-wV-L5M">
-                    <rect key="frame" x="35" y="225" width="305" height="50"/>
+                    <rect key="frame" x="35" y="275" width="305" height="50"/>
                     <color key="backgroundColor" red="0.49411764705882355" green="0.82745098039215681" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="k3j-TP-Qwk"/>
@@ -86,7 +86,7 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wow-4k-0ci">
-                    <rect key="frame" x="35" y="30" width="305" height="50"/>
+                    <rect key="frame" x="35" y="80" width="305" height="50"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机号码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Yfa-lb-LOK">
                             <rect key="frame" x="15" y="0.0" width="290" height="50"/>
@@ -97,7 +97,6 @@
                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         </textField>
                     </subviews>
-                    <color key="backgroundColor" red="0.37177459949213654" green="1" blue="0.36343786313154869" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="Yfa-lb-LOK" secondAttribute="bottom" id="TNV-TM-7Yw"/>
                         <constraint firstAttribute="height" constant="50" id="aB8-x6-PIb"/>
@@ -107,7 +106,7 @@
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
-                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColorWithUIColor">
                             <color key="value" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="25"/>
@@ -115,7 +114,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5S4-JX-KmD">
-                    <rect key="frame" x="35" y="95" width="305" height="50"/>
+                    <rect key="frame" x="35" y="145" width="305" height="50"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="C2P-PZ-vLA">
                             <rect key="frame" x="15" y="0.0" width="290" height="50"/>
@@ -126,7 +125,6 @@
                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         </textField>
                     </subviews>
-                    <color key="backgroundColor" red="0.59165826856764137" green="0.68110855698220618" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="C2P-PZ-vLA" firstAttribute="leading" secondItem="5S4-JX-KmD" secondAttribute="leading" constant="15" id="7cb-Jm-Frp"/>
                         <constraint firstItem="C2P-PZ-vLA" firstAttribute="top" secondItem="5S4-JX-KmD" secondAttribute="top" id="8I4-lC-Pts"/>
@@ -136,7 +134,7 @@
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
-                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColorWithUIColor">
                             <color key="value" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="25"/>
@@ -160,7 +158,7 @@
                 <constraint firstItem="5S4-JX-KmD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="35" id="q23-Pe-dti"/>
                 <constraint firstAttribute="trailing" secondItem="n8P-fO-ahU" secondAttribute="trailing" constant="35" id="qEv-cq-FlB"/>
                 <constraint firstAttribute="trailing" secondItem="Wow-4k-0ci" secondAttribute="trailing" constant="35" id="vCc-Oc-ks7"/>
-                <constraint firstItem="Wow-4k-0ci" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="vP1-QS-Oh8"/>
+                <constraint firstItem="Wow-4k-0ci" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="vP1-QS-Oh8"/>
                 <constraint firstAttribute="trailing" secondItem="5S4-JX-KmD" secondAttribute="trailing" constant="35" id="wRD-nf-Xi8"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

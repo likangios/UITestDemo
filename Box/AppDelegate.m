@@ -34,9 +34,7 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
     self.window = [[UIWindow alloc]initWithFrame:ScreenBounds];
     
     BCustomNaViewController *nav = [[BCustomNaViewController alloc]initWithRootViewController:[[BWelcomViewController alloc]initWithNibName:@"BWelcomViewController" bundle:nil]];
-    nav.navigationBarHidden = YES;
     self.window.rootViewController = nav;
-
     [self.window makeKeyAndVisible];
     
     return YES;
@@ -83,12 +81,13 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
 -(void) OnSignInSuccessful:(NSString * )acc WithPassword:(NSString *) password{
     DDLogError(@"登录成功");
     BCustomNaViewController *nav = [[BCustomNaViewController alloc]initWithRootViewController:[[BMainViewController alloc]initWithNibName:@"BMainViewController" bundle:nil]];
+    nav.navigationBar.hidden = YES;
     self.window.rootViewController = nav;
 }
 -(void) OnSignoutSuccessful{
     DDLogError(@"登出");
     BCustomNaViewController *nav = [[BCustomNaViewController alloc]initWithRootViewController:[[BWelcomViewController alloc]initWithNibName:@"BWelcomViewController" bundle:nil]];
-    nav.navigationBarHidden = YES;
+    nav.navigationBar.hidden = YES;
     self.window.rootViewController = nav;
 }
 #pragma mark - 用户通知(推送) _自定义方法

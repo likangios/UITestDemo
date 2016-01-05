@@ -16,6 +16,8 @@
 
 - (void)dismissAction:(id)sender;
 
+- (void)addCustomNavBar;
+
 - (void)addBackItem;
 
 - (void)addRedBackItem;

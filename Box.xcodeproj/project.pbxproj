@@ -22,6 +22,16 @@
 		61B28B831C165EA6009731FE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B28B821C165EA6009731FE /* ViewController.m */; };
 		61B28B881C165EA6009731FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61B28B871C165EA6009731FE /* Assets.xcassets */; };
 		61B28B8B1C165EA6009731FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61B28B891C165EA6009731FE /* LaunchScreen.storyboard */; };
+		61BDEE101C3B489D00E9625B /* CALayer+BLayerBorderColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 61BDEE0F1C3B489D00E9625B /* CALayer+BLayerBorderColor.m */; };
+		61BDEE131C3B4A9A00E9625B /* BSignupWithPhoneAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 61BDEE121C3B4A9A00E9625B /* BSignupWithPhoneAction.m */; };
+		61BDEE161C3B4BFD00E9625B /* BSignoutAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 61BDEE151C3B4BFD00E9625B /* BSignoutAction.m */; };
+		61BDEE191C3B4C5400E9625B /* BActionFindPWD.m in Sources */ = {isa = PBXBuildFile; fileRef = 61BDEE181C3B4C5400E9625B /* BActionFindPWD.m */; };
+		61BDEE1C1C3B4CAD00E9625B /* BConfirmCodeAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 61BDEE1B1C3B4CAD00E9625B /* BConfirmCodeAction.m */; };
+		61BDEE1F1C3B9E4900E9625B /* BQRAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61BDEE1E1C3B9E4900E9625B /* BQRAlertView.m */; };
+		61BDEE231C3BA09300E9625B /* BTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61BDEE221C3BA09300E9625B /* BTestViewController.m */; };
+		61BDEE251C3BA0B300E9625B /* BTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61BDEE241C3BA0B300E9625B /* BTestViewController.xib */; };
+		61BDEE271C3BAC5700E9625B /* BCustonNavBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61BDEE261C3BAC5700E9625B /* BCustonNavBar.xib */; };
+		61BDEE2A1C3BAC6900E9625B /* BCustonNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 61BDEE291C3BAC6900E9625B /* BCustonNavBar.m */; };
 		61CC09C31C17B66E0038349A /* BBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CC09C11C17B66E0038349A /* BBaseViewController.m */; };
 		61CC09C41C17B66E0038349A /* BBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61CC09C21C17B66E0038349A /* BBaseViewController.xib */; };
 		61CC09C81C17BF1E0038349A /* BBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CC09C61C17BF1E0038349A /* BBaseTableViewController.m */; };
@@ -115,6 +125,24 @@
 		61B28B8A1C165EA6009731FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		61B28B8C1C165EA6009731FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61B28B931C1662A5009731FE /* Box.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box.pch; sourceTree = "<group>"; };
+		61BDEE0E1C3B489D00E9625B /* CALayer+BLayerBorderColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+BLayerBorderColor.h"; sourceTree = "<group>"; };
+		61BDEE0F1C3B489D00E9625B /* CALayer+BLayerBorderColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+BLayerBorderColor.m"; sourceTree = "<group>"; };
+		61BDEE111C3B4A9A00E9625B /* BSignupWithPhoneAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSignupWithPhoneAction.h; sourceTree = "<group>"; };
+		61BDEE121C3B4A9A00E9625B /* BSignupWithPhoneAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSignupWithPhoneAction.m; sourceTree = "<group>"; };
+		61BDEE141C3B4BFD00E9625B /* BSignoutAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSignoutAction.h; sourceTree = "<group>"; };
+		61BDEE151C3B4BFD00E9625B /* BSignoutAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSignoutAction.m; sourceTree = "<group>"; };
+		61BDEE171C3B4C5400E9625B /* BActionFindPWD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BActionFindPWD.h; sourceTree = "<group>"; };
+		61BDEE181C3B4C5400E9625B /* BActionFindPWD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BActionFindPWD.m; sourceTree = "<group>"; };
+		61BDEE1A1C3B4CAD00E9625B /* BConfirmCodeAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BConfirmCodeAction.h; sourceTree = "<group>"; };
+		61BDEE1B1C3B4CAD00E9625B /* BConfirmCodeAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BConfirmCodeAction.m; sourceTree = "<group>"; };
+		61BDEE1D1C3B9E4900E9625B /* BQRAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQRAlertView.h; sourceTree = "<group>"; };
+		61BDEE1E1C3B9E4900E9625B /* BQRAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQRAlertView.m; sourceTree = "<group>"; };
+		61BDEE211C3BA09300E9625B /* BTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTestViewController.h; sourceTree = "<group>"; };
+		61BDEE221C3BA09300E9625B /* BTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTestViewController.m; sourceTree = "<group>"; };
+		61BDEE241C3BA0B300E9625B /* BTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTestViewController.xib; sourceTree = "<group>"; };
+		61BDEE261C3BAC5700E9625B /* BCustonNavBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BCustonNavBar.xib; sourceTree = "<group>"; };
+		61BDEE281C3BAC6900E9625B /* BCustonNavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCustonNavBar.h; sourceTree = "<group>"; };
+		61BDEE291C3BAC6900E9625B /* BCustonNavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCustonNavBar.m; sourceTree = "<group>"; };
 		61CC09C01C17B66E0038349A /* BBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBaseViewController.h; sourceTree = "<group>"; };
 		61CC09C11C17B66E0038349A /* BBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBaseViewController.m; sourceTree = "<group>"; };
 		61CC09C21C17B66E0038349A /* BBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBaseViewController.xib; sourceTree = "<group>"; };
@@ -231,6 +259,7 @@
 		615C638B1C16DBA800FD4082 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				61BDEE201C3BA05600E9625B /* Test */,
 				C8F10AE21C3AB18400BFBBDC /* ForgetPassword */,
 				618A532C1C3A6A6B00CD6DF7 /* QRCode */,
 				C8EA7EC41C37D05F00F0FB39 /* login */,
@@ -286,6 +315,14 @@
 				615C63A11C16DD1700FD4082 /* BActionBase.m */,
 				61244EB51C33B50000E2ED3A /* BActionLogin.h */,
 				61244EB61C33B50000E2ED3A /* BActionLogin.m */,
+				61BDEE141C3B4BFD00E9625B /* BSignoutAction.h */,
+				61BDEE151C3B4BFD00E9625B /* BSignoutAction.m */,
+				61BDEE1A1C3B4CAD00E9625B /* BConfirmCodeAction.h */,
+				61BDEE1B1C3B4CAD00E9625B /* BConfirmCodeAction.m */,
+				61BDEE171C3B4C5400E9625B /* BActionFindPWD.h */,
+				61BDEE181C3B4C5400E9625B /* BActionFindPWD.m */,
+				61BDEE111C3B4A9A00E9625B /* BSignupWithPhoneAction.h */,
+				61BDEE121C3B4A9A00E9625B /* BSignupWithPhoneAction.m */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -343,6 +380,16 @@
 				61B28B7C1C165EA6009731FE /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		61BDEE201C3BA05600E9625B /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				61BDEE211C3BA09300E9625B /* BTestViewController.h */,
+				61BDEE221C3BA09300E9625B /* BTestViewController.m */,
+				61BDEE241C3BA0B300E9625B /* BTestViewController.xib */,
+			);
+			name = Test;
 			sourceTree = "<group>";
 		};
 		61CC09BF1C17B64D0038349A /* Base */ = {
@@ -424,6 +471,8 @@
 				61E6D3C51C39FA2700A55C34 /* UINavigationItem+BMargin.m */,
 				C8F10ADE1C3AA8B500BFBBDC /* UIView+loadNib.h */,
 				C8F10ADF1C3AA8B500BFBBDC /* UIView+loadNib.m */,
+				61BDEE0E1C3B489D00E9625B /* CALayer+BLayerBorderColor.h */,
+				61BDEE0F1C3B489D00E9625B /* CALayer+BLayerBorderColor.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -510,6 +559,11 @@
 				618A53321C3A77B400CD6DF7 /* Preview.xib */,
 				618A53341C3A782C00CD6DF7 /* Preview.h */,
 				618A53351C3A782C00CD6DF7 /* Preview.m */,
+				61BDEE261C3BAC5700E9625B /* BCustonNavBar.xib */,
+				61BDEE281C3BAC6900E9625B /* BCustonNavBar.h */,
+				61BDEE291C3BAC6900E9625B /* BCustonNavBar.m */,
+				61BDEE1D1C3B9E4900E9625B /* BQRAlertView.h */,
+				61BDEE1E1C3B9E4900E9625B /* BQRAlertView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -601,6 +655,7 @@
 			files = (
 				C8F10ACC1C3AA56700BFBBDC /* icon_lock_red_@2x.png in Resources */,
 				C8F10AD01C3AA56700BFBBDC /* icon_scan_red_@2x.png in Resources */,
+				61BDEE271C3BAC5700E9625B /* BCustonNavBar.xib in Resources */,
 				61CC09C41C17B66E0038349A /* BBaseViewController.xib in Resources */,
 				C8F10AE71C3AB19B00BFBBDC /* BForgetPasswordViewController.xib in Resources */,
 				C8F10AC91C3AA56700BFBBDC /* icon_delete_red_@3x.png in Resources */,
@@ -620,6 +675,7 @@
 				C8EA7ECE1C37F63D00F0FB39 /* BLoginViewController.xib in Resources */,
 				C8EA7EC01C37CAB000F0FB39 /* BMainViewController.xib in Resources */,
 				C8F10ACA1C3AA56700BFBBDC /* icon_lock_black_@2x.png in Resources */,
+				61BDEE251C3BA0B300E9625B /* BTestViewController.xib in Resources */,
 				61CC09C91C17BF1E0038349A /* BBaseTableViewController.xib in Resources */,
 				C8F10ABF1C3AA56700BFBBDC /* icon_add_black_@3x.png in Resources */,
 				C8F10AD41C3AA56700BFBBDC /* icon_set_red_@2x.png in Resources */,
@@ -688,14 +744,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				615C63981C16DC7500FD4082 /* BUntil.m in Sources */,
+				61BDEE191C3B4C5400E9625B /* BActionFindPWD.m in Sources */,
 				615C639B1C16DCD400FD4082 /* BHttpActionMgr.m in Sources */,
 				61CC09C31C17B66E0038349A /* BBaseViewController.m in Sources */,
 				C8F10AE61C3AB19B00BFBBDC /* BForgetPasswordViewController.m in Sources */,
 				C8F10AE01C3AA8B500BFBBDC /* UIView+loadNib.m in Sources */,
+				61BDEE161C3B4BFD00E9625B /* BSignoutAction.m in Sources */,
 				61E6D3C61C39FA2700A55C34 /* UINavigationItem+BMargin.m in Sources */,
 				61B28B831C165EA6009731FE /* ViewController.m in Sources */,
 				C8EA7EBF1C37CAB000F0FB39 /* BMainViewController.m in Sources */,
 				C8EA7EC81C37F63000F0FB39 /* BRegisterViewController.m in Sources */,
+				61BDEE101C3B489D00E9625B /* CALayer+BLayerBorderColor.m in Sources */,
 				C8EA7EBB1C377A4A00F0FB39 /* UIViewController+Tracking.m in Sources */,
 				615C63A21C16DD1700FD4082 /* BActionBase.m in Sources */,
 				61B28B801C165EA6009731FE /* AppDelegate.m in Sources */,
@@ -708,7 +767,12 @@
 				615C63951C16DC5600FD4082 /* BModel.m in Sources */,
 				61B28B7D1C165EA6009731FE /* main.m in Sources */,
 				C8EA7EB21C3773D400F0FB39 /* BWelcomViewController.m in Sources */,
+				61BDEE231C3BA09300E9625B /* BTestViewController.m in Sources */,
+				61BDEE1C1C3B4CAD00E9625B /* BConfirmCodeAction.m in Sources */,
+				61BDEE1F1C3B9E4900E9625B /* BQRAlertView.m in Sources */,
 				61CC09C81C17BF1E0038349A /* BBaseTableViewController.m in Sources */,
+				61BDEE2A1C3BAC6900E9625B /* BCustonNavBar.m in Sources */,
+				61BDEE131C3B4A9A00E9625B /* BSignupWithPhoneAction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

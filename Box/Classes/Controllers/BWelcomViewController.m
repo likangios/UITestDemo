@@ -9,8 +9,11 @@
 #import "BWelcomViewController.h"
 #import "BLoginViewController.h"
 #import "BRegisterViewController.h"
+#import "BQRCodeViewController.h"
+#import "BTestViewController.h"
 @interface BWelcomViewController ()
-
+@property (nonatomic,strong) IBOutlet UIButton *loginBtn;
+@property (nonatomic,strong) IBOutlet UIButton *registerBtn;
 @end
 
 @implementation BWelcomViewController
@@ -22,12 +25,18 @@
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
-    self.navigationController.navigationBarHidden = NO;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    self.view.layer.cornerRadius
     // Do any additional setup after loading the view from its nib.
+}
+- (void)awakeFromNib{
+    [super awakeFromNib];
+}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.navigationController pushViewController:[[BTestViewController alloc]initWithNib] animated:YES];
+    
 }
 #pragma mark --action--
 - (IBAction)RegisterBtnClick:(id)sender {

@@ -13,12 +13,18 @@
 typedef void(^ActionSuccessBlock)(BActionBase *action,id responseObject,AFHTTPRequestOperation *operation);
 typedef void(^ActionFailureBlock)(BActionBase *action,NSError *error,AFHTTPRequestOperation *operation);
 
+/**
+ *  请求基类
+ */
 @interface BActionBase : NSObject
 
 
 @property (nonatomic,strong)NSMutableDictionary *parameters;
 
+@property (nonatomic,assign)    BOOL    isValid;
+
 - (id)initWithActionURLString:(NSString *)str_url;
+
 - (NSString *)get_action_url;
 
 - (BOOL)DoActionWithSuccess:(ActionSuccessBlock)success Failure:(ActionFailureBlock)failure;

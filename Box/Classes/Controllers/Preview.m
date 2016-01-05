@@ -14,15 +14,25 @@
 
 @property (nonatomic,strong) IBOutlet UIView *scan_line;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *Top;
+//@property (nonatomic,strong) NSThread *thread;
 @end
 
 @implementation Preview
 
 - (void)awakeFromNib{
     [super awakeFromNib];
-    [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(move) userInfo:nil repeats:YES];
+    _timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(timer_callback) userInfo:nil repeats:YES];
+
 }
-- (void)move{
+//- (void)newThread
+//{
+//    @autoreleasepool
+//    {
+//        _timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(timer_callback) userInfo:nil repeats:YES];
+//        [[NSRunLoop currentRunLoop] run];
+//    }
+//}
+- (void)timer_callback{
     
     if (self.Top.constant == self.box_view.frame.size.height) {
         self.Top.constant = 0;
@@ -30,4 +40,12 @@
         self.Top.constant ++;
     }
 }
+- (void)removeFromSuperview{
+    [super removeFromSuperview];
+    if (_timer.isValid) {
+        [_timer invalidate];
+    }
+    _timer = nil;
+}
+
 @end

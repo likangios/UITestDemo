@@ -9,6 +9,7 @@
 #import "BLoginViewController.h"
 #import "BRegisterViewController.h"
 #import "BForgetPasswordViewController.h"
+#import "BMainViewController.h"
 
 @interface BLoginViewController ()
 @property (nonatomic,strong) IBOutlet UITextField *phoneTextField;
@@ -23,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self addCustomNavBar];
     [self addBackItem];
     // Do any additional setup after loading the view from its nib.
 }
@@ -34,6 +36,7 @@
 #pragma mark - aciton -
 - (IBAction)loginBtnClick:(id)sender{
     DDLogError(@"登录");
+    [self.navigationController pushViewController:[[BMainViewController alloc]initWithNib] animated:YES];
 }
 - (IBAction)wxloginBtnClick:(id)sender{
     DDLogError(@"微信登录");
