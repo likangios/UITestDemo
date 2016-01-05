@@ -26,8 +26,7 @@
     [super viewDidLoad];
     [self addCustomNavBar];
     [self addBackItem];
-    [self addRightViewWithImage:[UIImage imageNamed:@"icon_add_black_"]];
-    self.barTitle = @"login";
+    self.barTitle = @"登录";
 }
 - (void)awakeFromNib{
     [super awakeFromNib];
@@ -35,6 +34,10 @@
     self.phoneTextField.layer.borderWidth = 2.0;
 }
 #pragma mark - aciton -
+- (void)backAction:(id)sender{
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 - (IBAction)loginBtnClick:(id)sender{
     DDLogError(@"登录");
     [self.navigationController pushViewController:[[BMainViewController alloc]initWithNib] animated:YES];

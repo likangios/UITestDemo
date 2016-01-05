@@ -1,35 +1,33 @@
 //
-//  BForgetPasswordViewController.m
+//  BModifyPasswordViewController.m
 //  Box
 //
-//  Created by 哈哈哈 on 16/1/4.
+//  Created by 哈哈哈 on 16/1/5.
 //  Copyright © 2016年 lk. All rights reserved.
 //
 
-#import "BForgetPasswordViewController.h"
+#import "BModifyPasswordViewController.h"
 
-@interface BForgetPasswordViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
-@property (weak, nonatomic) IBOutlet UITextField *confirmCodeTextField;
-@property (weak, nonatomic) IBOutlet UIButton *getConfirmCodeBtn;
-@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@interface BModifyPasswordViewController ()
+
+@property (weak, nonatomic) IBOutlet UITextField *NewpasswordTextField;
+@property (weak, nonatomic) IBOutlet UITextField *OldpasswordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *OkBtn;
 
 @end
 
-@implementation BForgetPasswordViewController
+@implementation BModifyPasswordViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addCustomNavBar];
     [self addBackItem];
-    self.barTitle = @"忘记密码";
+    self.barTitle = @"修改密码";
     // Do any additional setup after loading the view from its nib.
 }
+
 - (IBAction)OkBtnClick:(id)sender {
 }
-- (IBAction)getConfirmCodeBtnClick:(id)sender {
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

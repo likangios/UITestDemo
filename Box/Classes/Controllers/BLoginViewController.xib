@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n8P-fO-ahU">
-                    <rect key="frame" x="35" y="210" width="305" height="50"/>
+                    <rect key="frame" x="35" y="240" width="305" height="50"/>
                     <color key="backgroundColor" red="1" green="0.062745098039215685" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="dNW-o2-jm2"/>
@@ -40,7 +40,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1r-wV-L5M">
-                    <rect key="frame" x="35" y="275" width="305" height="50"/>
+                    <rect key="frame" x="35" y="305" width="305" height="50"/>
                     <color key="backgroundColor" red="0.49411764705882355" green="0.82745098039215681" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="k3j-TP-Qwk"/>
@@ -86,7 +86,7 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wow-4k-0ci">
-                    <rect key="frame" x="35" y="80" width="305" height="50"/>
+                    <rect key="frame" x="35" y="110" width="305" height="50"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机号码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Yfa-lb-LOK">
                             <rect key="frame" x="15" y="0.0" width="290" height="50"/>
@@ -107,14 +107,14 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
                         <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColorWithUIColor">
-                            <color key="value" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="value" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="25"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5S4-JX-KmD">
-                    <rect key="frame" x="35" y="145" width="305" height="50"/>
+                    <rect key="frame" x="35" y="175" width="305" height="50"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="C2P-PZ-vLA">
                             <rect key="frame" x="15" y="0.0" width="290" height="50"/>
@@ -122,7 +122,7 @@
                                 <constraint firstAttribute="height" constant="50" id="EJl-wh-6oG"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            <textInputTraits key="textInputTraits"/>
                         </textField>
                     </subviews>
                     <constraints>
@@ -135,7 +135,7 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
                         <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColorWithUIColor">
-                            <color key="value" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="value" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="25"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -158,7 +158,7 @@
                 <constraint firstItem="5S4-JX-KmD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="35" id="q23-Pe-dti"/>
                 <constraint firstAttribute="trailing" secondItem="n8P-fO-ahU" secondAttribute="trailing" constant="35" id="qEv-cq-FlB"/>
                 <constraint firstAttribute="trailing" secondItem="Wow-4k-0ci" secondAttribute="trailing" constant="35" id="vCc-Oc-ks7"/>
-                <constraint firstItem="Wow-4k-0ci" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="vP1-QS-Oh8"/>
+                <constraint firstItem="Wow-4k-0ci" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="110" id="vP1-QS-Oh8"/>
                 <constraint firstAttribute="trailing" secondItem="5S4-JX-KmD" secondAttribute="trailing" constant="35" id="wRD-nf-Xi8"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

@@ -47,6 +47,8 @@
 		61E6D3D91C3A500F00A55C34 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E6D3D81C3A500F00A55C34 /* libz.tbd */; };
 		61E6D3DB1C3A501B00A55C34 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E6D3DA1C3A501B00A55C34 /* libsqlite3.tbd */; };
 		A23AB41730D7622E432E8C30 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B244B8D7CF7FC87B279E78 /* libPods.a */; };
+		C8965C171C3C082800EA0005 /* BModifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8965C151C3C082800EA0005 /* BModifyPasswordViewController.m */; };
+		C8965C181C3C082800EA0005 /* BModifyPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8965C161C3C082800EA0005 /* BModifyPasswordViewController.xib */; };
 		C8EA7EAB1C36D21A00F0FB39 /* BCustomNaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EA7EA91C36D21A00F0FB39 /* BCustomNaViewController.m */; };
 		C8EA7EAC1C36D21A00F0FB39 /* BCustomNaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8EA7EAA1C36D21A00F0FB39 /* BCustomNaViewController.xib */; };
 		C8EA7EB21C3773D400F0FB39 /* BWelcomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EA7EB01C3773D400F0FB39 /* BWelcomViewController.m */; };
@@ -66,7 +68,7 @@
 		C8F10AC21C3AA56700BFBBDC /* icon_back_black_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C8F10AA21C3AA56700BFBBDC /* icon_back_black_@2x.png */; };
 		C8F10AC31C3AA56700BFBBDC /* icon_back_black_@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C8F10AA31C3AA56700BFBBDC /* icon_back_black_@3x.png */; };
 		C8F10AC41C3AA56700BFBBDC /* icon_back_red_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C8F10AA41C3AA56700BFBBDC /* icon_back_red_@2x.png */; };
-		C8F10AC51C3AA56700BFBBDC /* icon_back_red.png in Resources */ = {isa = PBXBuildFile; fileRef = C8F10AA51C3AA56700BFBBDC /* icon_back_red.png */; };
+		C8F10AC51C3AA56700BFBBDC /* icon_back_red_@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C8F10AA51C3AA56700BFBBDC /* icon_back_red_@3x.png */; };
 		C8F10AC61C3AA56700BFBBDC /* icon_delete_black_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C8F10AA61C3AA56700BFBBDC /* icon_delete_black_@2x.png */; };
 		C8F10AC71C3AA56700BFBBDC /* icon_delete_black_@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C8F10AA71C3AA56700BFBBDC /* icon_delete_black_@3x.png */; };
 		C8F10AC81C3AA56700BFBBDC /* icon_delete_red_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C8F10AA81C3AA56700BFBBDC /* icon_delete_red_@2x.png */; };
@@ -164,6 +166,9 @@
 		A9C80705F4D1FA262F3B80E5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BA44CC5CA4F887541AA8DD8A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C5B244B8D7CF7FC87B279E78 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8965C141C3C082800EA0005 /* BModifyPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BModifyPasswordViewController.h; sourceTree = "<group>"; };
+		C8965C151C3C082800EA0005 /* BModifyPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BModifyPasswordViewController.m; sourceTree = "<group>"; };
+		C8965C161C3C082800EA0005 /* BModifyPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BModifyPasswordViewController.xib; sourceTree = "<group>"; };
 		C8EA7EA81C36D21A00F0FB39 /* BCustomNaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCustomNaViewController.h; sourceTree = "<group>"; };
 		C8EA7EA91C36D21A00F0FB39 /* BCustomNaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCustomNaViewController.m; sourceTree = "<group>"; };
 		C8EA7EAA1C36D21A00F0FB39 /* BCustomNaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BCustomNaViewController.xib; sourceTree = "<group>"; };
@@ -189,7 +194,7 @@
 		C8F10AA21C3AA56700BFBBDC /* icon_back_black_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_back_black_@2x.png"; sourceTree = "<group>"; };
 		C8F10AA31C3AA56700BFBBDC /* icon_back_black_@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_back_black_@3x.png"; sourceTree = "<group>"; };
 		C8F10AA41C3AA56700BFBBDC /* icon_back_red_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_back_red_@2x.png"; sourceTree = "<group>"; };
-		C8F10AA51C3AA56700BFBBDC /* icon_back_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_back_red.png; sourceTree = "<group>"; };
+		C8F10AA51C3AA56700BFBBDC /* icon_back_red_@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_back_red_@3x.png"; sourceTree = "<group>"; };
 		C8F10AA61C3AA56700BFBBDC /* icon_delete_black_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_delete_black_@2x.png"; sourceTree = "<group>"; };
 		C8F10AA71C3AA56700BFBBDC /* icon_delete_black_@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_delete_black_@3x.png"; sourceTree = "<group>"; };
 		C8F10AA81C3AA56700BFBBDC /* icon_delete_red_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_delete_red_@2x.png"; sourceTree = "<group>"; };
@@ -524,7 +529,7 @@
 				C8F10AA21C3AA56700BFBBDC /* icon_back_black_@2x.png */,
 				C8F10AA31C3AA56700BFBBDC /* icon_back_black_@3x.png */,
 				C8F10AA41C3AA56700BFBBDC /* icon_back_red_@2x.png */,
-				C8F10AA51C3AA56700BFBBDC /* icon_back_red.png */,
+				C8F10AA51C3AA56700BFBBDC /* icon_back_red_@3x.png */,
 				C8F10AA61C3AA56700BFBBDC /* icon_delete_black_@2x.png */,
 				C8F10AA71C3AA56700BFBBDC /* icon_delete_black_@3x.png */,
 				C8F10AA81C3AA56700BFBBDC /* icon_delete_red_@2x.png */,
@@ -574,6 +579,9 @@
 				C8F10AE31C3AB19B00BFBBDC /* BForgetPasswordViewController.h */,
 				C8F10AE41C3AB19B00BFBBDC /* BForgetPasswordViewController.m */,
 				C8F10AE51C3AB19B00BFBBDC /* BForgetPasswordViewController.xib */,
+				C8965C141C3C082800EA0005 /* BModifyPasswordViewController.h */,
+				C8965C151C3C082800EA0005 /* BModifyPasswordViewController.m */,
+				C8965C161C3C082800EA0005 /* BModifyPasswordViewController.xib */,
 			);
 			name = ForgetPassword;
 			sourceTree = "<group>";
@@ -663,6 +671,7 @@
 				C8EA7EAC1C36D21A00F0FB39 /* BCustomNaViewController.xib in Resources */,
 				C8F10AC71C3AA56700BFBBDC /* icon_delete_black_@3x.png in Resources */,
 				C8F10AC21C3AA56700BFBBDC /* icon_back_black_@2x.png in Resources */,
+				C8965C181C3C082800EA0005 /* BModifyPasswordViewController.xib in Resources */,
 				618A53331C3A77B400CD6DF7 /* Preview.xib in Resources */,
 				C8F10ACB1C3AA56700BFBBDC /* icon_lock_black_@3x.png in Resources */,
 				C8F10AC31C3AA56700BFBBDC /* icon_back_black_@3x.png in Resources */,
@@ -696,7 +705,7 @@
 				C8F10AD61C3AA56700BFBBDC /* icon_text_black_@2x.png in Resources */,
 				C8F10AD71C3AA56700BFBBDC /* icon_text_black_@3x.png in Resources */,
 				C8EA7EB31C3773D400F0FB39 /* BWelcomViewController.xib in Resources */,
-				C8F10AC51C3AA56700BFBBDC /* icon_back_red.png in Resources */,
+				C8F10AC51C3AA56700BFBBDC /* icon_back_red_@3x.png in Resources */,
 				C8F10AC81C3AA56700BFBBDC /* icon_delete_red_@2x.png in Resources */,
 				C8F10ADA1C3AA56700BFBBDC /* img_logo_@2x.png in Resources */,
 				C8F10AD21C3AA56700BFBBDC /* icon_set_black_@2x.png in Resources */,
@@ -756,6 +765,7 @@
 				C8EA7EC81C37F63000F0FB39 /* BRegisterViewController.m in Sources */,
 				61BDEE101C3B489D00E9625B /* CALayer+BLayerBorderColor.m in Sources */,
 				C8EA7EBB1C377A4A00F0FB39 /* UIViewController+Tracking.m in Sources */,
+				C8965C171C3C082800EA0005 /* BModifyPasswordViewController.m in Sources */,
 				615C63A21C16DD1700FD4082 /* BActionBase.m in Sources */,
 				61B28B801C165EA6009731FE /* AppDelegate.m in Sources */,
 				61244EB71C33B50000E2ED3A /* BActionLogin.m in Sources */,

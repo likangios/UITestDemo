@@ -50,7 +50,9 @@
  */
 - (void)addTitleView:(UIView *)titView;
 
-- (void)addRightViewWithImage:(UIImage *)img;
+- (void)addRightViewWithImage:(UIImage *)img hightImage:(UIImage *)himg;
+
+- (void)addLeftViewWithImage:(UIImage *)img hightImage:(UIImage *)himg;
 
 - (void)addRightViewWithTitle:(NSString *)title;
 

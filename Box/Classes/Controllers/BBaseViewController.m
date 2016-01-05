@@ -76,12 +76,22 @@
         [_navBar addTitleView:titView];
     }
 }
-- (void)addRightViewWithImage:(UIImage *)img{
+- (void)addRightViewWithImage:(UIImage *)img hightImage:(UIImage *)himg{
     UIButton *RightBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, CustomNavigationBarHeight)];
     [RightBtn setImage:img forState:UIControlStateNormal];
+    [RightBtn setImage:himg forState:UIControlStateHighlighted];
     [RightBtn addTarget:self action:@selector(rightAction:) forControlEvents:UIControlEventTouchUpInside];
     if (_navBar) {
         [_navBar addRightBarButtonItem:RightBtn];
+    }
+}
+- (void)addLeftViewWithImage:(UIImage *)img hightImage:(UIImage *)himg{
+    UIButton *RightBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, CustomNavigationBarHeight)];
+    [RightBtn setImage:img forState:UIControlStateNormal];
+    [RightBtn setImage:himg forState:UIControlStateHighlighted];
+    [RightBtn addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
+    if (_navBar) {
+        [_navBar addLeftBarButtonItem:RightBtn];
     }
 }
 - (void)addRightViewWithTitle:(NSString *)title{
@@ -103,6 +113,8 @@
     
     UIButton *backBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, CustomNavigationBarHeight)];
     [backBtn setImage:[UIImage imageNamed:@"icon_back_black_"] forState:UIControlStateNormal];
+    [backBtn setImage:[UIImage imageNamed:@"icon_back_red_"] forState:UIControlStateHighlighted];
+
     [backBtn addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
     return backBtn;
 }

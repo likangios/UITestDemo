@@ -7,8 +7,13 @@
 //
 
 #import "BRegisterViewController.h"
+#import "BLoginViewController.h"
 
 @interface BRegisterViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
+@property (weak, nonatomic) IBOutlet UITextField *confirmCodeTextField;
+@property (weak, nonatomic) IBOutlet UIButton *getConfirmCodeBtn;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
 @end
 
@@ -16,8 +21,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self addCustomNavBar];
     [self addBackItem];
+    self.barTitle = @"新用户";
     // Do any additional setup after loading the view from its nib.
+}
+#pragma mark private 
+
+#pragma mark action
+
+- (IBAction)registerBtnClick:(id)sender {
+    DDLogError(@"注册");
+}
+- (IBAction)zhijiLogin:(id)sender {
+    
+    [self.navigationController pushViewController:[[BLoginViewController alloc]initWithNib] animated:YES];
+
+}
+- (IBAction)getConfirmCodeBtnClick:(id)sender {
+    DDLogError(@"获取验证码");
 }
 
 - (void)didReceiveMemoryWarning {
