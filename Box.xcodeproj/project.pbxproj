@@ -37,7 +37,6 @@
 		61CC09C81C17BF1E0038349A /* BBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CC09C61C17BF1E0038349A /* BBaseTableViewController.m */; };
 		61CC09C91C17BF1E0038349A /* BBaseTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61CC09C71C17BF1E0038349A /* BBaseTableViewController.xib */; };
 		61E6D3C61C39FA2700A55C34 /* UINavigationItem+BMargin.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E6D3C51C39FA2700A55C34 /* UINavigationItem+BMargin.m */; };
-		61E6D3CB1C3A4F8D00A55C34 /* libGeTuiSdk-1.3.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E6D3CA1C3A4F8D00A55C34 /* libGeTuiSdk-1.3.2.a */; };
 		61E6D3CD1C3A4FDD00A55C34 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E6D3CC1C3A4FDD00A55C34 /* CFNetwork.framework */; };
 		61E6D3CF1C3A4FE600A55C34 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E6D3CE1C3A4FE600A55C34 /* SystemConfiguration.framework */; };
 		61E6D3D11C3A4FED00A55C34 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E6D3D01C3A4FED00A55C34 /* CoreTelephony.framework */; };
@@ -158,8 +157,6 @@
 		61CC09C71C17BF1E0038349A /* BBaseTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBaseTableViewController.xib; sourceTree = "<group>"; };
 		61E6D3C41C39FA2700A55C34 /* UINavigationItem+BMargin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+BMargin.h"; sourceTree = "<group>"; };
 		61E6D3C51C39FA2700A55C34 /* UINavigationItem+BMargin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+BMargin.m"; sourceTree = "<group>"; };
-		61E6D3C91C3A4F8D00A55C34 /* GeTuiSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeTuiSdk.h; sourceTree = "<group>"; };
-		61E6D3CA1C3A4F8D00A55C34 /* libGeTuiSdk-1.3.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libGeTuiSdk-1.3.2.a"; sourceTree = "<group>"; };
 		61E6D3CC1C3A4FDD00A55C34 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		61E6D3CE1C3A4FE600A55C34 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		61E6D3D01C3A4FED00A55C34 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -256,7 +253,6 @@
 				61E6D3D11C3A4FED00A55C34 /* CoreTelephony.framework in Frameworks */,
 				61E6D3CF1C3A4FE600A55C34 /* SystemConfiguration.framework in Frameworks */,
 				61E6D3CD1C3A4FDD00A55C34 /* CFNetwork.framework in Frameworks */,
-				61E6D3CB1C3A4F8D00A55C34 /* libGeTuiSdk-1.3.2.a in Frameworks */,
 				A23AB41730D7622E432E8C30 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,20 +434,10 @@
 			isa = PBXGroup;
 			children = (
 				61EEDC471C3C9EC4007CD6B9 /* SDK1.6.2 */,
-				61E6D3C81C3A4F8D00A55C34 /* GtSdkLib */,
 			);
 			name = lib;
 			path = Box/Resources/lib;
 			sourceTree = SOURCE_ROOT;
-		};
-		61E6D3C81C3A4F8D00A55C34 /* GtSdkLib */ = {
-			isa = PBXGroup;
-			children = (
-				61E6D3C91C3A4F8D00A55C34 /* GeTuiSdk.h */,
-				61E6D3CA1C3A4F8D00A55C34 /* libGeTuiSdk-1.3.2.a */,
-			);
-			path = GtSdkLib;
-			sourceTree = "<group>";
 		};
 		61EEDC471C3C9EC4007CD6B9 /* SDK1.6.2 */ = {
 			isa = PBXGroup;

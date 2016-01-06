@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 //lib
-#import "GeTuiSdk.h"
+#import <GeTuiSdk.h>
 
 
 
