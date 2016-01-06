@@ -23,14 +23,18 @@
 #import <CocoaLumberjack/CocoaLumberjack.h>
 #import <MWPhotoBrowser.h>
 #import "UIView+loadNib.h"
-
+//友盟统计
 #define UMtongji        @"5689310867e58eee0f002fb4"
 
+// 个推
 #define kGtAppId           @"XdfwxPk5q48aKZf4jaCLZ5"
 #define kGtAppKey          @"6VQzYgLANT8EdyTkq6QdqA"
 #define kGtAppSecret       @"RmUyguJuxl5GsCMr1xii93"
-
 #define MasterSecret    @"lwpxSlKKcD8jWEtJanmI16"
+//微信登录
+
+#define WxAppID         @"wxbaecac6ac5769e25"
+#define WxAppSecret     @"d6f38e197be80c4c3a1ed5f1f242eaf7"
 
 
 

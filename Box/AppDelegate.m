@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
-
+#import "WXApi.h"
+#import <UMengAnalytics-NO-IDFA/MobClick.h>
+#import "BWXApiManager.h"
 #import "BCustomNaViewController.h"
 #import "BWelcomViewController.h"
 #import "BMainViewController.h"
@@ -30,7 +32,8 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
     // Override point for customization after application launch.
     [self initSDImageCache];
     [self initGeTui:launchOptions];
-    
+    [self initWXLogin];
+    [self initUM];
     self.window = [[UIWindow alloc]initWithFrame:ScreenBounds];
     
     BCustomNaViewController *nav = [[BCustomNaViewController alloc]initWithRootViewController:[[BWelcomViewController alloc]initWithNibName:@"BWelcomViewController" bundle:nil]];
@@ -39,6 +42,16 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
     
     return YES;
 }
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    
+    return  [WXApi handleOpenURL:url delegate:[BWXApiManager sharedManager]];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    
+    return [WXApi handleOpenURL:url delegate:[BWXApiManager sharedManager]];
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -78,11 +91,27 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
     [GeTuiSdk startSdkWithAppId:kGtAppId appKey:kGtAppKey appSecret:kGtAppSecret delegate:self];
     [self registerRemoteNotification];
 }
+- (void)initWXLogin{
+    
+    [WXApi registerApp:WxAppID withDescription:@"Box Login"];
+}
+- (void)initUM{
+    [MobClick startWithAppkey:UMtongji reportPolicy:BATCH channelId:nil];
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    [MobClick setAppVersion:version];
+}
+#pragma mark  login
+
 -(void) OnSignInSuccessful:(NSString * )acc WithPassword:(NSString *) password{
     DDLogError(@"登录成功");
     BCustomNaViewController *nav = [[BCustomNaViewController alloc]initWithRootViewController:[[BMainViewController alloc]initWithNibName:@"BMainViewController" bundle:nil]];
     nav.navigationBar.hidden = YES;
     self.window.rootViewController = nav;
+//    统计账号来源 本身
+    [MobClick profileSignInWithPUID:acc];
+    //微信登陆
+//   [MobClick profileSignInWithPUID:acc provider:@"WX"];
+
 }
 -(void) OnSignoutSuccessful{
     DDLogError(@"登出");

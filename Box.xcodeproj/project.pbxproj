@@ -46,6 +46,11 @@
 		61E6D3D71C3A500300A55C34 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E6D3D61C3A500300A55C34 /* CoreBluetooth.framework */; };
 		61E6D3D91C3A500F00A55C34 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E6D3D81C3A500F00A55C34 /* libz.tbd */; };
 		61E6D3DB1C3A501B00A55C34 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E6D3DA1C3A501B00A55C34 /* libsqlite3.tbd */; };
+		61EEDC4D1C3C9EC4007CD6B9 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61EEDC4B1C3C9EC4007CD6B9 /* libWeChatSDK.a */; };
+		61EEDC4E1C3C9EC4007CD6B9 /* read_me.txt in Resources */ = {isa = PBXBuildFile; fileRef = 61EEDC4C1C3C9EC4007CD6B9 /* read_me.txt */; };
+		61EEDC511C3CA531007CD6B9 /* BWXApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 61EEDC501C3CA531007CD6B9 /* BWXApiManager.m */; };
+		61EEDC541C3CAEF3007CD6B9 /* BWXApiRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 61EEDC531C3CAEF3007CD6B9 /* BWXApiRequestHandler.m */; };
+		61EEDC561C3CB675007CD6B9 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 61EEDC551C3CB675007CD6B9 /* libc++.tbd */; };
 		A23AB41730D7622E432E8C30 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B244B8D7CF7FC87B279E78 /* libPods.a */; };
 		C8965C171C3C082800EA0005 /* BModifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8965C151C3C082800EA0005 /* BModifyPasswordViewController.m */; };
 		C8965C181C3C082800EA0005 /* BModifyPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8965C161C3C082800EA0005 /* BModifyPasswordViewController.xib */; };
@@ -163,6 +168,16 @@
 		61E6D3D61C3A500300A55C34 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		61E6D3D81C3A500F00A55C34 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		61E6D3DA1C3A501B00A55C34 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		61EEDC481C3C9EC4007CD6B9 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		61EEDC491C3C9EC4007CD6B9 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		61EEDC4A1C3C9EC4007CD6B9 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
+		61EEDC4B1C3C9EC4007CD6B9 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		61EEDC4C1C3C9EC4007CD6B9 /* read_me.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = read_me.txt; sourceTree = "<group>"; };
+		61EEDC4F1C3CA530007CD6B9 /* BWXApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWXApiManager.h; sourceTree = "<group>"; };
+		61EEDC501C3CA531007CD6B9 /* BWXApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWXApiManager.m; sourceTree = "<group>"; };
+		61EEDC521C3CAEF3007CD6B9 /* BWXApiRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWXApiRequestHandler.h; sourceTree = "<group>"; };
+		61EEDC531C3CAEF3007CD6B9 /* BWXApiRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWXApiRequestHandler.m; sourceTree = "<group>"; };
+		61EEDC551C3CB675007CD6B9 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		A9C80705F4D1FA262F3B80E5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BA44CC5CA4F887541AA8DD8A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C5B244B8D7CF7FC87B279E78 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -231,11 +246,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61EEDC561C3CB675007CD6B9 /* libc++.tbd in Frameworks */,
 				61E6D3DB1C3A501B00A55C34 /* libsqlite3.tbd in Frameworks */,
 				61E6D3D91C3A500F00A55C34 /* libz.tbd in Frameworks */,
 				61E6D3D71C3A500300A55C34 /* CoreBluetooth.framework in Frameworks */,
 				61E6D3D51C3A4FFC00A55C34 /* CoreLocation.framework in Frameworks */,
 				61E6D3D31C3A4FF400A55C34 /* AVFoundation.framework in Frameworks */,
+				61EEDC4D1C3C9EC4007CD6B9 /* libWeChatSDK.a in Frameworks */,
 				61E6D3D11C3A4FED00A55C34 /* CoreTelephony.framework in Frameworks */,
 				61E6D3CF1C3A4FE600A55C34 /* SystemConfiguration.framework in Frameworks */,
 				61E6D3CD1C3A4FDD00A55C34 /* CFNetwork.framework in Frameworks */,
@@ -302,6 +319,10 @@
 				615C639A1C16DCD400FD4082 /* BHttpActionMgr.m */,
 				615C639C1C16DCE400FD4082 /* BResponeResult.h */,
 				615C639D1C16DCE400FD4082 /* BResponeResult.m */,
+				61EEDC4F1C3CA530007CD6B9 /* BWXApiManager.h */,
+				61EEDC501C3CA531007CD6B9 /* BWXApiManager.m */,
+				61EEDC521C3CAEF3007CD6B9 /* BWXApiRequestHandler.h */,
+				61EEDC531C3CAEF3007CD6B9 /* BWXApiRequestHandler.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -416,6 +437,7 @@
 		61E6D3C71C3A39ED00A55C34 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				61EEDC471C3C9EC4007CD6B9 /* SDK1.6.2 */,
 				61E6D3C81C3A4F8D00A55C34 /* GtSdkLib */,
 			);
 			name = lib;
@@ -431,9 +453,22 @@
 			path = GtSdkLib;
 			sourceTree = "<group>";
 		};
+		61EEDC471C3C9EC4007CD6B9 /* SDK1.6.2 */ = {
+			isa = PBXGroup;
+			children = (
+				61EEDC481C3C9EC4007CD6B9 /* WXApi.h */,
+				61EEDC491C3C9EC4007CD6B9 /* WXApiObject.h */,
+				61EEDC4A1C3C9EC4007CD6B9 /* WechatAuthSDK.h */,
+				61EEDC4B1C3C9EC4007CD6B9 /* libWeChatSDK.a */,
+				61EEDC4C1C3C9EC4007CD6B9 /* read_me.txt */,
+			);
+			path = SDK1.6.2;
+			sourceTree = "<group>";
+		};
 		C7A7CED3701A9DA0446C2C6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				61EEDC551C3CB675007CD6B9 /* libc++.tbd */,
 				61E6D3DA1C3A501B00A55C34 /* libsqlite3.tbd */,
 				61E6D3D81C3A500F00A55C34 /* libz.tbd */,
 				61E6D3D61C3A500300A55C34 /* CoreBluetooth.framework */,
@@ -702,6 +737,7 @@
 				618A53311C3A6A8D00CD6DF7 /* BQRCodeViewController.xib in Resources */,
 				C8F10AD31C3AA56700BFBBDC /* icon_set_black_@3x.png in Resources */,
 				C8F10AD91C3AA56700BFBBDC /* icon_text_red_@3x.png in Resources */,
+				61EEDC4E1C3C9EC4007CD6B9 /* read_me.txt in Resources */,
 				C8F10AD61C3AA56700BFBBDC /* icon_text_black_@2x.png in Resources */,
 				C8F10AD71C3AA56700BFBBDC /* icon_text_black_@3x.png in Resources */,
 				C8EA7EB31C3773D400F0FB39 /* BWelcomViewController.xib in Resources */,
@@ -759,6 +795,7 @@
 				C8F10AE61C3AB19B00BFBBDC /* BForgetPasswordViewController.m in Sources */,
 				C8F10AE01C3AA8B500BFBBDC /* UIView+loadNib.m in Sources */,
 				61BDEE161C3B4BFD00E9625B /* BSignoutAction.m in Sources */,
+				61EEDC541C3CAEF3007CD6B9 /* BWXApiRequestHandler.m in Sources */,
 				61E6D3C61C39FA2700A55C34 /* UINavigationItem+BMargin.m in Sources */,
 				61B28B831C165EA6009731FE /* ViewController.m in Sources */,
 				C8EA7EBF1C37CAB000F0FB39 /* BMainViewController.m in Sources */,
@@ -768,6 +805,7 @@
 				C8965C171C3C082800EA0005 /* BModifyPasswordViewController.m in Sources */,
 				615C63A21C16DD1700FD4082 /* BActionBase.m in Sources */,
 				61B28B801C165EA6009731FE /* AppDelegate.m in Sources */,
+				61EEDC511C3CA531007CD6B9 /* BWXApiManager.m in Sources */,
 				61244EB71C33B50000E2ED3A /* BActionLogin.m in Sources */,
 				C8EA7EAB1C36D21A00F0FB39 /* BCustomNaViewController.m in Sources */,
 				615C639E1C16DCE400FD4082 /* BResponeResult.m in Sources */,
@@ -895,6 +933,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Box/Resources/lib/GtSdkLib",
+					"$(PROJECT_DIR)/Box/Resources/lib/SDK1.6.2",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.XueXueCanBox.xuexuecanbox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -917,6 +956,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Box/Resources/lib/GtSdkLib",
+					"$(PROJECT_DIR)/Box/Resources/lib/SDK1.6.2",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.XueXueCanBox.xuexuecanbox;
 				PRODUCT_NAME = "$(TARGET_NAME)";

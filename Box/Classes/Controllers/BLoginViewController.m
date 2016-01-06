@@ -10,8 +10,10 @@
 #import "BRegisterViewController.h"
 #import "BForgetPasswordViewController.h"
 #import "BMainViewController.h"
+#import "BWXApiRequestHandler.h"
+#import "BWXApiManager.h"
 
-@interface BLoginViewController ()
+@interface BLoginViewController ()<BWXApiManagerDelegate>
 @property (nonatomic,strong) IBOutlet UITextField *phoneTextField;
 @property (nonatomic,strong) IBOutlet UITextField *passwordTextField;
 @property (nonatomic,strong) IBOutlet UIButton *loginBtn;
@@ -27,6 +29,7 @@
     [self addCustomNavBar];
     [self addBackItem];
     self.barTitle = @"登录";
+    [BWXApiManager sharedManager].delegate = self;
 }
 - (void)awakeFromNib{
     [super awakeFromNib];
@@ -44,6 +47,7 @@
 }
 - (IBAction)wxloginBtnClick:(id)sender{
     DDLogError(@"微信登录");
+[BWXApiRequestHandler sendAuthRequestScope:@"snsapi_userinfo" State:@"login" OpenID:@"" InViewController:self];
 }
 - (IBAction)forgetPasswordBtnClick:(id)sender{
         DDLogError(@"忘记密码");
@@ -52,6 +56,21 @@
 - (IBAction)xinUserBtnClick:(id)sender{
         DDLogError(@"新用户");
     [self.navigationController pushViewController:[[BRegisterViewController alloc]initWithNib] animated:YES];
+}
+#pragma makr AuthResponse
+- (void)managerDidRecvAuthResponse:(SendAuthResp *)response{
+    
+    DDLogDebug(@"response -- %@",response.description);
+}
+
+#pragma mark 重写
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    if ([BWXApiManager isWXAppInstalled]) {
+        self.wxloginBtn.hidden = NO;
+    }else{
+        self.wxloginBtn.hidden = YES;
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
