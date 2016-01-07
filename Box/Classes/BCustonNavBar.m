@@ -59,7 +59,8 @@
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 200, CustomNavigationBarHeight)];
     label.textAlignment = NSTextAlignmentCenter;
     label.text = barTitle;
-    label.textColor = [UIColor blackColor];
+    label.font  =[UIFont systemFontOfSize:18];
+    label.textColor = [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1.0];
     [self addTitleView:label];
 }
 @end

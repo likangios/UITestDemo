@@ -1,34 +1,36 @@
 //
-//  BInPutCodeViewController.m
+//  BInfoConfirmViewController.m
 //  Box
 //
-//  Created by FengLing on 16/1/7.
+//  Created by 哈哈哈 on 16/1/7.
 //  Copyright © 2016年 lk. All rights reserved.
 //
 
-#import "BInPutCodeViewController.h"
 #import "BInfoConfirmViewController.h"
-@interface BInPutCodeViewController ()
 
-@property (nonatomic,strong) IBOutlet UITextField *courseCodeTextField;
+@interface BInfoConfirmViewController ()
 
-@property (nonatomic,strong) IBOutlet UIButton *confirmCourseCodeBtn;
+@property (nonatomic,strong) IBOutlet UILabel *studentName;
 
+@property (nonatomic,strong) IBOutlet UILabel *studentAge;
+
+@property (nonatomic,strong) IBOutlet UILabel *studentSchool;
+
+@property (nonatomic,strong) IBOutlet UILabel *studentClass;
+
+@property (nonatomic,strong) IBOutlet UILabel *studentLearnTime;
 @end
 
-@implementation BInPutCodeViewController
+@implementation BInfoConfirmViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addCustomNavBar];
-    [self addRedBackItem];
-    self.barTitle = @"输入课程码";
+    [self addBackItem];
+    self.barTitle = @"信息确认";
     // Do any additional setup after loading the view from its nib.
 }
-- (IBAction)confirmCourseCodeClick:(id)sender{
-    
-    [self.navigationController pushViewController:[[BInfoConfirmViewController alloc]initWithNib] animated:YES];
-}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

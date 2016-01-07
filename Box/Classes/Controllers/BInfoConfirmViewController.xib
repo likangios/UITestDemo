@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BInfoConfirmViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ue-wK-1Wp">
+                    <rect key="frame" x="30" y="110" width="315" height="206"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="王与菲" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6s2-Pl-QgR">
+                            <rect key="frame" x="10" y="40" width="295" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="290-3E-UkY"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="highlightedColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6岁" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opM-KU-I5s">
+                            <rect key="frame" x="10" y="65" width="295" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="kfa-Ba-fou"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上海珊瑚海儿童艺术机构" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWn-fQ-hFa">
+                            <rect key="frame" x="10" y="106" width="295" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="ZEH-LN-Fnr"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="班级：红珊瑚班（幼儿）" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1BR-I2-CLL">
+                            <rect key="frame" x="10" y="131" width="295" height="16"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22.5" id="Q7f-6s-8HZ"/>
+                                <constraint firstAttribute="height" constant="20" id="Yz3-kd-glJ"/>
+                                <constraint firstAttribute="height" constant="16" id="vXD-Or-foE"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="Q7f-6s-8HZ"/>
+                                    <exclude reference="Yz3-kd-glJ"/>
+                                </mask>
+                            </variation>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="入学时间：2015-12-2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEh-ft-QF6">
+                            <rect key="frame" x="10" y="150" width="295" height="16"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="16" id="5Rv-2w-I3g"/>
+                                <constraint firstAttribute="height" constant="20" id="Azr-FX-Bc2"/>
+                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="16.5" id="a1Q-sw-rmP"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22.5" id="hqi-fr-BQY"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="Azr-FX-Bc2"/>
+                                    <exclude reference="a1Q-sw-rmP"/>
+                                    <exclude reference="hqi-fr-BQY"/>
+                                </mask>
+                            </variation>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="6s2-Pl-QgR" firstAttribute="centerX" secondItem="2Ue-wK-1Wp" secondAttribute="centerX" id="03r-8S-S1d"/>
+                        <constraint firstItem="JWn-fQ-hFa" firstAttribute="top" secondItem="opM-KU-I5s" secondAttribute="bottom" constant="21" id="0p5-at-HfR"/>
+                        <constraint firstItem="6s2-Pl-QgR" firstAttribute="leading" secondItem="2Ue-wK-1Wp" secondAttribute="leading" constant="10" id="CH2-hw-XMR"/>
+                        <constraint firstItem="6s2-Pl-QgR" firstAttribute="top" secondItem="2Ue-wK-1Wp" secondAttribute="top" constant="40" id="DEC-BG-s2V"/>
+                        <constraint firstAttribute="trailing" secondItem="6s2-Pl-QgR" secondAttribute="trailing" constant="10" id="EK6-of-jsq"/>
+                        <constraint firstItem="opM-KU-I5s" firstAttribute="leading" secondItem="6s2-Pl-QgR" secondAttribute="leading" id="Gmo-R4-Yed"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="206" id="Hiw-x5-iOs"/>
+                        <constraint firstItem="opM-KU-I5s" firstAttribute="top" secondItem="6s2-Pl-QgR" secondAttribute="bottom" id="KQf-tg-UCa"/>
+                        <constraint firstItem="1BR-I2-CLL" firstAttribute="trailing" secondItem="JWn-fQ-hFa" secondAttribute="trailing" id="MDq-WD-vPu"/>
+                        <constraint firstItem="oEh-ft-QF6" firstAttribute="leading" secondItem="1BR-I2-CLL" secondAttribute="leading" id="Qab-rY-ihg"/>
+                        <constraint firstItem="JWn-fQ-hFa" firstAttribute="trailing" secondItem="opM-KU-I5s" secondAttribute="trailing" id="TYu-nT-EWi"/>
+                        <constraint firstItem="oEh-ft-QF6" firstAttribute="trailing" secondItem="1BR-I2-CLL" secondAttribute="trailing" id="Ucc-3m-HUY"/>
+                        <constraint firstItem="JWn-fQ-hFa" firstAttribute="leading" secondItem="opM-KU-I5s" secondAttribute="leading" id="aKF-vF-EHA"/>
+                        <constraint firstItem="opM-KU-I5s" firstAttribute="centerX" secondItem="6s2-Pl-QgR" secondAttribute="centerX" id="bg3-xw-qh1"/>
+                        <constraint firstItem="1BR-I2-CLL" firstAttribute="top" secondItem="JWn-fQ-hFa" secondAttribute="bottom" constant="2.5" id="lSK-7c-H9w"/>
+                        <constraint firstAttribute="height" constant="206" id="lnR-IM-grt"/>
+                        <constraint firstItem="1BR-I2-CLL" firstAttribute="leading" secondItem="JWn-fQ-hFa" secondAttribute="leading" id="qbY-FG-SK1"/>
+                        <constraint firstItem="oEh-ft-QF6" firstAttribute="top" secondItem="1BR-I2-CLL" secondAttribute="bottom" constant="2.5" id="umJ-4R-eIc"/>
+                        <constraint firstItem="opM-KU-I5s" firstAttribute="trailing" secondItem="6s2-Pl-QgR" secondAttribute="trailing" id="z2v-YT-oDh"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColorWithUIColor">
+                            <color key="value" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="2Ue-wK-1Wp" secondAttribute="trailing" constant="30" id="PmF-Eb-RoW"/>
+                <constraint firstItem="2Ue-wK-1Wp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="ai4-KD-sVh"/>
+                <constraint firstItem="2Ue-wK-1Wp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="110" id="tqw-ck-Lek"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="370.5" y="279.5"/>
+        </view>
+    </objects>
+</document>
