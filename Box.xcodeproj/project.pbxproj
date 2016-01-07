@@ -32,6 +32,9 @@
 		61BDEE251C3BA0B300E9625B /* BTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61BDEE241C3BA0B300E9625B /* BTestViewController.xib */; };
 		61BDEE271C3BAC5700E9625B /* BCustonNavBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61BDEE261C3BAC5700E9625B /* BCustonNavBar.xib */; };
 		61BDEE2A1C3BAC6900E9625B /* BCustonNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 61BDEE291C3BAC6900E9625B /* BCustonNavBar.m */; };
+		61BE29111C3DF32900107B08 /* BInPutCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61BE290F1C3DF32900107B08 /* BInPutCodeViewController.m */; };
+		61BE29121C3DF32900107B08 /* BInPutCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61BE29101C3DF32900107B08 /* BInPutCodeViewController.xib */; };
+		61BE292C1C3E51E400107B08 /* BStoreService.m in Sources */ = {isa = PBXBuildFile; fileRef = 61BE292B1C3E51E400107B08 /* BStoreService.m */; };
 		61CC09C31C17B66E0038349A /* BBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CC09C11C17B66E0038349A /* BBaseViewController.m */; };
 		61CC09C41C17B66E0038349A /* BBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61CC09C21C17B66E0038349A /* BBaseViewController.xib */; };
 		61CC09C81C17BF1E0038349A /* BBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CC09C61C17BF1E0038349A /* BBaseTableViewController.m */; };
@@ -149,6 +152,11 @@
 		61BDEE261C3BAC5700E9625B /* BCustonNavBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BCustonNavBar.xib; sourceTree = "<group>"; };
 		61BDEE281C3BAC6900E9625B /* BCustonNavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCustonNavBar.h; sourceTree = "<group>"; };
 		61BDEE291C3BAC6900E9625B /* BCustonNavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCustonNavBar.m; sourceTree = "<group>"; };
+		61BE290E1C3DF32900107B08 /* BInPutCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BInPutCodeViewController.h; sourceTree = "<group>"; };
+		61BE290F1C3DF32900107B08 /* BInPutCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BInPutCodeViewController.m; sourceTree = "<group>"; };
+		61BE29101C3DF32900107B08 /* BInPutCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BInPutCodeViewController.xib; sourceTree = "<group>"; };
+		61BE292A1C3E51E400107B08 /* BStoreService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BStoreService.h; sourceTree = "<group>"; };
+		61BE292B1C3E51E400107B08 /* BStoreService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BStoreService.m; sourceTree = "<group>"; };
 		61CC09C01C17B66E0038349A /* BBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBaseViewController.h; sourceTree = "<group>"; };
 		61CC09C11C17B66E0038349A /* BBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBaseViewController.m; sourceTree = "<group>"; };
 		61CC09C21C17B66E0038349A /* BBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBaseViewController.xib; sourceTree = "<group>"; };
@@ -277,6 +285,7 @@
 		615C638B1C16DBA800FD4082 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				61BE290D1C3DF31100107B08 /* inputCode */,
 				61BDEE201C3BA05600E9625B /* Test */,
 				C8F10AE21C3AB18400BFBBDC /* ForgetPassword */,
 				618A532C1C3A6A6B00CD6DF7 /* QRCode */,
@@ -319,6 +328,8 @@
 				61EEDC501C3CA531007CD6B9 /* BWXApiManager.m */,
 				61EEDC521C3CAEF3007CD6B9 /* BWXApiRequestHandler.h */,
 				61EEDC531C3CAEF3007CD6B9 /* BWXApiRequestHandler.m */,
+				61BE292A1C3E51E400107B08 /* BStoreService.h */,
+				61BE292B1C3E51E400107B08 /* BStoreService.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -412,6 +423,16 @@
 				61BDEE241C3BA0B300E9625B /* BTestViewController.xib */,
 			);
 			name = Test;
+			sourceTree = "<group>";
+		};
+		61BE290D1C3DF31100107B08 /* inputCode */ = {
+			isa = PBXGroup;
+			children = (
+				61BE290E1C3DF32900107B08 /* BInPutCodeViewController.h */,
+				61BE290F1C3DF32900107B08 /* BInPutCodeViewController.m */,
+				61BE29101C3DF32900107B08 /* BInPutCodeViewController.xib */,
+			);
+			name = inputCode;
 			sourceTree = "<group>";
 		};
 		61CC09BF1C17B64D0038349A /* Base */ = {
@@ -689,6 +710,7 @@
 				C8F10AE71C3AB19B00BFBBDC /* BForgetPasswordViewController.xib in Resources */,
 				C8F10AC91C3AA56700BFBBDC /* icon_delete_red_@3x.png in Resources */,
 				C8F10ABE1C3AA56700BFBBDC /* icon_add_black_@2x.png in Resources */,
+				61BE29121C3DF32900107B08 /* BInPutCodeViewController.xib in Resources */,
 				C8EA7EAC1C36D21A00F0FB39 /* BCustomNaViewController.xib in Resources */,
 				C8F10AC71C3AA56700BFBBDC /* icon_delete_black_@3x.png in Resources */,
 				C8F10AC21C3AA56700BFBBDC /* icon_back_black_@2x.png in Resources */,
@@ -777,6 +799,7 @@
 				615C63981C16DC7500FD4082 /* BUntil.m in Sources */,
 				61BDEE191C3B4C5400E9625B /* BActionFindPWD.m in Sources */,
 				615C639B1C16DCD400FD4082 /* BHttpActionMgr.m in Sources */,
+				61BE29111C3DF32900107B08 /* BInPutCodeViewController.m in Sources */,
 				61CC09C31C17B66E0038349A /* BBaseViewController.m in Sources */,
 				C8F10AE61C3AB19B00BFBBDC /* BForgetPasswordViewController.m in Sources */,
 				C8F10AE01C3AA8B500BFBBDC /* UIView+loadNib.m in Sources */,
@@ -794,6 +817,7 @@
 				61EEDC511C3CA531007CD6B9 /* BWXApiManager.m in Sources */,
 				61244EB71C33B50000E2ED3A /* BActionLogin.m in Sources */,
 				C8EA7EAB1C36D21A00F0FB39 /* BCustomNaViewController.m in Sources */,
+				61BE292C1C3E51E400107B08 /* BStoreService.m in Sources */,
 				615C639E1C16DCE400FD4082 /* BResponeResult.m in Sources */,
 				618A53301C3A6A8D00CD6DF7 /* BQRCodeViewController.m in Sources */,
 				618A53361C3A782C00CD6DF7 /* Preview.m in Sources */,

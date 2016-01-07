@@ -74,6 +74,8 @@ static const int ddLogLevel = DDLogLevelOff;
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight [UIScreen mainScreen].bounds.size.height
 
+#define  KCFBundleName [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"]
+#define  KCFBundleShortVersionString [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.

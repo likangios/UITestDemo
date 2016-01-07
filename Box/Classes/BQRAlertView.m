@@ -28,13 +28,13 @@ typedef void(^blocks)();
         [view addSubview:self];
         
         self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.2];
-        CGFloat width = 292;
+        CGFloat width = 275;
         
-        CGFloat height = 98;
+        CGFloat height = 181;
         
         UIView *v = [[UIView alloc]init];
         
-        v.layer.cornerRadius = 2.0;
+        v.layer.cornerRadius = 5.0;
         v.layer.masksToBounds = YES;
         v.bounds = CGRectMake(0, 0, width,height);
         
@@ -44,19 +44,26 @@ typedef void(^blocks)();
         
         [self addSubview:v];
         
-        NSArray *arr = @[@"ac1",@"ac2"];
+        NSArray *arr = @[@"扫描二维码",@"输入课程码"];
+        NSArray *imgs = @[@"icon_scan_black_",@"icon_text_black_"];
+        NSArray *HighlightImgs = @[@"icon_scan_red_",@"icon_text_red_"];
         
         CGFloat btnW = height/arr.count;
         
         for (int i = 0; i<arr.count; i++) {
             
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-            btn.frame = CGRectMake(21,btnW*i, width-42, btnW);
+            btn.frame = CGRectMake(0,btnW*i, width, btnW);
             [btn setTitle:arr[i] forState:UIControlStateNormal];
+            [btn setImage:[UIImage imageNamed:imgs[i]] forState:UIControlStateNormal];
+            [btn setImage:[UIImage imageNamed:HighlightImgs[i]] forState:UIControlStateHighlighted];
+            btn.titleLabel.font = [UIFont systemFontOfSize:16];
             btn.tag = i+1;
-            btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+            btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
             [btn setTitleColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.87] forState:UIControlStateNormal];
+            [btn setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 15)];
             [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+            
             [v addSubview:btn];
             if (i>0) {
                 UIView *l = [[UIView alloc]initWithFrame:CGRectMake(0,i*btnW, width, 0.5)];

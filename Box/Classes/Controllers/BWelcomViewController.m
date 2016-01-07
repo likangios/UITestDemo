@@ -11,6 +11,7 @@
 #import "BRegisterViewController.h"
 #import "BQRCodeViewController.h"
 #import "BTestViewController.h"
+#import "BInPutCodeViewController.h"
 @interface BWelcomViewController ()
 @property (nonatomic,strong) IBOutlet UIButton *loginBtn;
 @property (nonatomic,strong) IBOutlet UIButton *registerBtn;
@@ -35,7 +36,7 @@
     [super awakeFromNib];
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [self.navigationController pushViewController:[[BTestViewController alloc]initWithNib] animated:YES];
+    [self.navigationController pushViewController:[[BInPutCodeViewController alloc]initWithNib] animated:YES];
     
 }
 #pragma mark --action--
