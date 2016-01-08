@@ -14,7 +14,7 @@
 
 @implementation UIView (loadNib)
 
-+(id)loadSelfWithNibOwner:(UIViewController *)owner{
++(id)loadSelfWithNibOwner:(id)owner{
 
     NSString *string =  NSStringFromClass([self class]);
     id  obj = [[[NSBundle mainBundle]loadNibNamed:string owner:owner options:nil]lastObject];

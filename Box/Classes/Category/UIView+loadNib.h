@@ -12,6 +12,6 @@
 
 @property (nonatomic,strong) NSString *tagString;
 
-+(id)loadSelfWithNibOwner:(UIViewController *)owner;
++(id)loadSelfWithNibOwner:(id)owner;
 - (UIView *)viewWithTagString:(NSString *)value;
 @end

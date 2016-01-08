@@ -70,6 +70,7 @@
 		C8ACE6821C3EA953005C2A02 /* img_scan_rightup_@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C8ACE67A1C3EA953005C2A02 /* img_scan_rightup_@3x.png */; };
 		C8ACE6851C3EAC8D005C2A02 /* BCourseCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8ACE6841C3EAC8D005C2A02 /* BCourseCardView.m */; };
 		C8ACE6871C3EACAC005C2A02 /* BCourseCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8ACE6861C3EACAC005C2A02 /* BCourseCardView.xib */; };
+		C8C0311B1C3FF7C300DDF007 /* BMainCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C0311A1C3FF7C300DDF007 /* BMainCardCell.m */; };
 		C8EA7EAB1C36D21A00F0FB39 /* BCustomNaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EA7EA91C36D21A00F0FB39 /* BCustomNaViewController.m */; };
 		C8EA7EAC1C36D21A00F0FB39 /* BCustomNaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8EA7EAA1C36D21A00F0FB39 /* BCustomNaViewController.xib */; };
 		C8EA7EB21C3773D400F0FB39 /* BWelcomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EA7EB01C3773D400F0FB39 /* BWelcomViewController.m */; };
@@ -220,6 +221,8 @@
 		C8ACE6831C3EAC8D005C2A02 /* BCourseCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCourseCardView.h; sourceTree = "<group>"; };
 		C8ACE6841C3EAC8D005C2A02 /* BCourseCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCourseCardView.m; sourceTree = "<group>"; };
 		C8ACE6861C3EACAC005C2A02 /* BCourseCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BCourseCardView.xib; sourceTree = "<group>"; };
+		C8C031191C3FF7C300DDF007 /* BMainCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMainCardCell.h; sourceTree = "<group>"; };
+		C8C0311A1C3FF7C300DDF007 /* BMainCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMainCardCell.m; sourceTree = "<group>"; };
 		C8EA7EA81C36D21A00F0FB39 /* BCustomNaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCustomNaViewController.h; sourceTree = "<group>"; };
 		C8EA7EA91C36D21A00F0FB39 /* BCustomNaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCustomNaViewController.m; sourceTree = "<group>"; };
 		C8EA7EAA1C36D21A00F0FB39 /* BCustomNaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BCustomNaViewController.xib; sourceTree = "<group>"; };
@@ -659,6 +662,8 @@
 				61F6B4611C3FB2F4007AA94B /* BMainCardView.h */,
 				61F6B4621C3FB2F4007AA94B /* BMainCardView.m */,
 				61F6B4641C3FB303007AA94B /* BMainCardView.xib */,
+				C8C031191C3FF7C300DDF007 /* BMainCardCell.h */,
+				C8C0311A1C3FF7C300DDF007 /* BMainCardCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -889,6 +894,7 @@
 				C8EA7EB21C3773D400F0FB39 /* BWelcomViewController.m in Sources */,
 				61BDEE231C3BA09300E9625B /* BTestViewController.m in Sources */,
 				61BDEE1C1C3B4CAD00E9625B /* BConfirmCodeAction.m in Sources */,
+				C8C0311B1C3FF7C300DDF007 /* BMainCardCell.m in Sources */,
 				61BDEE1F1C3B9E4900E9625B /* BQRAlertView.m in Sources */,
 				61CC09C81C17BF1E0038349A /* BBaseTableViewController.m in Sources */,
 				61BDEE2A1C3BAC6900E9625B /* BCustonNavBar.m in Sources */,

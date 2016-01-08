@@ -9,5 +9,14 @@
 #import "BBaseViewController.h"
 
 @interface BInfoConfirmViewController : BBaseViewController
+@property (nonatomic,strong) IBOutlet UILabel *studentName;
+
+@property (nonatomic,strong) IBOutlet UILabel *studentAge;
+
+@property (nonatomic,strong) IBOutlet UILabel *studentSchool;
+
+@property (nonatomic,strong) IBOutlet UILabel *studentClass;
+
+@property (nonatomic,strong) IBOutlet UILabel *studentLearnTime;
 
 @end

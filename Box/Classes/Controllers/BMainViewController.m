@@ -10,11 +10,10 @@
 #import "BQRCodeViewController.h"
 #import "AppDelegate.h"
 #import "UINavigationItem+BMargin.h"
+#import "BMainCardCell.h"
 
-@interface BMainViewController ()
-{
-    UITableView *_tableView;
-}
+@interface BMainViewController ()<UITableViewDataSource,UITableViewDelegate>
+@property (nonatomic,strong) IBOutlet UITableView  *TableView;
 @end
 
 @implementation BMainViewController
@@ -24,12 +23,35 @@
     [self addCustomNavBar];
     [self addRightViewWithImage:[UIImage imageNamed:@"icon_set_black_"] hightImage:[UIImage imageNamed:@"icon_set_red_"]];
     [self addLeftViewWithImage:[UIImage imageNamed:@"icon_add_black_"] hightImage:[UIImage imageNamed:@"icon_add_red_"]];
-    _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(reloadNewData)];
-    [_tableView.mj_header beginRefreshing];
+    _TableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(reloadNewData)];
+    [_TableView.mj_header beginRefreshing];
 }
 
 - (IBAction)tuichu:(id)sender {
 [(AppDelegate *)[UIApplication sharedApplication].delegate  OnSignoutSuccessful];
+}
+#pragma mark UITableViewDelegate
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 160;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 10;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 10;
+}
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    UIView *view=  [[UIView alloc]init];
+    view.backgroundColor = [UIColor clearColor];
+    return view;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    BMainCardCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BMainCardCell"];
+    if (cell == nil) {
+        cell = [[BMainCardCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"BMainCardCell"];
+    }
+    return cell;
 }
 #pragma mark private 
 - (void)initItem{
@@ -76,7 +98,11 @@
 }
 - (void)reloadNewData{
     
+    [self performSelector:@selector(endRef) withObject:nil afterDelay:2];
     
+}
+- (void)endRef{
+    [_TableView.mj_header endRefreshing];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
