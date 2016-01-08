@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BMainCardView">
+            <rect key="frame" x="0.0" y="0.0" width="552" height="182"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yki-td-q5D">
+                    <rect key="frame" x="10" y="10" width="532" height="172"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHZ-K4-0Fi">
+                            <rect key="frame" x="28" y="17" width="454" height="24"/>
+                            <color key="backgroundColor" red="0.1876229815365803" green="1" blue="0.72428158839256962" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Mw-YX-Jdz">
+                            <rect key="frame" x="28" y="49" width="454" height="24"/>
+                            <color key="backgroundColor" red="0.18762298150000001" green="1" blue="0.72428158840000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZsS-Wj-fRp">
+                            <rect key="frame" x="28" y="142" width="454" height="21"/>
+                            <color key="backgroundColor" red="0.18762298150000001" green="1" blue="0.72428158840000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQ0-dt-d9C">
+                            <rect key="frame" x="28" y="113" width="454" height="21"/>
+                            <color key="backgroundColor" red="0.18762298150000001" green="1" blue="0.72428158840000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgq-hF-Gxw">
+                            <rect key="frame" x="28" y="81" width="454" height="24"/>
+                            <color key="backgroundColor" red="0.18762298150000001" green="1" blue="0.72428158840000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.15747595679155291" green="0.70784521116695542" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <accessibility key="accessibilityConfiguration">
+                        <accessibilityTraits key="traits" notEnabled="YES"/>
+                    </accessibility>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColorWithUIColor">
+                            <color key="value" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7Q-dS-HWx">
+                    <rect key="frame" x="532" y="5" width="15" height="15"/>
+                    <color key="backgroundColor" red="1" green="0.13537546382737276" blue="0.17660580853134722" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="bCv-MV-zOh"/>
+                        <constraint firstAttribute="width" constant="15" id="jWw-9V-8mK"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="7.5"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="yki-td-q5D" secondAttribute="bottom" id="4K6-Yv-MGr"/>
+                <constraint firstAttribute="trailing" secondItem="o7Q-dS-HWx" secondAttribute="trailing" constant="5" id="8u9-fX-mv3"/>
+                <constraint firstItem="o7Q-dS-HWx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="Iqj-tA-Dyc"/>
+                <constraint firstItem="yki-td-q5D" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="OBg-FE-H5I"/>
+                <constraint firstAttribute="trailing" secondItem="yki-td-q5D" secondAttribute="trailing" constant="10" id="oG7-cm-kWU"/>
+                <constraint firstItem="yki-td-q5D" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="tyH-KD-1DY"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="age" destination="5Mw-YX-Jdz" id="Kn2-qr-6w2"/>
+                <outlet property="classs" destination="AQ0-dt-d9C" id="RyP-nF-kWB"/>
+                <outlet property="contentView" destination="yki-td-q5D" id="Dhz-SI-1TF"/>
+                <outlet property="name" destination="fHZ-K4-0Fi" id="NOg-1h-mqt"/>
+                <outlet property="number" destination="o7Q-dS-HWx" id="J02-fr-ROc"/>
+                <outlet property="sch" destination="dgq-hF-Gxw" id="KLl-2W-LWW"/>
+                <outlet property="time" destination="ZsS-Wj-fRp" id="hMX-ds-SjD"/>
+            </connections>
+            <point key="canvasLocation" x="379" y="171"/>
+        </view>
+    </objects>
+</document>

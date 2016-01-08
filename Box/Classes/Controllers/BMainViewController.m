@@ -12,7 +12,9 @@
 #import "UINavigationItem+BMargin.h"
 
 @interface BMainViewController ()
-
+{
+    UITableView *_tableView;
+}
 @end
 
 @implementation BMainViewController
@@ -22,8 +24,8 @@
     [self addCustomNavBar];
     [self addRightViewWithImage:[UIImage imageNamed:@"icon_set_black_"] hightImage:[UIImage imageNamed:@"icon_set_red_"]];
     [self addLeftViewWithImage:[UIImage imageNamed:@"icon_add_black_"] hightImage:[UIImage imageNamed:@"icon_add_red_"]];
-    [self  initItem];
-    // Do any additional setup after loading the view from its nib.
+    _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(reloadNewData)];
+    [_tableView.mj_header beginRefreshing];
 }
 
 - (IBAction)tuichu:(id)sender {
@@ -71,6 +73,10 @@
     DDLogDebug(@"添加");
     [self presentViewController:[[BQRCodeViewController alloc]initWithNib] animated:YES completion:NULL];
 //    [self.navigationController pushViewController:[[BQRCodeViewController alloc]initWithNib] animated:YES];
+}
+- (void)reloadNewData{
+    
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

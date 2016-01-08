@@ -12,6 +12,7 @@
 #import "BQRCodeViewController.h"
 #import "BTestViewController.h"
 #import "BInPutCodeViewController.h"
+#import "BMainCardView.h"
 @interface BWelcomViewController ()
 @property (nonatomic,strong) IBOutlet UIButton *loginBtn;
 @property (nonatomic,strong) IBOutlet UIButton *registerBtn;
@@ -29,6 +30,16 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    BMainCardView *mview = [BMainCardView loadSelfWithNibOwner:self];
+    
+    [self.view addSubview:mview];
+    
+    [mview mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(110);
+        make.left.right.mas_equalTo(0);
+        make.height.mas_equalTo(300);
+    }];
 //    self.view.layer.cornerRadius
     // Do any additional setup after loading the view from its nib.
 }

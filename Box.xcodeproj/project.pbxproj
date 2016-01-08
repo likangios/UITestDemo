@@ -53,6 +53,8 @@
 		61EEDC511C3CA531007CD6B9 /* BWXApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 61EEDC501C3CA531007CD6B9 /* BWXApiManager.m */; };
 		61EEDC541C3CAEF3007CD6B9 /* BWXApiRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 61EEDC531C3CAEF3007CD6B9 /* BWXApiRequestHandler.m */; };
 		61EEDC561C3CB675007CD6B9 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 61EEDC551C3CB675007CD6B9 /* libc++.tbd */; };
+		61F6B4631C3FB2F4007AA94B /* BMainCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F6B4621C3FB2F4007AA94B /* BMainCardView.m */; };
+		61F6B4651C3FB303007AA94B /* BMainCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61F6B4641C3FB303007AA94B /* BMainCardView.xib */; };
 		A23AB41730D7622E432E8C30 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B244B8D7CF7FC87B279E78 /* libPods.a */; };
 		C8965C171C3C082800EA0005 /* BModifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8965C151C3C082800EA0005 /* BModifyPasswordViewController.m */; };
 		C8965C181C3C082800EA0005 /* BModifyPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8965C161C3C082800EA0005 /* BModifyPasswordViewController.xib */; };
@@ -195,6 +197,9 @@
 		61EEDC521C3CAEF3007CD6B9 /* BWXApiRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWXApiRequestHandler.h; sourceTree = "<group>"; };
 		61EEDC531C3CAEF3007CD6B9 /* BWXApiRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWXApiRequestHandler.m; sourceTree = "<group>"; };
 		61EEDC551C3CB675007CD6B9 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		61F6B4611C3FB2F4007AA94B /* BMainCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMainCardView.h; sourceTree = "<group>"; };
+		61F6B4621C3FB2F4007AA94B /* BMainCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMainCardView.m; sourceTree = "<group>"; };
+		61F6B4641C3FB303007AA94B /* BMainCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMainCardView.xib; sourceTree = "<group>"; };
 		A9C80705F4D1FA262F3B80E5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BA44CC5CA4F887541AA8DD8A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C5B244B8D7CF7FC87B279E78 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -651,6 +656,9 @@
 				61BDEE291C3BAC6900E9625B /* BCustonNavBar.m */,
 				61BDEE1D1C3B9E4900E9625B /* BQRAlertView.h */,
 				61BDEE1E1C3B9E4900E9625B /* BQRAlertView.m */,
+				61F6B4611C3FB2F4007AA94B /* BMainCardView.h */,
+				61F6B4621C3FB2F4007AA94B /* BMainCardView.m */,
+				61F6B4641C3FB303007AA94B /* BMainCardView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -787,6 +795,7 @@
 				C8ACE6801C3EA953005C2A02 /* img_scan_rightdown_@3x.png in Resources */,
 				C8F10AC61C3AA56700BFBBDC /* icon_delete_black_@2x.png in Resources */,
 				C8F10ACD1C3AA56700BFBBDC /* icon_lock_red_@3x.png in Resources */,
+				61F6B4651C3FB303007AA94B /* BMainCardView.xib in Resources */,
 				C8ACE6871C3EACAC005C2A02 /* BCourseCardView.xib in Resources */,
 				C8F10AC11C3AA56700BFBBDC /* icon_add_red_@3x.png in Resources */,
 				C8F10AD11C3AA56700BFBBDC /* icon_scan_red_@3x.png in Resources */,
@@ -858,6 +867,7 @@
 				61EEDC541C3CAEF3007CD6B9 /* BWXApiRequestHandler.m in Sources */,
 				61E6D3C61C39FA2700A55C34 /* UINavigationItem+BMargin.m in Sources */,
 				61B28B831C165EA6009731FE /* ViewController.m in Sources */,
+				61F6B4631C3FB2F4007AA94B /* BMainCardView.m in Sources */,
 				C8EA7EBF1C37CAB000F0FB39 /* BMainViewController.m in Sources */,
 				C8EA7EC81C37F63000F0FB39 /* BRegisterViewController.m in Sources */,
 				61BDEE101C3B489D00E9625B /* CALayer+BLayerBorderColor.m in Sources */,
