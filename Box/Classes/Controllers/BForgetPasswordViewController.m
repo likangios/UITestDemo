@@ -25,9 +25,13 @@
     self.barTitle = @"忘记密码";
     // Do any additional setup after loading the view from its nib.
 }
+
 - (IBAction)OkBtnClick:(id)sender {
+
+    [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)getConfirmCodeBtnClick:(id)sender {
+
 }
 
 - (void)didReceiveMemoryWarning {

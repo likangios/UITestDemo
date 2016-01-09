@@ -28,14 +28,18 @@
  *  @param sender
  */
 - (void)backAction:(id)sender;
+/**
+ *  右边按钮事件
+ *
+ *  @param sender
+ */
+- (void)rightAction:(id)sender;
 
 - (void)dismissAction:(id)sender;
-
 /**
  *  添加自定义导航栏
  */
 - (void)addCustomNavBar;
-
 
 /**
  *  添加普通返回按钮
@@ -49,13 +53,21 @@
  *  添加中间视图
  */
 - (void)addTitleView:(UIView *)titView;
-
+/**
+ *  添加右边ItemView  默认图片  高亮图片
+ */
 - (void)addRightViewWithImage:(UIImage *)img hightImage:(UIImage *)himg;
-
+/**
+ *  添加左边ItemView  默认图片  高亮图片
+ */
 - (void)addLeftViewWithImage:(UIImage *)img hightImage:(UIImage *)himg;
-
+/**
+ *  添加右边ItemView  title
+ */
 - (void)addRightViewWithTitle:(NSString *)title;
-
+/**
+ *  添加右边ItemView  自定义view
+ */
 - (void)addRightViewWithCustomView:(UIView *)view;
 
 @end

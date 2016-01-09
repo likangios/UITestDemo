@@ -10,4 +10,6 @@
 
 @interface BQRCodeViewController : BBaseViewController
 
+@property (nonatomic,copy) void (^QRCodeBlocks)(BOOL isSuccess,NSString *courseInfo);
+
 @end

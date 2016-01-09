@@ -34,16 +34,15 @@
 
 @implementation BQRCodeViewController
 
+- (void)setQRCodeBlocks:(void (^)(BOOL, NSString *))QRCodeBlocks{
+    _QRCodeBlocks = QRCodeBlocks;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addRedBackItem];
     _captureSession = nil;
     _isReading = NO;
     [self performSelector:@selector(startReadCode) withObject:nil afterDelay:0.2];
-}
-- (void)awakeFromNib{
-    [super awakeFromNib];
-//    [self initAVCaptureSession];
 }
 - (void)startReadCode{
     [self startReading];
@@ -58,9 +57,10 @@
     AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:captureDevice error:&error];
     if (!input) {
         NSLog(@"%@", [error localizedDescription]);
+        [BUntil showErrorHUDViewAtView:self.view WithTitle:@"相机不可用"];
+        [self performSelector:@selector(backClick) withObject:nil afterDelay:2.0];
         return NO;
     }
-    
     //3.创建媒体数据输出流
     AVCaptureMetadataOutput *captureMetadataOutput = [[AVCaptureMetadataOutput alloc] init];
     
@@ -126,12 +126,21 @@
             [self performSelectorOnMainThread:@selector(stopReading) withObject:nil waitUntilDone:NO];
             _isReading = NO;
             NSLog(@" metadataObj %@",[metadataObj stringValue]);
+            _QRCodeBlocks(YES,metadataObj.stringValue);
         }
     }
 }
 - (BOOL)shouldAutorotate
 {
     return NO;
+}
+#pragma makr 重写
+
+- (void)backClick{
+    
+    if (_QRCodeBlocks) {
+    _QRCodeBlocks(NO,nil);
+    }
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];

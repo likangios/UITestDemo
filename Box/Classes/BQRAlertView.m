@@ -22,6 +22,8 @@ typedef void(^blocks)();
 - (instancetype)initWithShowView:(UIView *)view  Action1:(void(^)())ac1 Action2:(void (^)())ac2{
     self = [super initWithFrame:view.frame];
     if (self) {
+        self.effectViewAlph = 0.8;
+        
         _ac1Block = ac1;
         _ac2Block = ac2;
         
@@ -71,8 +73,6 @@ typedef void(^blocks)();
                 [v addSubview:l];
             }
         }
-        
-        
     }
     return self;
 }

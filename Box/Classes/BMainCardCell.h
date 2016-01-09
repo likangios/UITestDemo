@@ -10,4 +10,5 @@
 
 @interface BMainCardCell : UITableViewCell
 
+
 @end

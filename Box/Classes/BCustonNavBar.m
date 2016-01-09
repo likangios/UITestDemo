@@ -52,6 +52,7 @@
 }
 - (void)setBarImage:(UIImage *)barImage{
     UIImageView *imageview = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, barImage.size.width, CustomNavigationBarHeight)];
+    imageview.contentMode = UIViewContentModeScaleAspectFit;
     imageview.image = barImage;
     [self addTitleView:imageview];
 }

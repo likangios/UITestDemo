@@ -100,26 +100,26 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7Q-dS-HWx">
-                    <rect key="frame" x="470" y="5" width="15" height="15"/>
+                    <rect key="frame" x="453" y="3" width="30" height="30"/>
                     <color key="backgroundColor" red="1" green="0.13537546382737276" blue="0.17660580853134722" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="15" id="bCv-MV-zOh"/>
-                        <constraint firstAttribute="width" constant="15" id="jWw-9V-8mK"/>
+                        <constraint firstAttribute="height" constant="30" id="bCv-MV-zOh"/>
+                        <constraint firstAttribute="width" constant="30" id="jWw-9V-8mK"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="7.5"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
                     </userDefinedRuntimeAttributes>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="yki-td-q5D" secondAttribute="bottom" id="4K6-Yv-MGr"/>
-                <constraint firstAttribute="trailing" secondItem="o7Q-dS-HWx" secondAttribute="trailing" constant="5" id="8u9-fX-mv3"/>
-                <constraint firstItem="o7Q-dS-HWx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="Iqj-tA-Dyc"/>
+                <constraint firstAttribute="trailing" secondItem="o7Q-dS-HWx" secondAttribute="trailing" constant="7" id="8u9-fX-mv3"/>
+                <constraint firstItem="o7Q-dS-HWx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="3" id="Iqj-tA-Dyc"/>
                 <constraint firstItem="yki-td-q5D" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="OBg-FE-H5I"/>
                 <constraint firstAttribute="trailing" secondItem="yki-td-q5D" secondAttribute="trailing" constant="10" id="oG7-cm-kWU"/>
                 <constraint firstItem="yki-td-q5D" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="tyH-KD-1DY"/>

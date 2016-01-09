@@ -85,7 +85,7 @@
                 <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                 <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
-                <userDefinedRuntimeAttribute type="color" keyPath="layer.borderWithUIColor">
+                <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColorWithUIColor">
                     <color key="value" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>

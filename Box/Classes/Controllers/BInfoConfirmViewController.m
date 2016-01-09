@@ -10,6 +10,7 @@
 
 @interface BInfoConfirmViewController ()
 
+@property (nonatomic,strong) IBOutlet UIButton *confirmBtn;
 
 @end
 
@@ -22,7 +23,10 @@
     self.barTitle = @"信息确认";
     // Do any additional setup after loading the view from its nib.
 }
-
+-(IBAction)confirmClick:(id)sender{
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

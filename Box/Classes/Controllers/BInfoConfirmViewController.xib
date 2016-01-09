@@ -7,6 +7,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BInfoConfirmViewController">
             <connections>
+                <outlet property="confirmBtn" destination="pBl-Xi-ujb" id="vHa-Tt-zEQ"/>
+                <outlet property="studentAge" destination="opM-KU-I5s" id="iHn-eg-Xk5"/>
+                <outlet property="studentClass" destination="1BR-I2-CLL" id="E3d-Vk-8qi"/>
+                <outlet property="studentLearnTime" destination="oEh-ft-QF6" id="GkX-wO-bal"/>
+                <outlet property="studentName" destination="6s2-Pl-QgR" id="9gk-CG-jRw"/>
+                <outlet property="studentSchool" destination="JWn-fQ-hFa" id="xdr-Qo-RqE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -112,12 +118,34 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBl-Xi-ujb">
+                    <rect key="frame" x="35" y="341" width="305" height="50"/>
+                    <color key="backgroundColor" red="1" green="0.062745098040000002" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="nm6-Pe-A7z"/>
+                        <constraint firstAttribute="height" constant="50" id="vxr-9O-Ady"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="确认添加">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="25"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="confirmClick:" destination="-1" eventType="touchUpInside" id="FHe-GN-eHH"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="pBl-Xi-ujb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="35" id="O4d-ry-PHb"/>
                 <constraint firstAttribute="trailing" secondItem="2Ue-wK-1Wp" secondAttribute="trailing" constant="30" id="PmF-Eb-RoW"/>
                 <constraint firstItem="2Ue-wK-1Wp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="ai4-KD-sVh"/>
+                <constraint firstAttribute="trailing" secondItem="pBl-Xi-ujb" secondAttribute="trailing" constant="35" id="aqK-Wg-6kc"/>
                 <constraint firstItem="2Ue-wK-1Wp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="110" id="tqw-ck-Lek"/>
+                <constraint firstItem="pBl-Xi-ujb" firstAttribute="top" secondItem="2Ue-wK-1Wp" secondAttribute="bottom" constant="25" id="ucQ-Yi-F9e"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <point key="canvasLocation" x="370.5" y="279.5"/>

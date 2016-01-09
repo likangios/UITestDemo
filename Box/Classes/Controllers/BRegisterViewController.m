@@ -36,7 +36,6 @@
 - (IBAction)zhijiLogin:(id)sender {
     
     [self.navigationController pushViewController:[[BLoginViewController alloc]initWithNib] animated:YES];
-
 }
 - (IBAction)getConfirmCodeBtnClick:(id)sender {
     DDLogError(@"获取验证码");

@@ -9,7 +9,7 @@
 #import "BBaseViewController.h"
 #import "UINavigationItem+BMargin.h"
 #import <UMengAnalytics-NO-IDFA/MobClick.h>
-@interface BBaseViewController ()
+@interface BBaseViewController ()<UINavigationControllerDelegate>
 
 @end
 
@@ -26,7 +26,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.navigationController.delegate = self;
     
     
     self.title  = (NSString *)NSStringFromClass([self class]);

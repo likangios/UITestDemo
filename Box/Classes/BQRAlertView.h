@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BBlureEffectView.h"
 
-@interface BQRAlertView : UIView
+@interface BQRAlertView : BBlureEffectView
 /**
  *  预览 拍照 相册 AlertView
  *
