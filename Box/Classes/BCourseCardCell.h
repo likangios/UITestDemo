@@ -6,9 +6,8 @@
 //  Copyright © 2016年 lk. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-@interface BCourseCardCell : UITableViewCell
+#import "BBaseCell.h"
+@interface BCourseCardCell : BBaseCell
 
 @property (nonatomic,strong) NSIndexPath *indexPath;
 

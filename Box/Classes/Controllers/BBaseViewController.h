@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BCustonNavBar.h"
+#import "BBaseCell.h"
 
 @interface BBaseViewController : UIViewController
 {

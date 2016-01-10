@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BClassRoomPerformanceCell" rowHeight="160" id="KGk-i7-Jjw" customClass="BClassRoomPerformanceCell">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="162"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="390" height="161"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n4t-Jt-6eb">
+                        <rect key="frame" x="15" y="5" width="360" height="151"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="课堂表现" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tD-G2-qrN">
+                                <rect key="frame" x="12" y="12" width="65" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="Otk-Fi-m2g"/>
+                                    <constraint firstAttribute="height" constant="22" id="g3o-SH-P8y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="下周我们要临摹一副梵高的作品“星空”" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4l-fH-HiR">
+                                <rect key="frame" x="12" y="36" width="320" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Kl8-Q4-6Ut"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="未读" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vl9-mA-waz">
+                                <rect key="frame" x="297" y="12" width="35" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="YOb-hw-bJS"/>
+                                    <constraint firstAttribute="width" constant="35" id="efI-xG-Sev"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bgimg.png" translatesAutoresizingMaskIntoConstraints="NO" id="nNu-sC-bPe">
+                                <rect key="frame" x="12" y="68" width="326" height="53"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="nNu-sC-bPe" secondAttribute="bottom" constant="12" id="1qv-iQ-qav"/>
+                            <constraint firstItem="nNu-sC-bPe" firstAttribute="top" secondItem="D4l-fH-HiR" secondAttribute="bottom" constant="12" id="Az4-MT-jUF"/>
+                            <constraint firstAttribute="trailing" secondItem="D4l-fH-HiR" secondAttribute="trailing" constant="12" id="L0K-aX-3go"/>
+                            <constraint firstItem="1tD-G2-qrN" firstAttribute="leading" secondItem="n4t-Jt-6eb" secondAttribute="leading" constant="12" id="SSA-oY-zqG"/>
+                            <constraint firstItem="D4l-fH-HiR" firstAttribute="top" secondItem="1tD-G2-qrN" secondAttribute="bottom" constant="2" id="YtP-hw-zPG"/>
+                            <constraint firstItem="1tD-G2-qrN" firstAttribute="top" secondItem="n4t-Jt-6eb" secondAttribute="top" constant="12" id="eNA-2M-ByL"/>
+                            <constraint firstItem="nNu-sC-bPe" firstAttribute="leading" secondItem="n4t-Jt-6eb" secondAttribute="leading" constant="12" id="fpB-b6-UmJ"/>
+                            <constraint firstAttribute="trailing" secondItem="nNu-sC-bPe" secondAttribute="trailing" constant="12" id="gxD-gg-bV0"/>
+                            <constraint firstItem="D4l-fH-HiR" firstAttribute="leading" secondItem="n4t-Jt-6eb" secondAttribute="leading" constant="12" id="ouN-4l-KaI"/>
+                            <constraint firstItem="vl9-mA-waz" firstAttribute="top" secondItem="n4t-Jt-6eb" secondAttribute="top" constant="12" id="ru0-sa-pWR"/>
+                            <constraint firstAttribute="trailing" secondItem="vl9-mA-waz" secondAttribute="trailing" constant="12" id="uIr-g0-KOR"/>
+                        </constraints>
+                        <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
+                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColorWithUIColor">
+                                <color key="value" red="1" green="0.062745098040000002" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="n4t-Jt-6eb" secondAttribute="trailing" constant="15" id="Gdf-Hh-5NE"/>
+                    <constraint firstItem="n4t-Jt-6eb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="IzL-Bd-V0U"/>
+                    <constraint firstItem="n4t-Jt-6eb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="15" id="aVK-Xg-qAZ"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="n4t-Jt-6eb" secondAttribute="bottom" constant="5" id="gNa-gR-i4F"/>
+                </constraints>
+                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bgview" destination="n4t-Jt-6eb" id="T6B-7i-YJ8"/>
+                <outlet property="content" destination="D4l-fH-HiR" id="oLZ-iy-amP"/>
+                <outlet property="contentimg" destination="nNu-sC-bPe" id="g31-Mp-ISh"/>
+                <outlet property="isRead" destination="vl9-mA-waz" id="p6z-EL-K2r"/>
+            </connections>
+            <point key="canvasLocation" x="253" y="214"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="bgimg.png" width="642" height="140"/>
+    </resources>
+</document>

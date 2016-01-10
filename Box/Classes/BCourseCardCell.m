@@ -30,6 +30,9 @@
     }];
     // Initialization code
 }
+-(CGFloat)getCellHeight{
+    return 90;
+}
 - (void)deleteCourse{
     if (_DeleteCourseBlocks) {
         _DeleteCourseBlocks(_indexPath);

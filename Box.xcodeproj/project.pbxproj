@@ -61,6 +61,21 @@
 		C86D5C7F1C40E56F008C69AD /* BCourseCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C86D5C7D1C40E56F008C69AD /* BCourseCardCell.m */; };
 		C86D5C801C40E56F008C69AD /* BCourseCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C86D5C7E1C40E56F008C69AD /* BCourseCardCell.xib */; };
 		C86D5C861C4104BC008C69AD /* BBlureEffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = C86D5C851C4104BC008C69AD /* BBlureEffectView.m */; };
+		C86D5C8F1C4205DC008C69AD /* BHomeWorkTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C86D5C8D1C4205DC008C69AD /* BHomeWorkTCell.m */; };
+		C86D5C901C4205DC008C69AD /* BHomeWorkTCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C86D5C8E1C4205DC008C69AD /* BHomeWorkTCell.xib */; };
+		C86D5C941C421229008C69AD /* BClassRoomPerformanceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C86D5C921C421229008C69AD /* BClassRoomPerformanceCell.m */; };
+		C86D5C951C421229008C69AD /* BClassRoomPerformanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C86D5C931C421229008C69AD /* BClassRoomPerformanceCell.xib */; };
+		C86D5C971C421852008C69AD /* bgimg.png in Resources */ = {isa = PBXBuildFile; fileRef = C86D5C961C421852008C69AD /* bgimg.png */; };
+		C86D5C9B1C4218A2008C69AD /* BBeforeClassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C86D5C991C4218A2008C69AD /* BBeforeClassCell.m */; };
+		C86D5C9C1C4218A2008C69AD /* BBeforeClassCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C86D5C9A1C4218A2008C69AD /* BBeforeClassCell.xib */; };
+		C86D5CA01C421979008C69AD /* BDateTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C86D5C9E1C421979008C69AD /* BDateTimeCell.m */; };
+		C86D5CA11C421979008C69AD /* BDateTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C86D5C9F1C421979008C69AD /* BDateTimeCell.xib */; };
+		C86D5CA41C421A7A008C69AD /* UITableViewCell+BGetCellHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = C86D5CA31C421A7A008C69AD /* UITableViewCell+BGetCellHeight.m */; };
+		C86D5CA71C421ACF008C69AD /* BBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C86D5CA61C421ACF008C69AD /* BBaseCell.m */; };
+		C86D5CAA1C425887008C69AD /* BMainCardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C86D5CA91C425887008C69AD /* BMainCardModel.m */; };
+		C86D5CAD1C4261C7008C69AD /* BHomeworkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C86D5CAC1C4261C7008C69AD /* BHomeworkModel.m */; };
+		C86D5CB01C4261DC008C69AD /* BClassRoomPerformanceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C86D5CAF1C4261DC008C69AD /* BClassRoomPerformanceModel.m */; };
+		C86D5CB31C4261F3008C69AD /* BBeforeClassModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C86D5CB21C4261F3008C69AD /* BBeforeClassModel.m */; };
 		C8965C171C3C082800EA0005 /* BModifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8965C151C3C082800EA0005 /* BModifyPasswordViewController.m */; };
 		C8965C181C3C082800EA0005 /* BModifyPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8965C161C3C082800EA0005 /* BModifyPasswordViewController.xib */; };
 		C8ACE6711C3EA008005C2A02 /* BInfoConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8ACE66F1C3EA008005C2A02 /* BInfoConfirmViewController.m */; };
@@ -219,6 +234,31 @@
 		C86D5C7E1C40E56F008C69AD /* BCourseCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BCourseCardCell.xib; sourceTree = "<group>"; };
 		C86D5C841C4104BC008C69AD /* BBlureEffectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBlureEffectView.h; path = Category/BBlureEffectView.h; sourceTree = "<group>"; };
 		C86D5C851C4104BC008C69AD /* BBlureEffectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBlureEffectView.m; path = Category/BBlureEffectView.m; sourceTree = "<group>"; };
+		C86D5C8C1C4205DC008C69AD /* BHomeWorkTCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHomeWorkTCell.h; sourceTree = "<group>"; };
+		C86D5C8D1C4205DC008C69AD /* BHomeWorkTCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHomeWorkTCell.m; sourceTree = "<group>"; };
+		C86D5C8E1C4205DC008C69AD /* BHomeWorkTCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BHomeWorkTCell.xib; sourceTree = "<group>"; };
+		C86D5C911C421229008C69AD /* BClassRoomPerformanceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BClassRoomPerformanceCell.h; sourceTree = "<group>"; };
+		C86D5C921C421229008C69AD /* BClassRoomPerformanceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BClassRoomPerformanceCell.m; sourceTree = "<group>"; };
+		C86D5C931C421229008C69AD /* BClassRoomPerformanceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BClassRoomPerformanceCell.xib; sourceTree = "<group>"; };
+		C86D5C961C421852008C69AD /* bgimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgimg.png; sourceTree = "<group>"; };
+		C86D5C981C4218A2008C69AD /* BBeforeClassCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBeforeClassCell.h; sourceTree = "<group>"; };
+		C86D5C991C4218A2008C69AD /* BBeforeClassCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBeforeClassCell.m; sourceTree = "<group>"; };
+		C86D5C9A1C4218A2008C69AD /* BBeforeClassCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBeforeClassCell.xib; sourceTree = "<group>"; };
+		C86D5C9D1C421979008C69AD /* BDateTimeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDateTimeCell.h; sourceTree = "<group>"; };
+		C86D5C9E1C421979008C69AD /* BDateTimeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDateTimeCell.m; sourceTree = "<group>"; };
+		C86D5C9F1C421979008C69AD /* BDateTimeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BDateTimeCell.xib; sourceTree = "<group>"; };
+		C86D5CA21C421A7A008C69AD /* UITableViewCell+BGetCellHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+BGetCellHeight.h"; sourceTree = "<group>"; };
+		C86D5CA31C421A7A008C69AD /* UITableViewCell+BGetCellHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+BGetCellHeight.m"; sourceTree = "<group>"; };
+		C86D5CA51C421ACF008C69AD /* BBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBaseCell.h; sourceTree = "<group>"; };
+		C86D5CA61C421ACF008C69AD /* BBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBaseCell.m; sourceTree = "<group>"; };
+		C86D5CA81C425887008C69AD /* BMainCardModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMainCardModel.h; sourceTree = "<group>"; };
+		C86D5CA91C425887008C69AD /* BMainCardModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMainCardModel.m; sourceTree = "<group>"; };
+		C86D5CAB1C4261C7008C69AD /* BHomeworkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHomeworkModel.h; sourceTree = "<group>"; };
+		C86D5CAC1C4261C7008C69AD /* BHomeworkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHomeworkModel.m; sourceTree = "<group>"; };
+		C86D5CAE1C4261DC008C69AD /* BClassRoomPerformanceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BClassRoomPerformanceModel.h; sourceTree = "<group>"; };
+		C86D5CAF1C4261DC008C69AD /* BClassRoomPerformanceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BClassRoomPerformanceModel.m; sourceTree = "<group>"; };
+		C86D5CB11C4261F3008C69AD /* BBeforeClassModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBeforeClassModel.h; sourceTree = "<group>"; };
+		C86D5CB21C4261F3008C69AD /* BBeforeClassModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBeforeClassModel.m; sourceTree = "<group>"; };
 		C8965C141C3C082800EA0005 /* BModifyPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BModifyPasswordViewController.h; sourceTree = "<group>"; };
 		C8965C151C3C082800EA0005 /* BModifyPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BModifyPasswordViewController.m; sourceTree = "<group>"; };
 		C8965C161C3C082800EA0005 /* BModifyPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BModifyPasswordViewController.xib; sourceTree = "<group>"; };
@@ -366,6 +406,14 @@
 			children = (
 				615C63931C16DC5600FD4082 /* BModel.h */,
 				615C63941C16DC5600FD4082 /* BModel.m */,
+				C86D5CA81C425887008C69AD /* BMainCardModel.h */,
+				C86D5CA91C425887008C69AD /* BMainCardModel.m */,
+				C86D5CAB1C4261C7008C69AD /* BHomeworkModel.h */,
+				C86D5CAC1C4261C7008C69AD /* BHomeworkModel.m */,
+				C86D5CAE1C4261DC008C69AD /* BClassRoomPerformanceModel.h */,
+				C86D5CAF1C4261DC008C69AD /* BClassRoomPerformanceModel.m */,
+				C86D5CB11C4261F3008C69AD /* BBeforeClassModel.h */,
+				C86D5CB21C4261F3008C69AD /* BBeforeClassModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -597,6 +645,8 @@
 				C8F10ADF1C3AA8B500BFBBDC /* UIView+loadNib.m */,
 				61BDEE0E1C3B489D00E9625B /* CALayer+BLayerBorderColor.h */,
 				61BDEE0F1C3B489D00E9625B /* CALayer+BLayerBorderColor.m */,
+				C86D5CA21C421A7A008C69AD /* UITableViewCell+BGetCellHeight.h */,
+				C86D5CA31C421A7A008C69AD /* UITableViewCell+BGetCellHeight.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -690,6 +740,8 @@
 			children = (
 				C86D5C841C4104BC008C69AD /* BBlureEffectView.h */,
 				C86D5C851C4104BC008C69AD /* BBlureEffectView.m */,
+				C86D5CA51C421ACF008C69AD /* BBaseCell.h */,
+				C86D5CA61C421ACF008C69AD /* BBaseCell.m */,
 				618A53321C3A77B400CD6DF7 /* Preview.xib */,
 				618A53341C3A782C00CD6DF7 /* Preview.h */,
 				618A53351C3A782C00CD6DF7 /* Preview.m */,
@@ -709,6 +761,19 @@
 				61F6B4641C3FB303007AA94B /* BMainCardView.xib */,
 				C8C031191C3FF7C300DDF007 /* BMainCardCell.h */,
 				C8C0311A1C3FF7C300DDF007 /* BMainCardCell.m */,
+				C86D5C8C1C4205DC008C69AD /* BHomeWorkTCell.h */,
+				C86D5C8D1C4205DC008C69AD /* BHomeWorkTCell.m */,
+				C86D5C8E1C4205DC008C69AD /* BHomeWorkTCell.xib */,
+				C86D5C911C421229008C69AD /* BClassRoomPerformanceCell.h */,
+				C86D5C921C421229008C69AD /* BClassRoomPerformanceCell.m */,
+				C86D5C931C421229008C69AD /* BClassRoomPerformanceCell.xib */,
+				C86D5C981C4218A2008C69AD /* BBeforeClassCell.h */,
+				C86D5C991C4218A2008C69AD /* BBeforeClassCell.m */,
+				C86D5C9A1C4218A2008C69AD /* BBeforeClassCell.xib */,
+				C86D5C9D1C421979008C69AD /* BDateTimeCell.h */,
+				C86D5C9E1C421979008C69AD /* BDateTimeCell.m */,
+				C86D5C9F1C421979008C69AD /* BDateTimeCell.xib */,
+				C86D5C961C421852008C69AD /* bgimg.png */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -807,10 +872,13 @@
 				61CC09C41C17B66E0038349A /* BBaseViewController.xib in Resources */,
 				C8F10AE71C3AB19B00BFBBDC /* BForgetPasswordViewController.xib in Resources */,
 				C8F10AC91C3AA56700BFBBDC /* icon_delete_red_@3x.png in Resources */,
+				C86D5C9C1C4218A2008C69AD /* BBeforeClassCell.xib in Resources */,
 				C8F10ABE1C3AA56700BFBBDC /* icon_add_black_@2x.png in Resources */,
 				61BE29121C3DF32900107B08 /* BInPutCodeViewController.xib in Resources */,
 				C8EA7EAC1C36D21A00F0FB39 /* BCustomNaViewController.xib in Resources */,
+				C86D5C951C421229008C69AD /* BClassRoomPerformanceCell.xib in Resources */,
 				C8F10AC71C3AA56700BFBBDC /* icon_delete_black_@3x.png in Resources */,
+				C86D5C901C4205DC008C69AD /* BHomeWorkTCell.xib in Resources */,
 				C8F10AC21C3AA56700BFBBDC /* icon_back_black_@2x.png in Resources */,
 				C8965C181C3C082800EA0005 /* BModifyPasswordViewController.xib in Resources */,
 				C8ACE6721C3EA008005C2A02 /* BInfoConfirmViewController.xib in Resources */,
@@ -833,11 +901,13 @@
 				C8F10ACA1C3AA56700BFBBDC /* icon_lock_black_@2x.png in Resources */,
 				61BDEE251C3BA0B300E9625B /* BTestViewController.xib in Resources */,
 				61CC09C91C17BF1E0038349A /* BBaseTableViewController.xib in Resources */,
+				C86D5C971C421852008C69AD /* bgimg.png in Resources */,
 				C8F10ABF1C3AA56700BFBBDC /* icon_add_black_@3x.png in Resources */,
 				C8F10AD41C3AA56700BFBBDC /* icon_set_red_@2x.png in Resources */,
 				C8F10AD81C3AA56700BFBBDC /* icon_text_red_@2x.png in Resources */,
 				C8F10AC41C3AA56700BFBBDC /* icon_back_red_@2x.png in Resources */,
 				C8F10ADD1C3AA56700BFBBDC /* img_logo_B_@3x.png in Resources */,
+				C86D5CA11C421979008C69AD /* BDateTimeCell.xib in Resources */,
 				C8ACE67B1C3EA953005C2A02 /* img_scan_leftdown_@2x.png in Resources */,
 				C8F10ADC1C3AA56700BFBBDC /* img_logo_B_@2x.png in Resources */,
 				C8ACE67F1C3EA953005C2A02 /* img_scan_rightdown_@2x.png in Resources */,
@@ -908,18 +978,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C86D5CB31C4261F3008C69AD /* BBeforeClassModel.m in Sources */,
 				615C63981C16DC7500FD4082 /* BUntil.m in Sources */,
+				C86D5C8F1C4205DC008C69AD /* BHomeWorkTCell.m in Sources */,
 				61BDEE191C3B4C5400E9625B /* BActionFindPWD.m in Sources */,
+				C86D5CB01C4261DC008C69AD /* BClassRoomPerformanceModel.m in Sources */,
 				C8ACE6711C3EA008005C2A02 /* BInfoConfirmViewController.m in Sources */,
+				C86D5CA41C421A7A008C69AD /* UITableViewCell+BGetCellHeight.m in Sources */,
 				615C639B1C16DCD400FD4082 /* BHttpActionMgr.m in Sources */,
 				61BE29111C3DF32900107B08 /* BInPutCodeViewController.m in Sources */,
 				61CC09C31C17B66E0038349A /* BBaseViewController.m in Sources */,
 				C8F10AE61C3AB19B00BFBBDC /* BForgetPasswordViewController.m in Sources */,
+				C86D5CAD1C4261C7008C69AD /* BHomeworkModel.m in Sources */,
 				C8F10AE01C3AA8B500BFBBDC /* UIView+loadNib.m in Sources */,
+				C86D5C941C421229008C69AD /* BClassRoomPerformanceCell.m in Sources */,
+				C86D5CA71C421ACF008C69AD /* BBaseCell.m in Sources */,
 				61BDEE161C3B4BFD00E9625B /* BSignoutAction.m in Sources */,
 				61EEDC541C3CAEF3007CD6B9 /* BWXApiRequestHandler.m in Sources */,
 				61E6D3C61C39FA2700A55C34 /* UINavigationItem+BMargin.m in Sources */,
 				C86D5C7A1C40E4F8008C69AD /* BSettingViewController.m in Sources */,
+				C86D5C9B1C4218A2008C69AD /* BBeforeClassCell.m in Sources */,
 				61B28B831C165EA6009731FE /* ViewController.m in Sources */,
 				61F6B4631C3FB2F4007AA94B /* BMainCardView.m in Sources */,
 				C8EA7EBF1C37CAB000F0FB39 /* BMainViewController.m in Sources */,
@@ -933,6 +1011,7 @@
 				61244EB71C33B50000E2ED3A /* BActionLogin.m in Sources */,
 				C8EA7EAB1C36D21A00F0FB39 /* BCustomNaViewController.m in Sources */,
 				61BE292C1C3E51E400107B08 /* BStoreService.m in Sources */,
+				C86D5CA01C421979008C69AD /* BDateTimeCell.m in Sources */,
 				615C639E1C16DCE400FD4082 /* BResponeResult.m in Sources */,
 				C8C031201C40B19B00DDF007 /* BMessageViewController.m in Sources */,
 				C8ACE6851C3EAC8D005C2A02 /* BCourseCardView.m in Sources */,
@@ -951,6 +1030,7 @@
 				61BDEE2A1C3BAC6900E9625B /* BCustonNavBar.m in Sources */,
 				61BDEE131C3B4A9A00E9625B /* BSignupWithPhoneAction.m in Sources */,
 				C86D5C7F1C40E56F008C69AD /* BCourseCardCell.m in Sources */,
+				C86D5CAA1C425887008C69AD /* BMainCardModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

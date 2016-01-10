@@ -24,6 +24,9 @@
     }
     return self;
 }
+-(CGFloat)getCellHeight{
+    return 160.0;
+}
 - (void)initview{
     _cardView = [BMainCardView loadSelfWithNibOwner:self];
     [self.contentView addSubview:_cardView];

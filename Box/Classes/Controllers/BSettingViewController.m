@@ -53,7 +53,7 @@
     }else if (indexPath.row == count+3){
         return 75.0;
     }
-    return 90.0;
+    return  [[self tableView:tableView cellForRowAtIndexPath:indexPath] getCellHeight];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger count = _courseListData.count;

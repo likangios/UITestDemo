@@ -78,6 +78,19 @@ static const int ddLogLevel = DDLogLevelOff;
 #define  KCFBundleName [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"]
 #define  KCFBundleShortVersionString [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 
+
+
+
+#define color_green [UIColor colorWithRed:126/255.0 green:211/255.0 blue:33/255.0 alpha:1]
+
+#define color_red [UIColor colorWithRed:255/255.0 green:16/255.0 blue:73/255.0 alpha:1]
+
+#define color_gray [UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0 alpha:1]
+
+#define color_black [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1]
+
+
+
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
