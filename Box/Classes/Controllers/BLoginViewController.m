@@ -12,7 +12,8 @@
 #import "BMainViewController.h"
 #import "BWXApiRequestHandler.h"
 #import "BWXApiManager.h"
-
+#import "BActionLogin.h"
+#import "AppDelegate.h"
 @interface BLoginViewController ()<BWXApiManagerDelegate>
 @property (nonatomic,strong) IBOutlet UITextField *phoneTextField;
 @property (nonatomic,strong) IBOutlet UITextField *passwordTextField;
@@ -30,6 +31,10 @@
     [self addBackItem];
     self.barTitle = @"登录";
     [BWXApiManager sharedManager].delegate = self;
+    self.loginBtn.enabled = NO;
+    [self.phoneTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [self.passwordTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+
 }
 - (void)awakeFromNib{
     [super awakeFromNib];
@@ -43,7 +48,16 @@
 }
 - (IBAction)loginBtnClick:(id)sender{
     DDLogError(@"登录");
-    [self.navigationController pushViewController:[[BMainViewController alloc]initWithNib] animated:YES];
+    if ([self CheckPhoneAndPassword]) {
+    BActionLogin *action = [[BActionLogin alloc]initWithPhoneNumber:self.phoneTextField.text Password:self.passwordTextField.text];
+        [BUntil showHUDAddedTo:self.view];
+    [action DoActionWithSuccess:^(BActionBase *action, id responseObject, AFHTTPRequestOperation *operation) {
+        [BUntil hideAllHUDsForView:self.view];
+        [(AppDelegate *)[UIApplication sharedApplication].delegate OnSignInSuccessful:self.phoneTextField.text WithPassword:self.passwordTextField.text];
+    } Failure:^(BActionBase *action, NSError *error, AFHTTPRequestOperation *operation) {
+        [BUntil hideAllHUDsForView:self.view];
+    }];
+}
 }
 - (IBAction)wxloginBtnClick:(id)sender{
     DDLogError(@"微信登录");
@@ -62,8 +76,29 @@
     
     DDLogDebug(@"response -- %@",response.description);
 }
+#pragma mark UITextFieldDelegate 
 
+- (void)textFieldDidChange:(UITextField *)textField{
+    
+    if (textField == self.phoneTextField) {
+        if (textField.text.length>13) {
+        textField.text = [textField.text substringToIndex:13];
+        }
+    }
+}
+#pragma mark -- action 
+- (BOOL)CheckPhoneAndPassword{
+    if (![BUntil checkPhoneNumInput:self.phoneTextField.text]) {
+        [BUntil showErrorHUDViewAtView:self.view WithTitle:@"输入正确手机号"];
+        return NO;
+    }else if (self.passwordTextField.text.length){
+        [BUntil showErrorHUDViewAtView:self.view WithTitle:@"输入密码"];
+        return NO;
+    }
+    return YES;
+}
 #pragma mark 重写
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     if ([BWXApiManager isWXAppInstalled]) {

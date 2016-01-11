@@ -55,6 +55,7 @@
 		61EEDC561C3CB675007CD6B9 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 61EEDC551C3CB675007CD6B9 /* libc++.tbd */; };
 		61F6B4631C3FB2F4007AA94B /* BMainCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F6B4621C3FB2F4007AA94B /* BMainCardView.m */; };
 		61F6B4651C3FB303007AA94B /* BMainCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61F6B4641C3FB303007AA94B /* BMainCardView.xib */; };
+		61FE52941C43A50C006721F3 /* BCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 61FE52931C43A50C006721F3 /* BCustomButton.m */; };
 		A23AB41730D7622E432E8C30 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B244B8D7CF7FC87B279E78 /* libPods.a */; };
 		C86D5C7A1C40E4F8008C69AD /* BSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C86D5C781C40E4F8008C69AD /* BSettingViewController.m */; };
 		C86D5C7B1C40E4F8008C69AD /* BSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C86D5C791C40E4F8008C69AD /* BSettingViewController.xib */; };
@@ -223,6 +224,8 @@
 		61F6B4611C3FB2F4007AA94B /* BMainCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMainCardView.h; sourceTree = "<group>"; };
 		61F6B4621C3FB2F4007AA94B /* BMainCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMainCardView.m; sourceTree = "<group>"; };
 		61F6B4641C3FB303007AA94B /* BMainCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMainCardView.xib; sourceTree = "<group>"; };
+		61FE52921C43A50C006721F3 /* BCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCustomButton.h; sourceTree = "<group>"; };
+		61FE52931C43A50C006721F3 /* BCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCustomButton.m; sourceTree = "<group>"; };
 		A9C80705F4D1FA262F3B80E5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BA44CC5CA4F887541AA8DD8A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C5B244B8D7CF7FC87B279E78 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -740,6 +743,8 @@
 			children = (
 				C86D5C841C4104BC008C69AD /* BBlureEffectView.h */,
 				C86D5C851C4104BC008C69AD /* BBlureEffectView.m */,
+				61FE52921C43A50C006721F3 /* BCustomButton.h */,
+				61FE52931C43A50C006721F3 /* BCustomButton.m */,
 				C86D5CA51C421ACF008C69AD /* BBaseCell.h */,
 				C86D5CA61C421ACF008C69AD /* BBaseCell.m */,
 				618A53321C3A77B400CD6DF7 /* Preview.xib */,
@@ -991,6 +996,7 @@
 				C8F10AE61C3AB19B00BFBBDC /* BForgetPasswordViewController.m in Sources */,
 				C86D5CAD1C4261C7008C69AD /* BHomeworkModel.m in Sources */,
 				C8F10AE01C3AA8B500BFBBDC /* UIView+loadNib.m in Sources */,
+				61FE52941C43A50C006721F3 /* BCustomButton.m in Sources */,
 				C86D5C941C421229008C69AD /* BClassRoomPerformanceCell.m in Sources */,
 				C86D5CA71C421ACF008C69AD /* BBaseCell.m in Sources */,
 				61BDEE161C3B4BFD00E9625B /* BSignoutAction.m in Sources */,
@@ -1133,7 +1139,7 @@
 			baseConfigurationReference = BA44CC5CA4F887541AA8DD8A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kang Li (4Z9ZCQB5XG)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = Box/Box.pch;
@@ -1156,7 +1162,7 @@
 			baseConfigurationReference = A9C80705F4D1FA262F3B80E5 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Zhen Shao (R8AC5QZZYM)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = Box/Box.pch;

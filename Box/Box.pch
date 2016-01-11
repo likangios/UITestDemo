@@ -23,7 +23,10 @@
 #import <CocoaLumberjack/CocoaLumberjack.h>
 #import <MWPhotoBrowser.h>
 #import <MJRefresh/MJRefresh.h>
+
 #import "UIView+loadNib.h"
+#import "BCustomButton.h"
+
 //友盟统计
 #define UMtongji        @"5689310867e58eee0f002fb4"
 

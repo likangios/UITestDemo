@@ -9,5 +9,11 @@
 #import "BConfirmCodeAction.h"
 
 @implementation BConfirmCodeAction
-
+-(id) initWithPhoneNumber:(NSString *) phone_number{
+    self=[super initWithActionURLString:@""];
+    if (self) {
+        self.parameters  = [[NSMutableDictionary alloc]initWithObjectsAndKeys:phone_number,@"phone_number", nil];
+    }
+    return self;
+}
 @end

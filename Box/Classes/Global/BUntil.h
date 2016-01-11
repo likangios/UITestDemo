@@ -126,10 +126,12 @@
  *  显示loading
  *
  */
-- (void)showHUDAddedTo:(UIView *)view;
++ (void)showHUDAddedTo:(UIView *)view;
 /**
  *  隐藏loading
  *
  */
-- (void)hideAllHUDsForView:(UIView *)view;
++ (void)hideAllHUDsForView:(UIView *)view;
+
++ (BOOL)checkPhoneNumInput:(NSString *)phone;
 @end

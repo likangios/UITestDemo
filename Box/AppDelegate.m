@@ -14,6 +14,7 @@
 #import "BWelcomViewController.h"
 #import "BMainViewController.h"
 #import "ViewController.h"
+#import "BStoreService.h"
 
 
 
@@ -104,14 +105,13 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
 
 -(void) OnSignInSuccessful:(NSString * )acc WithPassword:(NSString *) password{
     DDLogError(@"登录成功");
+    [[BStoreService sharedStoreService] saveAccount:acc Password:password];
     BCustomNaViewController *nav = [[BCustomNaViewController alloc]initWithRootViewController:[[BMainViewController alloc]initWithNibName:@"BMainViewController" bundle:nil]];
-    nav.navigationBar.hidden = YES;
     self.window.rootViewController = nav;
 //    统计账号来源 本身
     [MobClick profileSignInWithPUID:acc];
     //微信登陆
 //   [MobClick profileSignInWithPUID:acc provider:@"WX"];
-
 }
 -(void) OnSignoutSuccessful{
     DDLogError(@"登出");

@@ -152,10 +152,20 @@ NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ012345
     [hud hide:YES afterDelay:2];
     return hud;
 }
-- (void)showHUDAddedTo:(UIView *)view{
++ (void)showHUDAddedTo:(UIView *)view{
     [MBProgressHUD showHUDAddedTo:view animated:YES];
 }
-- (void)hideAllHUDsForView:(UIView *)view{
++ (void)hideAllHUDsForView:(UIView *)view{
     [MBProgressHUD hideAllHUDsForView:view animated:YES];
+}
++ (BOOL)checkPhoneNumInput:(NSString *)phone{
+    
+    NSString * MOBILE = @"^[1][3,4,5,7,8][0-9]{9}$";
+    
+    NSPredicate *regexTestmobile = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", MOBILE];
+    
+    BOOL res = [regexTestmobile evaluateWithObject:phone];
+    
+    return res;
 }
 @end

@@ -12,4 +12,6 @@
  */
 @interface BConfirmCodeAction : BActionPostBase
 
+-(id) initWithPhoneNumber:(NSString *) phone_number;
+
 @end
