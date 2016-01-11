@@ -7,7 +7,7 @@
 //
 
 #import "BModifyPasswordViewController.h"
-
+#import "BChangePasswordAction.h"
 @interface BModifyPasswordViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *NewpasswordTextField;
@@ -27,7 +27,34 @@
 }
 
 - (IBAction)OkBtnClick:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    if ([self checkPassword]) {
+        BChangePasswordAction *action = [[BChangePasswordAction alloc]initWithOldPwd:self.OldpasswordTextField.text AndNewPwd:self.NewpasswordTextField.text];
+        [BUntil showHUDAddedTo:self.view];
+        [action DoActionWithSuccess:^(BActionBase *action, id responseObject, NSURLSessionDataTask *operation) {
+            BResponeResult *result = [BResponeResult createWithResponeObject:responseObject];
+            [BUntil hideAllHUDsForView:self.view];
+            if (result.get_error_code == kServerErrorCode_OK) {
+                [[BStoreService sharedStoreService] updtePassword:self.NewpasswordTextField.text];
+                [self.navigationController popViewControllerAnimated:YES];
+            }else{
+                [BUntil showErrorHUDViewAtView:self.view WithTitle:result.get_messge];
+            }
+        } Failure:^(BActionBase *action, NSError *error, NSURLSessionDataTask *operation) {
+            [BUntil hideAllHUDsForView:self.view];
+        }];
+    }
+}
+- (BOOL)checkPassword{
+    if (!self.OldpasswordTextField.text.length) {
+        [BUntil showErrorHUDViewAtView:self.view WithTitle:@"输入旧密码"];
+        return NO;
+    }
+    if (self.NewpasswordTextField.text.length<6) {
+        [BUntil showErrorHUDViewAtView:self.view WithTitle:@"输入至少6位新密码"];
+        return NO;
+    }
+    return YES;
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

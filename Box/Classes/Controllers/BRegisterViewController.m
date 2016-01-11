@@ -11,8 +11,11 @@
 #import "BSignupWithPhoneAction.h"
 #import "BConfirmCodeAction.h"
 
+#import "BUserBaseModel.h"
 
-#define COUNTDOWNTIME 60
+#import "AppDelegate.h"
+
+#define COUNTDOWNTIME 10
 
 
 @interface BRegisterViewController ()
@@ -41,7 +44,20 @@ int seconds;
 - (IBAction)registerBtnClick:(id)sender {
     DDLogError(@"注册");
     if ([self checkBeforRegister]) {
-        
+        BSignupWithPhoneAction *action = [[BSignupWithPhoneAction alloc]initWithPhoneNumber:self.phoneTextField.text ConfirmCode:self.confirmCodeTextField.text Password:self.passwordTextField.text];
+        [BUntil showHUDAddedTo:self.view];
+        [action DoActionWithSuccess:^(BActionBase *action, id responseObject, NSURLSessionDataTask *operation) {
+            [BUntil hideAllHUDsForView:self.view];
+            BResponeResult *result = [BResponeResult createWithResponeObject:responseObject];
+            if (result.get_error_code == kServerErrorCode_OK) {
+                [(AppDelegate *)[UIApplication sharedApplication].delegate OnSignInSuccessful:self.phoneTextField.text WithPassword:self.passwordTextField.text];
+
+            }else{
+                [BUntil showErrorHUDViewAtView:self.view WithTitle:result.get_messge];
+            }
+        } Failure:^(BActionBase *action, NSError *error, NSURLSessionDataTask *operation) {
+            [BUntil hideAllHUDsForView:self.view];
+        }];
     }
 }
 - (IBAction)zhijiLogin:(id)sender {
@@ -49,14 +65,21 @@ int seconds;
     [self.navigationController pushViewController:[[BLoginViewController alloc]initWithNib] animated:YES];
 }
 - (IBAction)getConfirmCodeBtnClick:(id)sender {
+    
     if ([BUntil checkPhoneNumInput:self.phoneTextField.text]) {
         [BUntil showHUDAddedTo:self.view];
-        BConfirmCodeAction *action = [[BConfirmCodeAction alloc]initWithPhoneNumber:self.phoneTextField.text];
-        [action DoActionWithSuccess:^(BActionBase *action, id responseObject, AFHTTPRequestOperation *operation) {
+        BConfirmCodeAction *action = [[BConfirmCodeAction alloc]initWithPhoneNumber:self.phoneTextField.text andTemplate_id:@"1"];
+        [action DoActionWithSuccess:^(BActionBase *action, id responseObject, NSURLSessionDataTask *operation) {
             [BUntil hideAllHUDsForView:self.view];
-            [self performTimer];
-        } Failure:^(BActionBase *action, NSError *error, AFHTTPRequestOperation *operation) {
+            BResponeResult *result = [BResponeResult createWithResponeObject:responseObject];
+            if (result.get_error_code == kServerErrorCode_OK) {
+                [self performTimer];
+            }else{
+                [BUntil showErrorHUDViewAtView:self.view WithTitle:result.get_messge];
+            }
+        } Failure:^(BActionBase *action, NSError *error, NSURLSessionDataTask *operation) {
             [BUntil hideAllHUDsForView:self.view];
+
         }];
     }else{
         [BUntil showErrorHUDViewAtView:self.view WithTitle:@"输入正确手机号"];
@@ -107,7 +130,7 @@ int seconds;
         [BUntil showErrorHUDViewAtView:self.view WithTitle:@"输入验证码"];
         return NO;
     }else if (self.passwordTextField.text.length<6){
-        [BUntil showErrorHUDViewAtView:self.view WithTitle:@"输入正确手机号"];
+        [BUntil showErrorHUDViewAtView:self.view WithTitle:@"输入至少6位密码"];
         return NO;
     }
     return YES;

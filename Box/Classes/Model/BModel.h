@@ -9,6 +9,10 @@
 #import "JSONModel.h"
 
 @interface BModel : JSONModel
+
+@property(nonatomic,strong) NSString *created_at;
+@property(nonatomic,strong) NSString *object_name;
+
 /**
  *  归档
  *

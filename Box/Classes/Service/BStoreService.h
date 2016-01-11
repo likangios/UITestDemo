@@ -11,4 +11,11 @@
 @interface BStoreService : NSObject
 + (instancetype)sharedStoreService;
 - (BOOL)saveAccount:(NSString *)account  Password:(NSString *)password;
+- (BOOL)updtePassword:(NSString *)pwd;
+- (NSString *)Account;
+- (NSString *)Password;
+- (void)removeAccount;
+- (void)removePassword;
+- (void)removeAccountAndPassword;
+
 @end

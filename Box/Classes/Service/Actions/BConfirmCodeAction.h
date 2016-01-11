@@ -11,7 +11,14 @@
  *  请求验证码
  */
 @interface BConfirmCodeAction : BActionPostBase
-
--(id) initWithPhoneNumber:(NSString *) phone_number;
+/**
+ *  请求短信验证码
+ *
+ *  @param phone_number 手机号
+ *  @param template_id  注册 1  找回密码 2
+ *
+ *  @return <#return value description#>
+ */
+-(id) initWithPhoneNumber:(NSString *) phone_number andTemplate_id:(NSString *)template_id;
 
 @end

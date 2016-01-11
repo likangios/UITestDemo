@@ -14,6 +14,9 @@
 #import "BWXApiManager.h"
 #import "BActionLogin.h"
 #import "AppDelegate.h"
+
+#import "BUserBaseModel.h"
+
 @interface BLoginViewController ()<BWXApiManagerDelegate>
 @property (nonatomic,strong) IBOutlet UITextField *phoneTextField;
 @property (nonatomic,strong) IBOutlet UITextField *passwordTextField;
@@ -31,10 +34,8 @@
     [self addBackItem];
     self.barTitle = @"登录";
     [BWXApiManager sharedManager].delegate = self;
-    self.loginBtn.enabled = NO;
     [self.phoneTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [self.passwordTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
-
 }
 - (void)awakeFromNib{
     [super awakeFromNib];
@@ -51,12 +52,24 @@
     if ([self CheckPhoneAndPassword]) {
     BActionLogin *action = [[BActionLogin alloc]initWithPhoneNumber:self.phoneTextField.text Password:self.passwordTextField.text];
         [BUntil showHUDAddedTo:self.view];
-    [action DoActionWithSuccess:^(BActionBase *action, id responseObject, AFHTTPRequestOperation *operation) {
-        [BUntil hideAllHUDsForView:self.view];
-        [(AppDelegate *)[UIApplication sharedApplication].delegate OnSignInSuccessful:self.phoneTextField.text WithPassword:self.passwordTextField.text];
-    } Failure:^(BActionBase *action, NSError *error, AFHTTPRequestOperation *operation) {
-        [BUntil hideAllHUDsForView:self.view];
-    }];
+        [action DoActionWithSuccess:^(BActionBase *action, id responseObject, NSURLSessionDataTask *operation) {
+            [BUntil hideAllHUDsForView:self.view];
+
+            BResponeResult *result=  [BResponeResult createWithResponeObject:responseObject];
+            if (result.get_error_code ==kServerErrorCode_OK) {
+                BUserBaseModel *model = [[BUserBaseModel alloc]initWithDictionary:[result get_first_object] error:nil];
+                [(AppDelegate *)[UIApplication sharedApplication].delegate OnSignInSuccessful:self.phoneTextField.text WithPassword:self.passwordTextField.text];
+            }else{
+                [BUntil showErrorHUDViewAtView:self.view WithTitle:result.get_messge];
+            }
+         
+        } Failure:^(BActionBase *action, NSError *error, NSURLSessionDataTask *operation) {
+           
+            [BUntil hideAllHUDsForView:self.view];
+            
+            
+        }];
+
 }
 }
 - (IBAction)wxloginBtnClick:(id)sender{
@@ -91,7 +104,7 @@
     if (![BUntil checkPhoneNumInput:self.phoneTextField.text]) {
         [BUntil showErrorHUDViewAtView:self.view WithTitle:@"输入正确手机号"];
         return NO;
-    }else if (self.passwordTextField.text.length){
+    }else if (!self.passwordTextField.text.length){
         [BUntil showErrorHUDViewAtView:self.view WithTitle:@"输入密码"];
         return NO;
     }

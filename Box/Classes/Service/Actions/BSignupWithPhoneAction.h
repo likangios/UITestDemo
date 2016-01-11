@@ -20,6 +20,6 @@
  *  @return
  */
 -(id) initWithPhoneNumber:(NSString *) phone_number
-              ConfirmCode:(NSString *) confirm_code;
+              ConfirmCode:(NSString *) confirm_code Password:(NSString *)pwd;
 
 @end

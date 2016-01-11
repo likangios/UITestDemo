@@ -12,17 +12,17 @@
 -(id) initWithPhoneNumber:(NSString *) phone_number
                  Password:(NSString *) password
               ConfirmCode:(NSString *) confirm_code{
-    self  = [super initWithActionURLString:@"users/findpwd/phone.json"];
+    self  = [super initWithActionURLString:@"/api/v1/user/parent/findPassword.json"];
     if (self) {
         self.parameters = [NSMutableDictionary dictionary];
         if (phone_number) {
             [self.parameters setObject:phone_number forKey:@"phone_num"];
         }
         if (password) {
-            [self.parameters setObject:password forKey:@"pwd"];
+            [self.parameters setObject:password forKey:@"password"];
         }
         if (confirm_code) {
-            [self.parameters setObject:confirm_code forKey:@"token"];
+            [self.parameters setObject:confirm_code forKey:@"sms_code"];
         }
     }
     self.isValid = YES;

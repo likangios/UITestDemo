@@ -27,6 +27,14 @@
     }
     return YES;
 }
+- (BOOL)updtePassword:(NSString *)pwd{
+    
+    UICKeyChainStore *keychain = [UICKeyChainStore keyChainStoreWithService:KCFBundleName];
+    if (![keychain setString:pwd forKey:(__bridge id)kSecValueData]) {
+        return NO;
+    }
+    return YES;
+}
 - (NSString *)Account{
     UICKeyChainStore *keychain = [UICKeyChainStore keyChainStoreWithService:KCFBundleName];
     return keychain[(__bridge id)kSecAttrAccount];
@@ -38,6 +46,10 @@
 - (void)removeAccount{
         UICKeyChainStore *keychain = [UICKeyChainStore keyChainStoreWithService:KCFBundleName];
     keychain[(__bridge id)kSecAttrAccount] = nil;
+}
+- (void)removePassword{
+    UICKeyChainStore *keychain = [UICKeyChainStore keyChainStoreWithService:KCFBundleName];
+    keychain[(__bridge id)kSecValueData] = nil;
 }
 - (void)removeAccountAndPassword{
     UICKeyChainStore *keychain = [UICKeyChainStore keyChainStoreWithService:KCFBundleName];

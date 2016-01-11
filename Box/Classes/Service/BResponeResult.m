@@ -9,9 +9,9 @@
 #import "BResponeResult.h"
 
 
-#define JSONRESKEY_ERRORCODE    @"error_code"
+#define JSONRESKEY_ERRORCODE    @"eCode"
 #define JSONRESKEY_DATA @"data"
-#define JSONRESKEY_MESSAGE  @"error_desc"
+#define JSONRESKEY_MESSAGE  @"eDesc"
 
 @implementation BResponeResult
 

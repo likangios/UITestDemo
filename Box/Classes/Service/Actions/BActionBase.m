@@ -41,14 +41,16 @@
 @implementation BActionGetBase
 
 -(BOOL)DoActionWithSuccess:(ActionSuccessBlock)success Failure:(ActionFailureBlock)failure{
-    AFHTTPRequestOperationManager *manager = [[BHttpActionMgr shared] getHttpRequestMgr];
+    AFHTTPSessionManager *manager = [[BHttpActionMgr shared] getHttpRequestMgr];
     if (!manager) {
         return NO;
     }
-    [manager GET:self.url parameters:self.parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        success(self,responseObject,operation);
-    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
-        failure(self,error,operation);
+    [manager GET:self.url parameters:self.parameters progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask *  task, id   responseObject) {
+        success(self,responseObject,task);
+    } failure:^(NSURLSessionDataTask *  task, NSError *  error) {
+        failure(self,error,task);
     }];
     return YES;
 }
@@ -59,15 +61,17 @@
 
 -(BOOL)DoActionWithSuccess:(ActionSuccessBlock)success Failure:(ActionFailureBlock)failure
 {
-    AFHTTPRequestOperationManager *manager = [[BHttpActionMgr shared] getHttpRequestMgr];
+    AFHTTPSessionManager *manager = [[BHttpActionMgr shared] getHttpRequestMgr];
     
     if (!manager) {
         return NO;
     }
-    [manager POST:self.url parameters:self.parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        success(self,responseObject,operation);
-    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
-        failure(self,error,operation);
+    [manager POST:self.url parameters:self.parameters progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        success(self,responseObject,task);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure(self,error,task);
     }];
 
     return YES;
@@ -78,18 +82,19 @@
 @implementation BActionDeleteBase
 
 -(BOOL)DoActionWithSuccess:(ActionSuccessBlock)success Failure:(ActionFailureBlock)failure{
-    AFHTTPRequestOperationManager *manager = [[BHttpActionMgr shared] getHttpRequestMgr];
+    AFHTTPSessionManager *manager = [[BHttpActionMgr shared] getHttpRequestMgr];
     
     if (!manager) {
         return NO;
     }
-    
-    [manager DELETE:self.url parameters:self.parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        success(self,responseObject,operation);
-    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
-        failure(self,error,operation);
+    [manager DELETE:self.url parameters:self.parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        success(self,responseObject,task);
+
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure(self,error,task);
+
     }];
-    
+
     return YES;
 }
 

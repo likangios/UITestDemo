@@ -21,13 +21,13 @@
  *
  *  @return
  */
-- (AFHTTPRequestOperationManager *)getHttpRequestMgr;
+- (AFHTTPSessionManager *)getHttpRequestMgr;
 /**
  *  获取https操作管理器
  *
  *  @return
  */
-- (AFHTTPRequestOperationManager *)getHttpsRequestMgr;
+- (AFHTTPSessionManager *)getHttpsRequestMgr;
 /**
  *  清除缓存
  */

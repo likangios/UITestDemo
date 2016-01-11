@@ -10,7 +10,7 @@
 
 @interface BHttpActionMgr ()
 
-@property (nonatomic,strong)AFHTTPRequestOperationManager *httpRequestMgr;
+@property (nonatomic,strong)AFHTTPSessionManager *httpRequestMgr;
 
 @end
 
@@ -25,7 +25,7 @@ static BHttpActionMgr *shareMgr = nil;
 #if defined(BOX_DEVELOPMENT)
     host = @"http://192.168.1.1";
 #elif defined(BOX_UAT)
-    host = @"";
+    host = @"http://uat.box.app.xuexuecan.com";
 #elif defined(BOX_PRODUCTION)
     host = @"";
 #endif
@@ -37,22 +37,22 @@ static BHttpActionMgr *shareMgr = nil;
     static dispatch_once_t predicate;
     
     dispatch_once(&predicate, ^{
-        shareMgr = [[self class]init];
+        shareMgr = [[BHttpActionMgr alloc]init];
         
         NSURL *base_url = [NSURL URLWithString:[shareMgr getBaseUrlString]];
-        AFHTTPRequestOperationManager *manager =[[AFHTTPRequestOperationManager alloc]initWithBaseURL:base_url];
+        AFHTTPSessionManager *manager =[[AFHTTPSessionManager alloc]initWithBaseURL:base_url];
         manager.responseSerializer = [AFJSONResponseSerializer serializer];
         shareMgr.httpRequestMgr = manager;
         
     });
     return shareMgr;
 }
-- (AFHTTPRequestOperationManager *)getHttpRequestMgr{
+- (AFHTTPSessionManager *)getHttpRequestMgr{
     shareMgr.httpRequestMgr.securityPolicy.allowInvalidCertificates = NO;
     return shareMgr.httpRequestMgr;
 }
 
-- (AFHTTPRequestOperationManager *)getHttpsRequestMgr{
+- (AFHTTPSessionManager *)getHttpsRequestMgr{
     shareMgr.httpRequestMgr.securityPolicy.allowInvalidCertificates = NO;
     return shareMgr.httpRequestMgr;
 }

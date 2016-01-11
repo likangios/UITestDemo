@@ -1,5 +1,5 @@
 platform :ios, '7.0'
-pod 'AFNetworking', '~> 2.4'
+pod 'AFNetworking', '~> 3.0.4'
 pod 'IHKeyboardAvoiding', '~> 2.5'
 pod 'MBProgressHUD', '~> 0.8'
 pod 'AFSoundManager'

@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "BHttpActionMgr.h"
+#import "BResponeResult.h"
+
 @class BActionBase;
 
-typedef void(^ActionSuccessBlock)(BActionBase *action,id responseObject,AFHTTPRequestOperation *operation);
-typedef void(^ActionFailureBlock)(BActionBase *action,NSError *error,AFHTTPRequestOperation *operation);
+typedef void(^ActionSuccessBlock)(BActionBase *action,id responseObject,NSURLSessionDataTask *operation);
+typedef void(^ActionFailureBlock)(BActionBase *action,NSError *error,NSURLSessionDataTask *operation);
 
 /**
  *  请求基类
