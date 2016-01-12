@@ -25,6 +25,22 @@
     [self addRedBackItem];
     [self initCell];
     self.barTitle = @"王宇飞";
+    __weak typeof(self) _weakself = self;
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [_weakself refreshData];
+    }];
+    [self.tableView.mj_header beginRefreshing];
+    
+    self.tableView.mj_footer = [MJRefreshFooter footerWithRefreshingBlock:^{
+        [_weakself upLoadData];
+    }];
+}
+#pragma mark -action-
+- (void)refreshData{
+    NSLog(@"刷新");
+}
+- (void)upLoadData{
+    NSLog(@"加载");
 }
 #pragma mark UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

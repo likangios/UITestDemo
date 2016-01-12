@@ -9,6 +9,7 @@
 #import "BBaseCell.h"
 @interface BCourseCardCell : BBaseCell
 
+@property (nonatomic,strong) BUUIDinfoModel *model;
 @property (nonatomic,strong) NSIndexPath *indexPath;
 
 @property (nonatomic,copy) void (^DeleteCourseBlocks)(NSIndexPath *indexPath);

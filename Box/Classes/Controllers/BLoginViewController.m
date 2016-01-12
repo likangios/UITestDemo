@@ -15,8 +15,6 @@
 #import "BActionLogin.h"
 #import "AppDelegate.h"
 
-#import "BUserBaseModel.h"
-
 @interface BLoginViewController ()<BWXApiManagerDelegate>
 @property (nonatomic,strong) IBOutlet UITextField *phoneTextField;
 @property (nonatomic,strong) IBOutlet UITextField *passwordTextField;
@@ -57,7 +55,7 @@
 
             BResponeResult *result=  [BResponeResult createWithResponeObject:responseObject];
             if (result.get_error_code ==kServerErrorCode_OK) {
-                BUserBaseModel *model = [[BUserBaseModel alloc]initWithDictionary:[result get_first_object] error:nil];
+//                BUserBaseModel *model = [[BUserBaseModel alloc]initWithDictionary:[result get_first_object] error:nil];
                 [(AppDelegate *)[UIApplication sharedApplication].delegate OnSignInSuccessful:self.phoneTextField.text WithPassword:self.passwordTextField.text];
             }else{
                 [BUntil showErrorHUDViewAtView:self.view WithTitle:result.get_messge];

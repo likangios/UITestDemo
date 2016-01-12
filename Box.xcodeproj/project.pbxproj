@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		61244EB71C33B50000E2ED3A /* BActionLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 61244EB61C33B50000E2ED3A /* BActionLogin.m */; };
+		6134CAF71C4484F700669097 /* BTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6134CAF61C4484F700669097 /* BTestVC.m */; };
+		6134CAF91C44852A00669097 /* BTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6134CAF81C44852900669097 /* BTestVC.xib */; };
+		6134CAFB1C448C5E00669097 /* bg_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 6134CAFA1C448C5E00669097 /* bg_blue.png */; };
+		6134CAFE1C44AFC200669097 /* BObjectList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6134CAFD1C44AFC200669097 /* BObjectList.m */; };
+		6134CB011C44C7A900669097 /* BObjectFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6134CB001C44C7A900669097 /* BObjectFactory.m */; };
+		6134CB041C44CFA700669097 /* BGetUUIDInfoAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 6134CB031C44CFA700669097 /* BGetUUIDInfoAction.m */; };
+		6134CB071C44D13E00669097 /* BUUIDinfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6134CB061C44D13E00669097 /* BUUIDinfoModel.m */; };
+		6134CB0A1C44DE3B00669097 /* BAddUIDIRelation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6134CB091C44DE3B00669097 /* BAddUIDIRelation.m */; };
+		6134CB0D1C44E51600669097 /* BGetUUIDRelationListAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 6134CB0C1C44E51600669097 /* BGetUUIDRelationListAction.m */; };
+		6134CB101C44F88B00669097 /* BDeleteUIDIRelationAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 6134CB0F1C44F88B00669097 /* BDeleteUIDIRelationAction.m */; };
 		615C63951C16DC5600FD4082 /* BModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 615C63941C16DC5600FD4082 /* BModel.m */; };
 		615C63981C16DC7500FD4082 /* BUntil.m in Sources */ = {isa = PBXBuildFile; fileRef = 615C63971C16DC7500FD4082 /* BUntil.m */; };
 		615C639B1C16DCD400FD4082 /* BHttpActionMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 615C639A1C16DCD400FD4082 /* BHttpActionMgr.m */; };
@@ -148,6 +158,24 @@
 /* Begin PBXFileReference section */
 		61244EB51C33B50000E2ED3A /* BActionLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BActionLogin.h; sourceTree = "<group>"; };
 		61244EB61C33B50000E2ED3A /* BActionLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BActionLogin.m; sourceTree = "<group>"; };
+		6134CAF51C4484F700669097 /* BTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTestVC.h; sourceTree = "<group>"; };
+		6134CAF61C4484F700669097 /* BTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTestVC.m; sourceTree = "<group>"; };
+		6134CAF81C44852900669097 /* BTestVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTestVC.xib; sourceTree = "<group>"; };
+		6134CAFA1C448C5E00669097 /* bg_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_blue.png; sourceTree = "<group>"; };
+		6134CAFC1C44AFC200669097 /* BObjectList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BObjectList.h; sourceTree = "<group>"; };
+		6134CAFD1C44AFC200669097 /* BObjectList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BObjectList.m; sourceTree = "<group>"; };
+		6134CAFF1C44C7A900669097 /* BObjectFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BObjectFactory.h; sourceTree = "<group>"; };
+		6134CB001C44C7A900669097 /* BObjectFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BObjectFactory.m; sourceTree = "<group>"; };
+		6134CB021C44CFA700669097 /* BGetUUIDInfoAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGetUUIDInfoAction.h; sourceTree = "<group>"; };
+		6134CB031C44CFA700669097 /* BGetUUIDInfoAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGetUUIDInfoAction.m; sourceTree = "<group>"; };
+		6134CB051C44D13E00669097 /* BUUIDinfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BUUIDinfoModel.h; sourceTree = "<group>"; };
+		6134CB061C44D13E00669097 /* BUUIDinfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BUUIDinfoModel.m; sourceTree = "<group>"; };
+		6134CB081C44DE3B00669097 /* BAddUIDIRelation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAddUIDIRelation.h; sourceTree = "<group>"; };
+		6134CB091C44DE3B00669097 /* BAddUIDIRelation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAddUIDIRelation.m; sourceTree = "<group>"; };
+		6134CB0B1C44E51600669097 /* BGetUUIDRelationListAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGetUUIDRelationListAction.h; sourceTree = "<group>"; };
+		6134CB0C1C44E51600669097 /* BGetUUIDRelationListAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGetUUIDRelationListAction.m; sourceTree = "<group>"; };
+		6134CB0E1C44F88B00669097 /* BDeleteUIDIRelationAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDeleteUIDIRelationAction.h; sourceTree = "<group>"; };
+		6134CB0F1C44F88B00669097 /* BDeleteUIDIRelationAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDeleteUIDIRelationAction.m; sourceTree = "<group>"; };
 		615C63931C16DC5600FD4082 /* BModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BModel.h; sourceTree = "<group>"; };
 		615C63941C16DC5600FD4082 /* BModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BModel.m; sourceTree = "<group>"; };
 		615C63961C16DC7500FD4082 /* BUntil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BUntil.h; sourceTree = "<group>"; };
@@ -369,6 +397,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6134CAF41C4484AB00669097 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				6134CAF51C4484F700669097 /* BTestVC.h */,
+				6134CAF61C4484F700669097 /* BTestVC.m */,
+				6134CAF81C44852900669097 /* BTestVC.xib */,
+				6134CAFA1C448C5E00669097 /* bg_blue.png */,
+			);
+			name = test;
+			sourceTree = "<group>";
+		};
 		615C638A1C16DBA800FD4082 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -386,6 +425,7 @@
 		615C638B1C16DBA800FD4082 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6134CAF41C4484AB00669097 /* test */,
 				C86D5C761C40E4E9008C69AD /* set */,
 				C8C0311C1C40B18400DDF007 /* message */,
 				61BE290D1C3DF31100107B08 /* inputCode */,
@@ -415,6 +455,10 @@
 			children = (
 				615C63931C16DC5600FD4082 /* BModel.h */,
 				615C63941C16DC5600FD4082 /* BModel.m */,
+				6134CAFC1C44AFC200669097 /* BObjectList.h */,
+				6134CAFD1C44AFC200669097 /* BObjectList.m */,
+				6134CAFF1C44C7A900669097 /* BObjectFactory.h */,
+				6134CB001C44C7A900669097 /* BObjectFactory.m */,
 				C86D5CA81C425887008C69AD /* BMainCardModel.h */,
 				C86D5CA91C425887008C69AD /* BMainCardModel.m */,
 				C86D5CAB1C4261C7008C69AD /* BHomeworkModel.h */,
@@ -423,6 +467,8 @@
 				C86D5CAF1C4261DC008C69AD /* BClassRoomPerformanceModel.m */,
 				C86D5CB11C4261F3008C69AD /* BBeforeClassModel.h */,
 				C86D5CB21C4261F3008C69AD /* BBeforeClassModel.m */,
+				6134CB051C44D13E00669097 /* BUUIDinfoModel.h */,
+				6134CB061C44D13E00669097 /* BUUIDinfoModel.m */,
 				C89DBC031C43EF6700921FA2 /* BUserBaseModel.h */,
 				C89DBC041C43EF6700921FA2 /* BUserBaseModel.m */,
 			);
@@ -465,12 +511,20 @@
 				61BDEE151C3B4BFD00E9625B /* BSignoutAction.m */,
 				61BDEE1A1C3B4CAD00E9625B /* BConfirmCodeAction.h */,
 				61BDEE1B1C3B4CAD00E9625B /* BConfirmCodeAction.m */,
+				6134CB021C44CFA700669097 /* BGetUUIDInfoAction.h */,
+				6134CB031C44CFA700669097 /* BGetUUIDInfoAction.m */,
+				6134CB081C44DE3B00669097 /* BAddUIDIRelation.h */,
+				6134CB091C44DE3B00669097 /* BAddUIDIRelation.m */,
+				6134CB0E1C44F88B00669097 /* BDeleteUIDIRelationAction.h */,
+				6134CB0F1C44F88B00669097 /* BDeleteUIDIRelationAction.m */,
 				61BDEE171C3B4C5400E9625B /* BActionFindPWD.h */,
 				61BDEE181C3B4C5400E9625B /* BActionFindPWD.m */,
 				61BDEE111C3B4A9A00E9625B /* BSignupWithPhoneAction.h */,
 				61BDEE121C3B4A9A00E9625B /* BSignupWithPhoneAction.m */,
 				C89DBC061C43F1D400921FA2 /* BChangePasswordAction.h */,
 				C89DBC071C43F1D400921FA2 /* BChangePasswordAction.m */,
+				6134CB0B1C44E51600669097 /* BGetUUIDRelationListAction.h */,
+				6134CB0C1C44E51600669097 /* BGetUUIDRelationListAction.m */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -849,7 +903,7 @@
 				TargetAttributes = {
 					61B28B771C165EA6009731FE = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = GDGZ2H4K6A;
+						DevelopmentTeam = E5EJ3R9VNE;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -900,6 +954,7 @@
 				C8ACE67E1C3EA953005C2A02 /* img_scan_leftup_@3x.png in Resources */,
 				618A53331C3A77B400CD6DF7 /* Preview.xib in Resources */,
 				C8F10ACB1C3AA56700BFBBDC /* icon_lock_black_@3x.png in Resources */,
+				6134CAF91C44852A00669097 /* BTestVC.xib in Resources */,
 				C8F10AC31C3AA56700BFBBDC /* icon_back_black_@3x.png in Resources */,
 				C86D5C7B1C40E4F8008C69AD /* BSettingViewController.xib in Resources */,
 				C8EA7EC21C37CB6300F0FB39 /* ViewController.xib in Resources */,
@@ -922,6 +977,7 @@
 				C8F10AD81C3AA56700BFBBDC /* icon_text_red_@2x.png in Resources */,
 				C8F10AC41C3AA56700BFBBDC /* icon_back_red_@2x.png in Resources */,
 				C8F10ADD1C3AA56700BFBBDC /* img_logo_B_@3x.png in Resources */,
+				6134CAFB1C448C5E00669097 /* bg_blue.png in Resources */,
 				C86D5CA11C421979008C69AD /* BDateTimeCell.xib in Resources */,
 				C8ACE67B1C3EA953005C2A02 /* img_scan_leftdown_@2x.png in Resources */,
 				C8F10ADC1C3AA56700BFBBDC /* img_logo_B_@2x.png in Resources */,
@@ -994,8 +1050,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C86D5CB31C4261F3008C69AD /* BBeforeClassModel.m in Sources */,
+				6134CB0A1C44DE3B00669097 /* BAddUIDIRelation.m in Sources */,
 				615C63981C16DC7500FD4082 /* BUntil.m in Sources */,
 				C86D5C8F1C4205DC008C69AD /* BHomeWorkTCell.m in Sources */,
+				6134CB0D1C44E51600669097 /* BGetUUIDRelationListAction.m in Sources */,
+				6134CB071C44D13E00669097 /* BUUIDinfoModel.m in Sources */,
 				61BDEE191C3B4C5400E9625B /* BActionFindPWD.m in Sources */,
 				C86D5CB01C4261DC008C69AD /* BClassRoomPerformanceModel.m in Sources */,
 				C8ACE6711C3EA008005C2A02 /* BInfoConfirmViewController.m in Sources */,
@@ -1007,11 +1066,15 @@
 				C89DBC081C43F1D400921FA2 /* BChangePasswordAction.m in Sources */,
 				C86D5CAD1C4261C7008C69AD /* BHomeworkModel.m in Sources */,
 				C8F10AE01C3AA8B500BFBBDC /* UIView+loadNib.m in Sources */,
+				6134CB011C44C7A900669097 /* BObjectFactory.m in Sources */,
+				6134CB101C44F88B00669097 /* BDeleteUIDIRelationAction.m in Sources */,
 				61FE52941C43A50C006721F3 /* BCustomButton.m in Sources */,
 				C86D5C941C421229008C69AD /* BClassRoomPerformanceCell.m in Sources */,
 				C86D5CA71C421ACF008C69AD /* BBaseCell.m in Sources */,
+				6134CB041C44CFA700669097 /* BGetUUIDInfoAction.m in Sources */,
 				61BDEE161C3B4BFD00E9625B /* BSignoutAction.m in Sources */,
 				61EEDC541C3CAEF3007CD6B9 /* BWXApiRequestHandler.m in Sources */,
+				6134CAF71C4484F700669097 /* BTestVC.m in Sources */,
 				61E6D3C61C39FA2700A55C34 /* UINavigationItem+BMargin.m in Sources */,
 				C89DBC051C43EF6700921FA2 /* BUserBaseModel.m in Sources */,
 				C86D5C7A1C40E4F8008C69AD /* BSettingViewController.m in Sources */,
@@ -1027,6 +1090,7 @@
 				61B28B801C165EA6009731FE /* AppDelegate.m in Sources */,
 				61EEDC511C3CA531007CD6B9 /* BWXApiManager.m in Sources */,
 				61244EB71C33B50000E2ED3A /* BActionLogin.m in Sources */,
+				6134CAFE1C44AFC200669097 /* BObjectList.m in Sources */,
 				C8EA7EAB1C36D21A00F0FB39 /* BCustomNaViewController.m in Sources */,
 				61BE292C1C3E51E400107B08 /* BStoreService.m in Sources */,
 				C86D5CA01C421979008C69AD /* BDateTimeCell.m in Sources */,
@@ -1150,7 +1214,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BA44CC5CA4F887541AA8DD8A /* Pods.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Kang Li (4Z9ZCQB5XG)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = Box/Box.pch;
@@ -1162,7 +1226,7 @@
 					"$(PROJECT_DIR)/Box/Resources/lib/GtSdkLib",
 					"$(PROJECT_DIR)/Box/Resources/lib/SDK1.6.2",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.XueXueCanBox.xuexuecanbox;
+				PRODUCT_BUNDLE_IDENTIFIER = com.XueXueCanBox.xuexuecan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1172,7 +1236,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A9C80705F4D1FA262F3B80E5 /* Pods.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Zhen Shao (R8AC5QZZYM)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = Box/Box.pch;
@@ -1184,7 +1248,7 @@
 					"$(PROJECT_DIR)/Box/Resources/lib/GtSdkLib",
 					"$(PROJECT_DIR)/Box/Resources/lib/SDK1.6.2",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.XueXueCanBox.xuexuecanbox;
+				PRODUCT_BUNDLE_IDENTIFIER = com.XueXueCanBox.xuexuecan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

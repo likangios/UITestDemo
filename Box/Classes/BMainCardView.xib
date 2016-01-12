@@ -127,13 +127,13 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="age" destination="5Mw-YX-Jdz" id="Kn2-qr-6w2"/>
-                <outlet property="classs" destination="AQ0-dt-d9C" id="RyP-nF-kWB"/>
-                <outlet property="contentView" destination="yki-td-q5D" id="Dhz-SI-1TF"/>
-                <outlet property="name" destination="fHZ-K4-0Fi" id="NOg-1h-mqt"/>
-                <outlet property="number" destination="o7Q-dS-HWx" id="J02-fr-ROc"/>
-                <outlet property="sch" destination="dgq-hF-Gxw" id="KLl-2W-LWW"/>
-                <outlet property="time" destination="ZsS-Wj-fRp" id="hMX-ds-SjD"/>
+                <outlet property="admission_time" destination="ZsS-Wj-fRp" id="hDv-T3-vxV"/>
+                <outlet property="class_name" destination="AQ0-dt-d9C" id="yOY-vD-ZUj"/>
+                <outlet property="contentView" destination="yki-td-q5D" id="QOE-B7-4l5"/>
+                <outlet property="organization_name" destination="dgq-hF-Gxw" id="OYY-YB-de4"/>
+                <outlet property="student_age" destination="5Mw-YX-Jdz" id="RME-98-YyV"/>
+                <outlet property="student_name" destination="fHZ-K4-0Fi" id="iNh-7E-8S0"/>
+                <outlet property="unRead_number" destination="o7Q-dS-HWx" id="V6u-sq-d2L"/>
             </connections>
             <point key="canvasLocation" x="322" y="197.5"/>
         </view>

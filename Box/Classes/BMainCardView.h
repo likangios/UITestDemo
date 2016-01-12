@@ -9,11 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface BMainCardView : UIView
-@property (nonatomic,strong) IBOutlet UIView *contentView;
-@property (nonatomic,strong) IBOutlet UILabel *name;
-@property (nonatomic,strong) IBOutlet UILabel *age;
-@property (nonatomic,strong) IBOutlet UILabel *sch;
-@property (nonatomic,strong) IBOutlet UILabel *classs;
-@property (nonatomic,strong) IBOutlet UILabel *time;
-@property (nonatomic,strong) IBOutlet UILabel *number;
+
+@property   (nonatomic,strong) BUUIDinfoModel *model;
+
 @end

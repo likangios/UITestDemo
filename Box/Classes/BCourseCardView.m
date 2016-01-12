@@ -8,6 +8,8 @@
 
 #import "BCourseCardView.h"
 
+
+
 @implementation BCourseCardView
 
 /*
@@ -17,7 +19,5 @@
     // Drawing code
 }
 */
--(IBAction)DeleteCourse:(id)sender{
-    
-}
+
 @end

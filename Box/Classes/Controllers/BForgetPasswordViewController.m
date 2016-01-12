@@ -11,6 +11,9 @@
 #import "BActionFindPWD.h"
 #import "AppDelegate.h"
 @interface BForgetPasswordViewController ()
+{
+    int seconds;
+}
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
 @property (weak, nonatomic) IBOutlet UITextField *confirmCodeTextField;
 @property (weak, nonatomic) IBOutlet UIButton *getConfirmCodeBtn;
@@ -69,9 +72,6 @@
         [BUntil showErrorHUDViewAtView:self.view WithTitle:@"输入正确手机号"];
     }
 }
-#define COUNTDOWNTIME 10
-
-int seconds;
 /**
  *    countdown timer
  *

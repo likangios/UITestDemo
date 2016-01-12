@@ -27,6 +27,10 @@
 #import "UIView+loadNib.h"
 #import "BCustomButton.h"
 #import "BStoreService.h"
+#import "BObjectFactory.h"
+
+#define COUNTDOWNTIME 10
+
 //友盟统计
 #define UMtongji        @"5689310867e58eee0f002fb4"
 

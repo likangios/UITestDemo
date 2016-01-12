@@ -10,5 +10,5 @@
 
 @interface BMainCardCell : BBaseCell
 
-
+@property (nonatomic,strong) BUUIDinfoModel *model;
 @end

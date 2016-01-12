@@ -10,40 +10,38 @@
 #import "BModifyPasswordViewController.h"
 #import "BCourseCardCell.h"
 #import "AppDelegate.h"
+//
+#import "BDeleteUIDIRelationAction.h"
 
 @interface BSettingViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,strong) IBOutlet UITableView *tableView;
 
-@property (nonatomic,strong) NSMutableArray *courseListData;
-
 @end
 
 @implementation BSettingViewController
 
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    self  =  [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        _tableviewDataList  = [[BObjectList alloc]init];
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addCustomNavBar];
     [self addRedBackItem];
     self.barTitle = @"设置";
-    _courseListData = [NSMutableArray array];
-    [self initData];
-    // Do any additional setup after loading the view from its nib.
-}
-- (void)initData{
-    for (int i = 0; i<10; i++) {
-        NSString *str = [NSString stringWithFormat:@"%d",arc4random()%1000];
-        [_courseListData addObject:str];
-    }
-    [_tableView reloadData];
+
 }
 #pragma mark UITableViewDelegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return _courseListData.count+4;
+    return _tableviewDataList.GetCount+4;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSInteger count = _courseListData.count;
+    NSInteger count = _tableviewDataList.GetCount;
     if (indexPath.row == 0) {
         return 25.0;
     }else if (indexPath.row == count+1){
@@ -56,7 +54,7 @@
     return  [[self tableView:tableView cellForRowAtIndexPath:indexPath] getCellHeight];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSInteger count = _courseListData.count;
+    NSInteger count = _tableviewDataList.GetCount;
     
     if (indexPath.row == 0) {
     
@@ -116,6 +114,7 @@
             [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             button.layer.cornerRadius=  25.0;
             button.layer.masksToBounds = YES;
+            button.showsTouchWhenHighlighted = YES;
             [button setTitle:@"退出登录" forState:UIControlStateNormal];
             
             button.titleLabel.font = [UIFont systemFontOfSize:18];
@@ -134,10 +133,14 @@
         if (cell == nil) {
             cell = [BCourseCardCell loadSelfWithNibOwner:self];
         }
-        id mode = _courseListData[indexPath.row -1];
+        BUUIDinfoModel * model = (BUUIDinfoModel *)[_tableviewDataList GetIndexAt:indexPath.row-1 WithIsDESC:YES];
+        cell.model = model;
+        __weak typeof(self) _weakself = self;
         
         [cell setDeleteCourseBlocks:^(NSIndexPath *indexPaht) {
             
+            BUUIDinfoModel * model = (BUUIDinfoModel *)[_tableviewDataList GetIndexAt:indexPath.row-1 WithIsDESC:YES];
+            [_weakself DeleteCourseWithUUID:model.uuid];
             NSLog(@"delete index %ld",(long)indexPath.row);
         }];
         return cell;
@@ -160,7 +163,22 @@
 }
 #pragma mark ---
 #pragma mark action
-
+- (void)DeleteCourseWithUUID:(NSString *)uuid{
+    BDeleteUIDIRelationAction *action = [[BDeleteUIDIRelationAction alloc]initWithUUID:uuid];
+    [_tableviewDataList Remove:nil];
+    [BUntil showHUDAddedTo:self.view];
+    [action DoActionWithSuccess:^(BActionBase *action, id responseObject, NSURLSessionDataTask *operation) {
+        [BUntil hideAllHUDsForView:self.view];
+        BResponeResult *result = [BResponeResult createWithResponeObject:responseObject];
+        if (result.get_error_code == kServerErrorCode_OK) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"update" object:nil];
+        }else{
+            [BUntil showErrorHUDViewAtView:self.view WithTitle:result.get_messge];
+        }
+    } Failure:^(BActionBase *action, NSError *error, NSURLSessionDataTask *operation) {
+        [BUntil hideAllHUDsForView:self.view];
+    }];
+}
 - (void)modifyPassWordAction{
     DDLogDebug(@"修改密码");
     [self.navigationController pushViewController:[[BModifyPasswordViewController alloc]initWithNib] animated:YES];

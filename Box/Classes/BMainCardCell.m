@@ -34,6 +34,9 @@
         make.left.right.top.bottom.mas_equalTo(0);
     }];
 }
+-(void)setModel:(BUUIDinfoModel *)model{
+    _model = model;
+}
 - (void)awakeFromNib {
     // Initialization code
 }

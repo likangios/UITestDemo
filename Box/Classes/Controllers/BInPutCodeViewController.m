@@ -8,6 +8,7 @@
 
 #import "BInPutCodeViewController.h"
 #import "BInfoConfirmViewController.h"
+#import "BGetUUIDInfoAction.h"
 @interface BInPutCodeViewController ()
 
 @property (nonatomic,strong) IBOutlet UITextField *courseCodeTextField;
@@ -22,12 +23,30 @@
     [super viewDidLoad];
     [self addCustomNavBar];
     [self addRedBackItem];
-    self.barTitle = @"输入课程码";
-    // Do any additional setup after loading the view from its nib.
+//    self.barTitle = @"输入课程码";
 }
 - (IBAction)confirmCourseCodeClick:(id)sender{
     
-    [self.navigationController pushViewController:[[BInfoConfirmViewController alloc]initWithNib] animated:YES];
+    if (self.courseCodeTextField.text.length) {
+        BGetUUIDInfoAction *action = [[BGetUUIDInfoAction alloc]initWithUUID:self.courseCodeTextField.text];
+        [BUntil showHUDAddedTo:self.view];
+        [action DoActionWithSuccess:^(BActionBase *action, id responseObject, NSURLSessionDataTask *operation) {
+            [BUntil hideAllHUDsForView:self.view];
+            BResponeResult *result=  [BResponeResult createWithResponeObject:responseObject];
+            if (result.get_error_code == kServerErrorCode_OK) {
+                BUUIDinfoModel *model = [[BObjectFactory shared] createWithClassType:@"BUUIDinfoModel" JsonDirectory:[result get_first_object]];
+                BInfoConfirmViewController *info = [[BInfoConfirmViewController alloc]initWithNib   ];
+                info.model = model;
+                [self.navigationController pushViewController:info animated:YES];
+            }else{
+                [BUntil showErrorHUDViewAtView:self.view WithTitle:result.get_messge];
+            }
+        } Failure:^(BActionBase *action, NSError *error, NSURLSessionDataTask *operation) {
+            [BUntil hideAllHUDsForView:self.view];
+        }];
+    }else{
+        [BUntil showErrorHUDViewAtView:self.view WithTitle:@"输入正确的课程码"];
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

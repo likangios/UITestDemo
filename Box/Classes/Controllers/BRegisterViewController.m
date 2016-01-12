@@ -10,15 +10,12 @@
 #import "BLoginViewController.h"
 #import "BSignupWithPhoneAction.h"
 #import "BConfirmCodeAction.h"
-
-#import "BUserBaseModel.h"
-
 #import "AppDelegate.h"
 
-#define COUNTDOWNTIME 10
-
-
 @interface BRegisterViewController ()
+{
+    int seconds;
+}
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
 @property (weak, nonatomic) IBOutlet UITextField *confirmCodeTextField;
 @property (weak, nonatomic) IBOutlet UIButton *getConfirmCodeBtn;
@@ -28,14 +25,13 @@
 @end
 
 @implementation BRegisterViewController
-int seconds;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addCustomNavBar];
     [self addBackItem];
     self.barTitle = @"新用户";
-    // Do any additional setup after loading the view from its nib.
 }
 #pragma mark private 
 
@@ -62,7 +58,7 @@ int seconds;
 }
 - (IBAction)zhijiLogin:(id)sender {
     
-    [self.navigationController pushViewController:[[BLoginViewController alloc]initWithNib] animated:YES];
+//    [self.navigationController pushViewController:[[BLoginViewController alloc]initWithNib] animated:YES];
 }
 - (IBAction)getConfirmCodeBtnClick:(id)sender {
     

@@ -11,10 +11,11 @@
 @implementation BCustomButton
 
 -(void)setEnabled:(BOOL)enabled{
+    [super setEnabled:enabled];
     if (enabled) {
-        self.alpha = 1;
+        self.backgroundColor = [self.backgroundColor colorWithAlphaComponent:1.0];
     }else{
-        self.alpha = 0.6;
+        self.backgroundColor = [self.backgroundColor colorWithAlphaComponent:0.5];
     }
 }
 @end

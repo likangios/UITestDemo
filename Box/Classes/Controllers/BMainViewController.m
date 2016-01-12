@@ -19,8 +19,13 @@
 //view
 #import "BMainCardCell.h"
 #import "BQRAlertView.h"
+//action
+#import "BGetUUIDRelationListAction.h"
 
 @interface BMainViewController ()<UITableViewDataSource,UITableViewDelegate>
+{
+    BObjectList *_tableDataList;
+}
 @property (nonatomic,strong) IBOutlet UITableView  *TableView;
 @end
 
@@ -30,17 +35,44 @@
     [super viewDidLoad];
     [self addCustomNavBar];
     [self initCustomBar];
-}
 
-- (IBAction)tuichu:(id)sender {
-[(AppDelegate *)[UIApplication sharedApplication].delegate  OnSignoutSuccessful];
+}
+- (void)refreshData{
+    
+    BGetUUIDRelationListAction *action = [[BGetUUIDRelationListAction alloc]init];
+    [BUntil showHUDAddedTo:self.view];
+    [action DoActionWithSuccess:^(BActionBase *action, id responseObject, NSURLSessionDataTask *operation) {
+        [BUntil hideAllHUDsForView:self.view];
+        BResponeResult *result = [BResponeResult createWithResponeObject:responseObject];
+        if (result.get_error_code == kServerErrorCode_OK) {
+            NSArray *array = [result try_get_data_with_array];
+            NSLog(@"array ----- %@",array);
+
+            _tableDataList = [[BObjectList alloc]init];
+            [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                BUUIDinfoModel *model = [[BUUIDinfoModel alloc]initWithDictionary:obj error:nil];
+                [_tableDataList Add:model];
+            }];
+            [self.TableView reloadData];
+            [self.TableView.mj_header endRefreshing];
+        }else{
+            [self.TableView.mj_header endRefreshing];
+            [BUntil showErrorHUDViewAtView:self.view WithTitle:result.get_messge];
+        }
+    } Failure:^(BActionBase *action, NSError *error, NSURLSessionDataTask *operation) {
+        [self.TableView.mj_header endRefreshing];
+        [BUntil hideAllHUDsForView:self.view];
+    }];
+    
+    NSLog(@"刷新");
+    
 }
 #pragma mark UITableViewDelegate
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return [self tableView:tableView cellForRowAtIndexPath:indexPath].getCellHeight;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return _tableDataList.GetCount;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 10;
@@ -57,9 +89,12 @@
         cell = [[BMainCardCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"BMainCardCell"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
+    cell.model = (BUUIDinfoModel *)[_tableDataList GetIndexAt:indexPath.row WithIsDESC:YES];
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    BUUIDinfoModel *model = (BUUIDinfoModel *)[_tableDataList GetIndexAt:indexPath.row WithIsDESC:YES];
+    
     [self.navigationController pushViewController:[[BMessageViewController alloc]initWithNib] animated:YES];
 }
 #pragma mark private 
@@ -68,7 +103,10 @@
     self.barImage = [UIImage imageNamed:@"img_logo_"];
     [self addRightViewWithImage:[UIImage imageNamed:@"icon_set_black_"] hightImage:[UIImage imageNamed:@"icon_set_red_"]];
     [self addLeftViewWithImage:[UIImage imageNamed:@"icon_add_black_"] hightImage:[UIImage imageNamed:@"icon_add_red_"]];
-    _TableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(reloadNewData)];
+    __weak typeof(self)  _weakself = self;
+    self.TableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [_weakself refreshData];
+    }];
     [_TableView.mj_header beginRefreshing];
 }
 #pragma mark action
@@ -104,7 +142,10 @@
     }];
 }
 -(void)rightAction:(id)sender{
-    [self.navigationController pushViewController:[[BSettingViewController alloc]initWithNib] animated:YES];
+    
+    BSettingViewController *set = [[BSettingViewController alloc]initWithNib];
+    
+    [self.navigationController pushViewController:set animated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

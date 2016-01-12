@@ -7,8 +7,19 @@
 //
 
 #import "BInfoConfirmViewController.h"
-
+#import "BAddUIDIRelation.h"
+#import "BGetUUIDInfoAction.h"
 @interface BInfoConfirmViewController ()
+
+@property (nonatomic,strong) IBOutlet UILabel *studentName;
+
+@property (nonatomic,strong) IBOutlet UILabel *studentAge;
+
+@property (nonatomic,strong) IBOutlet UILabel *studentSchool;
+
+@property (nonatomic,strong) IBOutlet UILabel *studentClass;
+
+@property (nonatomic,strong) IBOutlet UILabel *studentLearnTime;
 
 @property (nonatomic,strong) IBOutlet UIButton *confirmBtn;
 
@@ -20,12 +31,53 @@
     [super viewDidLoad];
     [self addCustomNavBar];
     [self addBackItem];
+    [self updataUI];
     self.barTitle = @"信息确认";
-    // Do any additional setup after loading the view from its nib.
+    [self getInfoWithUUID:self.uuid];
+}
+-(void)updataUI{
+    if (self.model) {
+    self.studentName.text = self.model.student_name;
+    self.studentAge.text = [NSString stringWithFormat:@"年龄：%d岁",self.model.student_age.intValue];
+    self.studentSchool.text = self.model.organization_name;
+    self.studentClass.text = [NSString stringWithFormat:@"班级：%@",self.model.class_name];
+        self.studentLearnTime.text = [NSString stringWithFormat:@"入学时间：%@",self.model.admission_time];
+    }
+}
+- (void)getInfoWithUUID:(NSString *)uuid{
+    if (!uuid.length)
+    return;
+    BGetUUIDInfoAction *action = [[BGetUUIDInfoAction alloc]initWithUUID:uuid];
+    [BUntil showHUDAddedTo:self.view];
+    [action DoActionWithSuccess:^(BActionBase *action, id responseObject, NSURLSessionDataTask *operation) {
+        [BUntil hideAllHUDsForView:self.view];
+        BResponeResult *result=  [BResponeResult createWithResponeObject:responseObject];
+        if (result.get_error_code == kServerErrorCode_OK) {
+            self.model = [[BObjectFactory shared] createWithClassType:@"BUUIDinfoModel" JsonDirectory:[result get_first_object]];
+            [self updataUI];
+        }else{
+            [BUntil showErrorHUDViewAtView:self.view WithTitle:result.get_messge];
+        }
+    } Failure:^(BActionBase *action, NSError *error, NSURLSessionDataTask *operation) {
+        [BUntil hideAllHUDsForView:self.view];
+    }];
 }
 -(IBAction)confirmClick:(id)sender{
     
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    BAddUIDIRelation *action = [[BAddUIDIRelation alloc]initWithUUID:self.model.uuid];
+    [BUntil showHUDAddedTo:self.view];
+    [action DoActionWithSuccess:^(BActionBase *action, id responseObject, NSURLSessionDataTask *operation) {
+        BResponeResult *result = [BResponeResult createWithResponeObject:responseObject];
+        [BUntil hideAllHUDsForView:self.view];
+        if (result.get_error_code == kServerErrorCode_OK) {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+        }else{
+            [BUntil showErrorHUDViewAtView:self.view WithTitle:result.get_messge];
+        }
+    } Failure:^(BActionBase *action, NSError *error, NSURLSessionDataTask *operation) {
+        [BUntil hideAllHUDsForView:self.view];
+    }];
+
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

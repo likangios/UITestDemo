@@ -17,6 +17,14 @@
 
 @implementation BCourseCardCell
 
+- (void)setModel:(BUUIDinfoModel *)model{
+    _model = model;
+    if (_model) {
+    _courseCardView.studentSchool.text = _model.organization_name;
+    _courseCardView.studentName.text = _model.student_name;
+        _courseCardView.studentClass.text = [NSString stringWithFormat:@"班级：%@",_model.class_name];
+    }
+}
 - (void)awakeFromNib {
     [super awakeFromNib];
     _courseCardView = [BCourseCardView loadSelfWithNibOwner:self];

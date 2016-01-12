@@ -12,15 +12,21 @@
 #import "BQRCodeViewController.h"
 #import "BTestViewController.h"
 #import "BInPutCodeViewController.h"
+#import "BTestVC.h"
 @interface BWelcomViewController ()
 @property (nonatomic,strong) IBOutlet UIButton *loginBtn;
 @property (nonatomic,strong) IBOutlet UIButton *registerBtn;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrllowWidth;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageviewWidth;
+@property (nonatomic,strong) IBOutlet UIPageControl *pageControl;
 @end
 
 @implementation BWelcomViewController
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    _scrllowWidth.constant = ScreenWidth*3;
+    _imageviewWidth.constant = ScreenWidth;
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
 }
 - (void)viewWillDisappear:(BOOL)animated{
@@ -29,17 +35,18 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.view.layer.cornerRadius
-    // Do any additional setup after loading the view from its nib.
 }
 - (void)awakeFromNib{
     [super awakeFromNib];
 }
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+//    
+//    [self.navigationController pushViewController:[[BTestVC alloc]initWithNib] animated:YES];
+//}
 #pragma mark --action--
 - (IBAction)RegisterBtnClick:(id)sender {
     DDLogError(@"注册");
     [self.navigationController pushViewController:[[BRegisterViewController alloc]initWithNib] animated:YES];
-
 }
 - (IBAction)LoginBtnClick:(id)sender {
     DDLogError(@"登录");
@@ -48,6 +55,11 @@
 #pragma mark private
 
 
+#pragma mark UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    NSLog(@"scrol.content %f",scrollView.contentOffset.x);
+    _pageControl.currentPage = scrollView.contentOffset.x/ScreenWidth;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

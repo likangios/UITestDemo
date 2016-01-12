@@ -10,7 +10,17 @@
 
 @interface BModel : JSONModel
 
+/**
+ *  对象的唯一id
+ */
+@property (nonatomic,strong)    NSNumber    *guid;
+/**
+ *  创建时间
+ */
 @property(nonatomic,strong) NSString *created_at;
+/**
+ *  对象类型
+ */
 @property(nonatomic,strong) NSString *object_name;
 
 /**

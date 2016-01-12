@@ -10,4 +10,5 @@
 
 @interface BSettingViewController : BBaseViewController
 
+@property (nonatomic,strong) BObjectList *tableviewDataList;
 @end
