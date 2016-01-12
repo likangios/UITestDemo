@@ -76,6 +76,11 @@ static const int ddLogLevel = DDLogLevelOff;
 
 #endif
 
+// NOTIFICATION
+
+#define KDELETEUUIDNOTIFICATION @"KDELETEUUIDNOTIFICATION"
+#define KADDUUIDNOTIFICATION @"KADDUUIDNOTIFICATION"
+
 
 #define CustomNavigationBarHeight 60
 #define ScreenBounds [UIScreen mainScreen].bounds

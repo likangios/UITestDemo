@@ -10,5 +10,5 @@
 
 @interface BSettingViewController : BBaseViewController
 
-@property (nonatomic,strong) BObjectList *tableviewDataList;
+@property (nonatomic,strong) NSMutableArray *tableviewDataList;
 @end

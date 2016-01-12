@@ -24,7 +24,7 @@
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self  =  [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        _tableviewDataList  = [[BObjectList alloc]init];
+        _tableviewDataList  = [NSMutableArray array];
     }
     return self;
 }
@@ -38,10 +38,10 @@
 #pragma mark UITableViewDelegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return _tableviewDataList.GetCount+4;
+    return _tableviewDataList.count+4;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSInteger count = _tableviewDataList.GetCount;
+    NSInteger count = _tableviewDataList.count;
     if (indexPath.row == 0) {
         return 25.0;
     }else if (indexPath.row == count+1){
@@ -54,7 +54,7 @@
     return  [[self tableView:tableView cellForRowAtIndexPath:indexPath] getCellHeight];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSInteger count = _tableviewDataList.GetCount;
+    NSInteger count = _tableviewDataList.count;
     
     if (indexPath.row == 0) {
     
@@ -133,14 +133,14 @@
         if (cell == nil) {
             cell = [BCourseCardCell loadSelfWithNibOwner:self];
         }
-        BUUIDinfoModel * model = (BUUIDinfoModel *)[_tableviewDataList GetIndexAt:indexPath.row-1 WithIsDESC:YES];
+        BUUIDinfoModel * model = (BUUIDinfoModel *)_tableviewDataList[indexPath.row-1];
         cell.model = model;
         __weak typeof(self) _weakself = self;
         
         [cell setDeleteCourseBlocks:^(NSIndexPath *indexPaht) {
             
-            BUUIDinfoModel * model = (BUUIDinfoModel *)[_tableviewDataList GetIndexAt:indexPath.row-1 WithIsDESC:YES];
-            [_weakself DeleteCourseWithUUID:model.uuid];
+            BUUIDinfoModel * model = (BUUIDinfoModel *)_tableviewDataList[indexPath.row-1];
+            [_weakself DeleteCourseWithUUID:model];
             NSLog(@"delete index %ld",(long)indexPath.row);
         }];
         return cell;
@@ -163,15 +163,16 @@
 }
 #pragma mark ---
 #pragma mark action
-- (void)DeleteCourseWithUUID:(NSString *)uuid{
-    BDeleteUIDIRelationAction *action = [[BDeleteUIDIRelationAction alloc]initWithUUID:uuid];
-    [_tableviewDataList Remove:nil];
+- (void)DeleteCourseWithUUID:(BUUIDinfoModel *)model{
+    BDeleteUIDIRelationAction *action = [[BDeleteUIDIRelationAction alloc]initWithUUID:model.uuid];
     [BUntil showHUDAddedTo:self.view];
     [action DoActionWithSuccess:^(BActionBase *action, id responseObject, NSURLSessionDataTask *operation) {
         [BUntil hideAllHUDsForView:self.view];
         BResponeResult *result = [BResponeResult createWithResponeObject:responseObject];
         if (result.get_error_code == kServerErrorCode_OK) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"update" object:nil];
+            [_tableviewDataList removeObject:model];
+            [self.tableView reloadData];
+            [[NSNotificationCenter defaultCenter] postNotificationName:KDELETEUUIDNOTIFICATION object:nil];
         }else{
             [BUntil showErrorHUDViewAtView:self.view WithTitle:result.get_messge];
         }

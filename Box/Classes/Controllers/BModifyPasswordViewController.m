@@ -54,7 +54,6 @@
         return NO;
     }
     return YES;
-    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

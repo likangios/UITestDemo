@@ -13,6 +13,8 @@
 #import "BTestViewController.h"
 #import "BInPutCodeViewController.h"
 #import "BTestVC.h"
+#import "BActionLogin.h"
+#import "AppDelegate.h"
 @interface BWelcomViewController ()
 @property (nonatomic,strong) IBOutlet UIButton *loginBtn;
 @property (nonatomic,strong) IBOutlet UIButton *registerBtn;
@@ -28,6 +30,7 @@
     _scrllowWidth.constant = ScreenWidth*3;
     _imageviewWidth.constant = ScreenWidth;
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
+    [self Autologin];
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
@@ -36,13 +39,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
-- (void)awakeFromNib{
-    [super awakeFromNib];
+- (void)Autologin{
+    NSString *acc  =  [BStoreService sharedStoreService].Account;
+    NSString *pwd  =  [BStoreService sharedStoreService].Password;
+    if (acc.length&&pwd.length){
+        BActionLogin *action = [[BActionLogin alloc]initWithPhoneNumber:acc Password:pwd];
+        [BUntil showHUDAddedTo:self.view];
+        [action DoActionWithSuccess:^(BActionBase *action, id responseObject, NSURLSessionDataTask *operation) {
+            [BUntil hideAllHUDsForView:self.view];
+            
+            BResponeResult *result=  [BResponeResult createWithResponeObject:responseObject];
+            if (result.get_error_code ==kServerErrorCode_OK) {
+                [(AppDelegate *)[UIApplication sharedApplication].delegate OnSignInSuccessful:acc WithPassword:pwd];
+            }
+            
+        } Failure:^(BActionBase *action, NSError *error, NSURLSessionDataTask *operation) {
+            [BUntil hideAllHUDsForView:self.view];
+        }];
+    }
+        
 }
-//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-//    
-//    [self.navigationController pushViewController:[[BTestVC alloc]initWithNib] animated:YES];
-//}
 #pragma mark --action--
 - (IBAction)RegisterBtnClick:(id)sender {
     DDLogError(@"注册");

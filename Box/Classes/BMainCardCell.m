@@ -36,6 +36,7 @@
 }
 -(void)setModel:(BUUIDinfoModel *)model{
     _model = model;
+    _cardView.model = _model;
 }
 - (void)awakeFromNib {
     // Initialization code

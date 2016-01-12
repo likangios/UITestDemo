@@ -70,6 +70,7 @@
         BResponeResult *result = [BResponeResult createWithResponeObject:responseObject];
         [BUntil hideAllHUDsForView:self.view];
         if (result.get_error_code == kServerErrorCode_OK) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:KADDUUIDNOTIFICATION object:nil];
         [self.navigationController popToRootViewControllerAnimated:YES];
         }else{
             [BUntil showErrorHUDViewAtView:self.view WithTitle:result.get_messge];

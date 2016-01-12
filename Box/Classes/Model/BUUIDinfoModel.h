@@ -18,4 +18,9 @@
 @property(nonatomic,strong) NSString *class_id;
 @property(nonatomic,strong) NSString *class_name;
 @property(nonatomic,strong) NSString *admission_time;
+@property (nonatomic,strong) NSNumber *message_unreadCount;
+@property (nonatomic,strong) NSString *teacher_avatar;
+@property (nonatomic,strong) NSNumber *teacher_id;
+@property (nonatomic,strong) NSString *teacher_name;
+
 @end

@@ -31,9 +31,14 @@
     [self addCustomNavBar];
     [self addBackItem];
     self.barTitle = @"登录";
+    NSString *acc  =  [BStoreService sharedStoreService].Account;
+    if (acc.length) {
+        self.phoneTextField.text = acc;
+    }
     [BWXApiManager sharedManager].delegate = self;
     [self.phoneTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [self.passwordTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+
 }
 - (void)awakeFromNib{
     [super awakeFromNib];
@@ -47,6 +52,7 @@
 }
 - (IBAction)loginBtnClick:(id)sender{
     DDLogError(@"登录");
+    [self.view endEditing:YES];
     if ([self CheckPhoneAndPassword]) {
     BActionLogin *action = [[BActionLogin alloc]initWithPhoneNumber:self.phoneTextField.text Password:self.passwordTextField.text];
         [BUntil showHUDAddedTo:self.view];
@@ -82,7 +88,7 @@
         DDLogError(@"新用户");
     [self.navigationController pushViewController:[[BRegisterViewController alloc]initWithNib] animated:YES];
 }
-#pragma makr AuthResponse
+#pragma mark  -- AuthResponse -- 
 - (void)managerDidRecvAuthResponse:(SendAuthResp *)response{
     
     DDLogDebug(@"response -- %@",response.description);

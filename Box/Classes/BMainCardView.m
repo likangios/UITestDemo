@@ -32,6 +32,17 @@
         _organization_name.text = _model.organization_name;
         _class_name.text = [NSString stringWithFormat:@"班级：%@",_model.class_name];
         _admission_time.text = [NSString stringWithFormat:@"入学时间：%@",_model.admission_time];
+        _unRead_number.text = [NSString stringWithFormat:@"%d",_model.message_unreadCount.intValue];
+        [self isReadedWith:_model.message_unreadCount.intValue];
+    }
+}
+-(void)isReadedWith:(BOOL)rect{
+    if (rect) {
+        _contentView.layer.borderColor = color_red.CGColor;
+        _unRead_number.hidden = NO;
+    }else{
+        _contentView.layer.borderColor = color_gray.CGColor;
+        _unRead_number.hidden = YES;
     }
 }
 @end

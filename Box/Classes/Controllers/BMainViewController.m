@@ -24,7 +24,7 @@
 
 @interface BMainViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
-    BObjectList *_tableDataList;
+    NSMutableArray *_tableDataList;
 }
 @property (nonatomic,strong) IBOutlet UITableView  *TableView;
 @end
@@ -33,8 +33,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _tableDataList = [NSMutableArray array];
     [self addCustomNavBar];
     [self initCustomBar];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:KDELETEUUIDNOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:KADDUUIDNOTIFICATION object:nil];
 
 }
 - (void)refreshData{
@@ -47,11 +50,10 @@
         if (result.get_error_code == kServerErrorCode_OK) {
             NSArray *array = [result try_get_data_with_array];
             NSLog(@"array ----- %@",array);
-
-            _tableDataList = [[BObjectList alloc]init];
+            [_tableDataList removeAllObjects];
             [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 BUUIDinfoModel *model = [[BUUIDinfoModel alloc]initWithDictionary:obj error:nil];
-                [_tableDataList Add:model];
+                [_tableDataList addObject:model];
             }];
             [self.TableView reloadData];
             [self.TableView.mj_header endRefreshing];
@@ -72,7 +74,7 @@
     return [self tableView:tableView cellForRowAtIndexPath:indexPath].getCellHeight;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return _tableDataList.GetCount;
+    return _tableDataList.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 10;
@@ -89,13 +91,13 @@
         cell = [[BMainCardCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"BMainCardCell"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    cell.model = (BUUIDinfoModel *)[_tableDataList GetIndexAt:indexPath.row WithIsDESC:YES];
+    cell.model = (BUUIDinfoModel *)_tableDataList[indexPath.row];
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    BUUIDinfoModel *model = (BUUIDinfoModel *)[_tableDataList GetIndexAt:indexPath.row WithIsDESC:YES];
-    
-    [self.navigationController pushViewController:[[BMessageViewController alloc]initWithNib] animated:YES];
+    BUUIDinfoModel *model = (BUUIDinfoModel *)_tableDataList[indexPath.row];
+    BMessageViewController *message = [[BMessageViewController alloc]initWithNib];
+    [self.navigationController pushViewController:message animated:YES];
 }
 #pragma mark private 
 - (void)initCustomBar{
@@ -144,7 +146,7 @@
 -(void)rightAction:(id)sender{
     
     BSettingViewController *set = [[BSettingViewController alloc]initWithNib];
-    
+    set.tableviewDataList = _tableDataList;
     [self.navigationController pushViewController:set animated:YES];
 }
 - (void)didReceiveMemoryWarning {

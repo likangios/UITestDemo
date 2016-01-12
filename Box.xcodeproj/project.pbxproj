@@ -903,7 +903,7 @@
 				TargetAttributes = {
 					61B28B771C165EA6009731FE = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = E5EJ3R9VNE;
+						DevelopmentTeam = GDGZ2H4K6A;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1214,19 +1214,21 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BA44CC5CA4F887541AA8DD8A /* Pods.debug.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = Box/Box.pch;
 				INFOPLIST_FILE = Box/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Box/Resources/lib/GtSdkLib",
 					"$(PROJECT_DIR)/Box/Resources/lib/SDK1.6.2",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.XueXueCanBox.xuexuecan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.XueXueCanBox.xuexuecanbox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1236,19 +1238,21 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A9C80705F4D1FA262F3B80E5 /* Pods.release.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = Box/Box.pch;
 				INFOPLIST_FILE = Box/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Box/Resources/lib/GtSdkLib",
 					"$(PROJECT_DIR)/Box/Resources/lib/SDK1.6.2",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.XueXueCanBox.xuexuecan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.XueXueCanBox.xuexuecanbox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

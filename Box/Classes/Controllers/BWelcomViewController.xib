@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -26,23 +26,22 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUQ-0i-KMp">
                             <rect key="frame" x="0.0" y="0.0" width="1200" height="667"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y2y-M8-Fdu" userLabel="Image View1">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="img_intro1" translatesAutoresizingMaskIntoConstraints="NO" id="y2y-M8-Fdu" userLabel="Image View1">
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="677"/>
                                     <color key="backgroundColor" red="0.15953198139999999" green="1" blue="0.73618958420000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="100" id="er6-GE-jQo"/>
                                     </constraints>
                                 </imageView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lpm-GK-SyX" userLabel="Image View2">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="img_intro2" translatesAutoresizingMaskIntoConstraints="NO" id="Lpm-GK-SyX" userLabel="Image View2">
                                     <rect key="frame" x="100" y="0.0" width="100" height="677"/>
                                     <color key="backgroundColor" red="0.1439856216" green="0.76068852109999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </imageView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N0E-v3-HFq" userLabel="Image View3">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="img_intro3" translatesAutoresizingMaskIntoConstraints="NO" id="N0E-v3-HFq" userLabel="Image View3">
                                     <rect key="frame" x="198" y="0.0" width="100" height="677"/>
                                     <color key="backgroundColor" red="1" green="0.2468380973" blue="0.25795669110000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </imageView>
                             </subviews>
-                            <color key="backgroundColor" red="0.21981694439999999" green="0.83978197139999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="Lpm-GK-SyX" firstAttribute="centerY" secondItem="hUQ-0i-KMp" secondAttribute="centerY" id="58M-yy-zOR"/>
                                 <constraint firstItem="Lpm-GK-SyX" firstAttribute="height" secondItem="y2y-M8-Fdu" secondAttribute="height" id="723-IY-35K"/>
@@ -106,7 +105,8 @@
                     </connections>
                 </button>
                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="lqI-Xl-6G0">
-                    <rect key="frame" x="168" y="524" width="39" height="37"/>
+                    <rect key="frame" x="168" y="534" width="39" height="37"/>
+                    <color key="pageIndicatorTintColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="currentPageIndicatorTintColor" red="1" green="0.2468380973" blue="0.25795669110000002" alpha="1" colorSpace="calibratedRGB"/>
                 </pageControl>
             </subviews>
@@ -119,7 +119,7 @@
                 <constraint firstItem="jaW-eu-KIK" firstAttribute="leading" secondItem="bA8-G9-DEb" secondAttribute="trailing" constant="15" id="LoV-dc-jCk"/>
                 <constraint firstItem="lqI-Xl-6G0" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QAb-a0-XGB"/>
                 <constraint firstItem="bA8-G9-DEb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="als-JD-6fq"/>
-                <constraint firstItem="jaW-eu-KIK" firstAttribute="top" secondItem="lqI-Xl-6G0" secondAttribute="bottom" constant="30" id="bc9-Zi-RuR"/>
+                <constraint firstItem="jaW-eu-KIK" firstAttribute="top" secondItem="lqI-Xl-6G0" secondAttribute="bottom" constant="20" id="bc9-Zi-RuR"/>
                 <constraint firstItem="7WA-xD-Uvz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="fvw-AC-9e5"/>
                 <constraint firstAttribute="bottom" secondItem="7WA-xD-Uvz" secondAttribute="bottom" id="gNd-UR-OT8"/>
                 <constraint firstAttribute="trailing" secondItem="7WA-xD-Uvz" secondAttribute="trailing" id="kDG-oT-YOD"/>
@@ -131,4 +131,9 @@
             <point key="canvasLocation" x="396.5" y="-633.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="img_intro1" width="250" height="444"/>
+        <image name="img_intro2" width="250" height="444"/>
+        <image name="img_intro3" width="250" height="444"/>
+    </resources>
 </document>
