@@ -13,8 +13,12 @@
 #import "BBeforeClassCell.h"
 #import "BDateTimeCell.h"
 
+#import "BGetMessageInfoList.h"
+
 @interface BMessageViewController ()<UITableViewDataSource,UITableViewDelegate>
+
 @property (nonatomic,strong) IBOutlet UITableView *tableView;
+@property (nonatomic,strong) NSMutableArray *messageListData;
 @end
 
 @implementation BMessageViewController
@@ -25,22 +29,49 @@
     [self addRedBackItem];
     [self initCell];
     self.barTitle = @"王宇飞";
+    _messageListData = [NSMutableArray array];
+    
     __weak typeof(self) _weakself = self;
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [_weakself refreshData];
     }];
-    [self.tableView.mj_header beginRefreshing];
-    
     self.tableView.mj_footer = [MJRefreshFooter footerWithRefreshingBlock:^{
         [_weakself upLoadData];
+    }];
+}
+- (void)getMessageInfoListWithOffset:(NSNumber *)offset Limit:(NSNumber *)limit_count{
+    
+    BGetMessageInfoList *action = [[BGetMessageInfoList alloc]initWithOffset:offset Limit:limit_count WithUUID:self.uuid];
+    [action DoActionWithSuccess:^(BActionBase *action, id responseObject, NSURLSessionDataTask *operation) {
+        BResponeResult *result = [BResponeResult createWithResponeObject:responseObject];
+        if (result.get_error_code == kServerErrorCode_OK) {
+            NSArray *array = [result try_get_data_with_array];
+
+            [array bk_each:^(id obj) {
+                BMessageInfo *info = [[BMessageInfo alloc]initWithDictionary:obj error:nil];
+                [_messageListData addObject:info];
+            }];
+            [_tableView reloadData];
+        }else{
+            [BUntil showErrorHUDViewAtView:self.view WithTitle:result.get_messge];
+        }
+        [_tableView.mj_header endRefreshing];
+        [_tableView.mj_footer endRefreshing];
+    } Failure:^(BActionBase *action, NSError *error, NSURLSessionDataTask *operation) {
+        
     }];
 }
 #pragma mark -action-
 - (void)refreshData{
     NSLog(@"刷新");
+    _messageListData = [NSMutableArray array];
+    [self.tableView.mj_header beginRefreshing];
+    [self getMessageInfoListWithOffset:@0 Limit:Limit_count];
 }
 - (void)upLoadData{
     NSLog(@"加载");
+    [self.tableView.mj_footer beginRefreshing];
+    [self getMessageInfoListWithOffset:@0 Limit:Limit_count];
 }
 #pragma mark UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

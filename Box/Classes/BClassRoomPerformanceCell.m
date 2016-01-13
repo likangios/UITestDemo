@@ -27,12 +27,17 @@
  */
 @property (nonatomic,strong) IBOutlet UIImageView *contentimg;
 
+
 @end
 
 @implementation BClassRoomPerformanceCell
 
 - (void)awakeFromNib {
     // Initialization code
+}
+-(void)setInfoModel:(BMessageInfo *)infoModel{
+    _infoModel = infoModel;
+    
 }
 -(CGFloat)getCellHeight{
     return 162.0;

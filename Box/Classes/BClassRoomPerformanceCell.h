@@ -11,5 +11,5 @@
  *  课堂表现
  */
 @interface BClassRoomPerformanceCell : BBaseCell
-
+@property (nonatomic,strong) BMessageInfo *infoModel;
 @end

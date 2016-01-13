@@ -9,5 +9,5 @@
 #import "BBaseViewController.h"
 
 @interface BMessageViewController : BBaseViewController
-
+@property (nonatomic,strong) NSString *uuid;
 @end

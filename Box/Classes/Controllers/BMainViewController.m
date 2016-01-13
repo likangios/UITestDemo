@@ -97,6 +97,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     BUUIDinfoModel *model = (BUUIDinfoModel *)_tableDataList[indexPath.row];
     BMessageViewController *message = [[BMessageViewController alloc]initWithNib];
+    message.uuid = model.uuid;
     [self.navigationController pushViewController:message animated:YES];
 }
 #pragma mark private 

@@ -67,6 +67,8 @@
 		61F6B4651C3FB303007AA94B /* BMainCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61F6B4641C3FB303007AA94B /* BMainCardView.xib */; };
 		61FE52941C43A50C006721F3 /* BCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 61FE52931C43A50C006721F3 /* BCustomButton.m */; };
 		A23AB41730D7622E432E8C30 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B244B8D7CF7FC87B279E78 /* libPods.a */; };
+		C838B6671C4688CF00CF39DC /* BGetMessageInfoList.m in Sources */ = {isa = PBXBuildFile; fileRef = C838B6661C4688CF00CF39DC /* BGetMessageInfoList.m */; };
+		C838B66A1C4692EC00CF39DC /* BMessageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C838B6691C4692EC00CF39DC /* BMessageInfo.m */; };
 		C86D5C7A1C40E4F8008C69AD /* BSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C86D5C781C40E4F8008C69AD /* BSettingViewController.m */; };
 		C86D5C7B1C40E4F8008C69AD /* BSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C86D5C791C40E4F8008C69AD /* BSettingViewController.xib */; };
 		C86D5C7F1C40E56F008C69AD /* BCourseCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C86D5C7D1C40E56F008C69AD /* BCourseCardCell.m */; };
@@ -259,6 +261,10 @@
 		A9C80705F4D1FA262F3B80E5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BA44CC5CA4F887541AA8DD8A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C5B244B8D7CF7FC87B279E78 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C838B6651C4688CF00CF39DC /* BGetMessageInfoList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGetMessageInfoList.h; sourceTree = "<group>"; };
+		C838B6661C4688CF00CF39DC /* BGetMessageInfoList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGetMessageInfoList.m; sourceTree = "<group>"; };
+		C838B6681C4692EC00CF39DC /* BMessageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMessageInfo.h; sourceTree = "<group>"; };
+		C838B6691C4692EC00CF39DC /* BMessageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMessageInfo.m; sourceTree = "<group>"; };
 		C86D5C771C40E4F8008C69AD /* BSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSettingViewController.h; sourceTree = "<group>"; };
 		C86D5C781C40E4F8008C69AD /* BSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSettingViewController.m; sourceTree = "<group>"; };
 		C86D5C791C40E4F8008C69AD /* BSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSettingViewController.xib; sourceTree = "<group>"; };
@@ -471,6 +477,8 @@
 				6134CB061C44D13E00669097 /* BUUIDinfoModel.m */,
 				C89DBC031C43EF6700921FA2 /* BUserBaseModel.h */,
 				C89DBC041C43EF6700921FA2 /* BUserBaseModel.m */,
+				C838B6681C4692EC00CF39DC /* BMessageInfo.h */,
+				C838B6691C4692EC00CF39DC /* BMessageInfo.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -525,6 +533,8 @@
 				C89DBC071C43F1D400921FA2 /* BChangePasswordAction.m */,
 				6134CB0B1C44E51600669097 /* BGetUUIDRelationListAction.h */,
 				6134CB0C1C44E51600669097 /* BGetUUIDRelationListAction.m */,
+				C838B6651C4688CF00CF39DC /* BGetMessageInfoList.h */,
+				C838B6661C4688CF00CF39DC /* BGetMessageInfoList.m */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -1053,6 +1063,7 @@
 				6134CB0A1C44DE3B00669097 /* BAddUIDIRelation.m in Sources */,
 				615C63981C16DC7500FD4082 /* BUntil.m in Sources */,
 				C86D5C8F1C4205DC008C69AD /* BHomeWorkTCell.m in Sources */,
+				C838B66A1C4692EC00CF39DC /* BMessageInfo.m in Sources */,
 				6134CB0D1C44E51600669097 /* BGetUUIDRelationListAction.m in Sources */,
 				6134CB071C44D13E00669097 /* BUUIDinfoModel.m in Sources */,
 				61BDEE191C3B4C5400E9625B /* BActionFindPWD.m in Sources */,
@@ -1091,6 +1102,7 @@
 				61EEDC511C3CA531007CD6B9 /* BWXApiManager.m in Sources */,
 				61244EB71C33B50000E2ED3A /* BActionLogin.m in Sources */,
 				6134CAFE1C44AFC200669097 /* BObjectList.m in Sources */,
+				C838B6671C4688CF00CF39DC /* BGetMessageInfoList.m in Sources */,
 				C8EA7EAB1C36D21A00F0FB39 /* BCustomNaViewController.m in Sources */,
 				61BE292C1C3E51E400107B08 /* BStoreService.m in Sources */,
 				C86D5CA01C421979008C69AD /* BDateTimeCell.m in Sources */,
