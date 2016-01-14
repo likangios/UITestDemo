@@ -417,7 +417,6 @@
 				615C638C1C16DBA800FD4082 /* Global */,
 				615C638D1C16DBA800FD4082 /* Model */,
 				615C638E1C16DBA800FD4082 /* Service */,
-				615C638F1C16DBA800FD4082 /* Views */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -491,13 +490,6 @@
 				61BE292B1C3E51E400107B08 /* BStoreService.m */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		615C638F1C16DBA800FD4082 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		615C639F1C16DCFF00FD4082 /* Actions */ = {

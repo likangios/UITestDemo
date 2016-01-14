@@ -33,7 +33,7 @@
                 <constraint firstAttribute="bottom" secondItem="W7b-er-Aim" secondAttribute="bottom" id="rDk-V0-Ypm"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-            <point key="canvasLocation" x="340.5" y="342.5"/>
+            <point key="canvasLocation" x="316.5" y="229.5"/>
         </view>
     </objects>
 </document>

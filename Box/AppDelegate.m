@@ -34,7 +34,7 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
     [self initSDImageCache];
     [self initGeTui:launchOptions];
     [self initWXLogin];
-//    [self initUM];
+    [self initUM];
     self.window = [[UIWindow alloc]initWithFrame:ScreenBounds];
     
     BCustomNaViewController *nav = [[BCustomNaViewController alloc]initWithRootViewController:[[BWelcomViewController alloc]initWithNibName:@"BWelcomViewController" bundle:nil]];
