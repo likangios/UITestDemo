@@ -36,7 +36,10 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
     [self initWXLogin];
     [self initUM];
     self.window = [[UIWindow alloc]initWithFrame:ScreenBounds];
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
     
+    self.window = [[UIWindow alloc]initWithFrame:ScreenBounds];
     BCustomNaViewController *nav = [[BCustomNaViewController alloc]initWithRootViewController:[[BWelcomViewController alloc]initWithNibName:@"BWelcomViewController" bundle:nil]];
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
@@ -115,6 +118,7 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
 }
 -(void) OnSignoutSuccessful{
     DDLogError(@"登出");
+    [[BStoreService sharedStoreService] removePassword];
     BCustomNaViewController *nav = [[BCustomNaViewController alloc]initWithRootViewController:[[BWelcomViewController alloc]initWithNibName:@"BWelcomViewController" bundle:nil]];
     nav.navigationBar.hidden = YES;
     self.window.rootViewController = nav;

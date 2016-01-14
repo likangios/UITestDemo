@@ -61,7 +61,7 @@
 //    [self.navigationController pushViewController:[[BLoginViewController alloc]initWithNib] animated:YES];
 }
 - (IBAction)getConfirmCodeBtnClick:(id)sender {
-    
+
     if ([BUntil checkPhoneNumInput:self.phoneTextField.text]) {
         [BUntil showHUDAddedTo:self.view];
         BConfirmCodeAction *action = [[BConfirmCodeAction alloc]initWithPhoneNumber:self.phoneTextField.text andTemplate_id:@"1"];
@@ -94,6 +94,7 @@
     
     if ([_timerForsms isValid]) {
         [_timerForsms invalidate];
+        _timerForsms = nil;
     }
     seconds = COUNTDOWNTIME;
     _timerForsms = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(decreaseSmsCodefromNumber:) userInfo:nil repeats:YES];
@@ -103,15 +104,11 @@
 {
     if (seconds > 0) {
         [self.getConfirmCodeBtn setTitle:[NSString stringWithFormat:@"%ds后重新获取", seconds] forState:UIControlStateNormal];
-        [self.getConfirmCodeBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         --seconds;
         
     } else {
         [self.getConfirmCodeBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
-        [self.getConfirmCodeBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-        [[self.getConfirmCodeBtn titleLabel] setTextAlignment:NSTextAlignmentCenter];
         self.getConfirmCodeBtn.enabled = YES;
-        [[self.getConfirmCodeBtn titleLabel] setTextColor:[UIColor redColor]];
         if ([_timerForsms isValid]) {
             [_timerForsms invalidate];
         }

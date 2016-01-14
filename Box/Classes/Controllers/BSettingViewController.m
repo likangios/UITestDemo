@@ -114,7 +114,6 @@
             [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             button.layer.cornerRadius=  25.0;
             button.layer.masksToBounds = YES;
-            button.showsTouchWhenHighlighted = YES;
             [button setTitle:@"退出登录" forState:UIControlStateNormal];
             
             button.titleLabel.font = [UIFont systemFontOfSize:18];

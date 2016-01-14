@@ -14,6 +14,8 @@
 #import "BUserBaseModel.h"
 #import "BUUIDinfoModel.h"
 #import "BObjectList.h"
+#import "BMessageInfo.h"
+
 typedef id (^objectCreator)(NSDictionary * data);
 
 /**
