@@ -69,6 +69,7 @@
 		A23AB41730D7622E432E8C30 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B244B8D7CF7FC87B279E78 /* libPods.a */; };
 		C838B6671C4688CF00CF39DC /* BGetMessageInfoList.m in Sources */ = {isa = PBXBuildFile; fileRef = C838B6661C4688CF00CF39DC /* BGetMessageInfoList.m */; };
 		C838B66A1C4692EC00CF39DC /* BMessageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C838B6691C4692EC00CF39DC /* BMessageInfo.m */; };
+		C838B66D1C47D6C100CF39DC /* BMessageResource.m in Sources */ = {isa = PBXBuildFile; fileRef = C838B66C1C47D6C100CF39DC /* BMessageResource.m */; };
 		C86D5C7A1C40E4F8008C69AD /* BSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C86D5C781C40E4F8008C69AD /* BSettingViewController.m */; };
 		C86D5C7B1C40E4F8008C69AD /* BSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C86D5C791C40E4F8008C69AD /* BSettingViewController.xib */; };
 		C86D5C7F1C40E56F008C69AD /* BCourseCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C86D5C7D1C40E56F008C69AD /* BCourseCardCell.m */; };
@@ -265,6 +266,8 @@
 		C838B6661C4688CF00CF39DC /* BGetMessageInfoList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGetMessageInfoList.m; sourceTree = "<group>"; };
 		C838B6681C4692EC00CF39DC /* BMessageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMessageInfo.h; sourceTree = "<group>"; };
 		C838B6691C4692EC00CF39DC /* BMessageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMessageInfo.m; sourceTree = "<group>"; };
+		C838B66B1C47D6C100CF39DC /* BMessageResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMessageResource.h; sourceTree = "<group>"; };
+		C838B66C1C47D6C100CF39DC /* BMessageResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMessageResource.m; sourceTree = "<group>"; };
 		C86D5C771C40E4F8008C69AD /* BSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSettingViewController.h; sourceTree = "<group>"; };
 		C86D5C781C40E4F8008C69AD /* BSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSettingViewController.m; sourceTree = "<group>"; };
 		C86D5C791C40E4F8008C69AD /* BSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSettingViewController.xib; sourceTree = "<group>"; };
@@ -478,6 +481,8 @@
 				C89DBC041C43EF6700921FA2 /* BUserBaseModel.m */,
 				C838B6681C4692EC00CF39DC /* BMessageInfo.h */,
 				C838B6691C4692EC00CF39DC /* BMessageInfo.m */,
+				C838B66B1C47D6C100CF39DC /* BMessageResource.h */,
+				C838B66C1C47D6C100CF39DC /* BMessageResource.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1102,6 +1107,7 @@
 				C8C031201C40B19B00DDF007 /* BMessageViewController.m in Sources */,
 				C8ACE6851C3EAC8D005C2A02 /* BCourseCardView.m in Sources */,
 				618A53301C3A6A8D00CD6DF7 /* BQRCodeViewController.m in Sources */,
+				C838B66D1C47D6C100CF39DC /* BMessageResource.m in Sources */,
 				618A53361C3A782C00CD6DF7 /* Preview.m in Sources */,
 				C8EA7ECD1C37F63D00F0FB39 /* BLoginViewController.m in Sources */,
 				615C63951C16DC5600FD4082 /* BModel.m in Sources */,

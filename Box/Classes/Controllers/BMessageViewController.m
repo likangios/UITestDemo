@@ -35,6 +35,7 @@
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [_weakself refreshData];
     }];
+    [self.tableView.mj_header beginRefreshing];
     self.tableView.mj_footer = [MJRefreshFooter footerWithRefreshingBlock:^{
         [_weakself upLoadData];
     }];
@@ -45,12 +46,14 @@
     [action DoActionWithSuccess:^(BActionBase *action, id responseObject, NSURLSessionDataTask *operation) {
         BResponeResult *result = [BResponeResult createWithResponeObject:responseObject];
         if (result.get_error_code == kServerErrorCode_OK) {
+            
             NSArray *array = [result try_get_data_with_array];
-
             [array bk_each:^(id obj) {
                 BMessageInfo *info = [[BMessageInfo alloc]initWithDictionary:obj error:nil];
                 [_messageListData addObject:info];
             }];
+            [self dealMessageListData];
+            
             [_tableView reloadData];
         }else{
             [BUntil showErrorHUDViewAtView:self.view WithTitle:result.get_messge];
@@ -65,7 +68,6 @@
 - (void)refreshData{
     NSLog(@"刷新");
     _messageListData = [NSMutableArray array];
-    [self.tableView.mj_header beginRefreshing];
     [self getMessageInfoListWithOffset:@0 Limit:Limit_count];
 }
 - (void)upLoadData{
@@ -74,8 +76,12 @@
     [self getMessageInfoListWithOffset:@0 Limit:Limit_count];
 }
 #pragma mark UITableViewDelegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return _messageListData.count;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 7 ;
+    NSArray *array = _messageListData[section];
+    return array.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -84,34 +90,23 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.row == 0||indexPath.row == 2||indexPath.row == 5) {
-        
+        NSArray *array = _messageListData[indexPath.section];
+        id  rect = array[indexPath.row];
+        if ([rect isKindOfClass:[BMessageInfo class]]) {
+            BClassRoomPerformanceCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BClassRoomPerformanceCell"];
+            cell.infoModel = (BMessageInfo *)rect;
+            return cell;
+        }else{
         BDateTimeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BDateTimeCell"];
-        
+        cell.dateString = (NSString *)rect;
+        cell.selected = NO;
         return cell;
-    }
-    if (indexPath.row == 1||indexPath.row == 6) {
-        BHomeWorkTCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BHomeWorkTCell"];
-        
-        return cell;
-    }
-    if (indexPath.row == 3) {
-        BClassRoomPerformanceCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BClassRoomPerformanceCell"];
-        
-        return cell;
-    }
-    if (indexPath.row == 4) {
-        BBeforeClassCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BBeforeClassCell"];
-        
-        return cell;
-    }
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@""];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@""];
-    }
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
-    return cell;
-    
+        }
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSArray *array = _messageListData[indexPath.section];
+    BMessageInfo  *info = array[indexPath.row];
+    NSLog(@"info %@",info);
 }
 #pragma mark views
 
@@ -121,6 +116,42 @@
         [self.tableView registerNib:[UINib nibWithNibName:classStr bundle:nil] forCellReuseIdentifier:classStr];
     }
     self.tableView.tableFooterView = [[UIView alloc]init];
+}
+#pragma mark -private method--
+
+- (void)dealMessageListData{
+    NSMutableArray *muarray = [NSMutableArray array];
+    
+    NSMutableArray *timeArr = [NSMutableArray array];
+    for (int i = 0; i<_messageListData.count; i++) {
+        NSUInteger index;
+        BMessageInfo *info = _messageListData[i];
+        NSString *timeStr =[self DateFormatter:info.message_createdAt];
+        index = [timeArr indexOfObject:timeStr];
+        if (index == NSNotFound) {
+            [timeArr addObject:timeStr];
+        }
+    }
+    for (int i = 0; i<timeArr.count; i++) {
+        NSMutableArray *array = [NSMutableArray array];
+        NSString *string = timeArr[i];
+        [array addObject:string];
+        for (BMessageInfo *info in _messageListData) {
+            NSString *timeStr =[self DateFormatter:info.message_createdAt];
+            if ([timeStr isEqualToString:string]) {
+                [array addObject:info];
+            }
+        }
+        [muarray addObject:array];
+    }
+    _messageListData = [NSMutableArray arrayWithArray:muarray];
+}
+- (NSString *)DateFormatter:(NSString *)date{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *dateString = [dateFormatter dateFromString:date];
+    [dateFormatter setDateFormat:@"MM/dd"];
+    return [dateFormatter stringFromDate:dateString];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

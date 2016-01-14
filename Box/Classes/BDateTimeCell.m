@@ -23,7 +23,9 @@
     [super awakeFromNib];
     // Initialization code
 }
-
+- (void)setDateString:(NSString *)dateString{
+    self.dateLabel.text= dateString;
+}
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

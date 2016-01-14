@@ -13,4 +13,5 @@
  */
 @interface BDateTimeCell : BBaseCell
 
+@property (nonatomic,strong) NSString *dateString;
 @end

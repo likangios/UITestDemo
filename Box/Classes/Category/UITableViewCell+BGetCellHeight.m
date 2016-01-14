@@ -7,9 +7,20 @@
 //
 
 #import "UITableViewCell+BGetCellHeight.h"
+#import <objc/runtime.h>
 
 @implementation UITableViewCell (BGetCellHeight)
+
+static char strAddrKey = 'cellheight';
+
+-(NSNumber *)cellHeight{
+    return objc_getAssociatedObject(self, &strAddrKey);
+}
+- (void)setCellHeight:(NSNumber*)cellHeight{
+objc_setAssociatedObject(self, &strAddrKey, cellHeight, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
 -(CGFloat)getCellHeight{
-    return 44;
+    return self.cellHeight.floatValue;
 }
 @end

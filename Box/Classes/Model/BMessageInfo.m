@@ -11,7 +11,3 @@
 @implementation BMessageInfo
 
 @end
-
-@implementation BMessageResource
-
-@end

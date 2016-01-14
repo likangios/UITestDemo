@@ -23,7 +23,7 @@ static BHttpActionMgr *shareMgr = nil;
     NSString *host = nil;
     
 #if defined(BOX_DEVELOPMENT)
-    host = @"http://192.168.1.1";
+    host = @"http://uat.box.app.xuexuecan";
 #elif defined(BOX_UAT)
     host = @"http://uat.box.app.xuexuecan.com";
 #elif defined(BOX_PRODUCTION)

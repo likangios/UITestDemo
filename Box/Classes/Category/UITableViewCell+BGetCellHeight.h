@@ -9,7 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface UITableViewCell (BGetCellHeight)
-
+/**
+ *  给cell 加的属性 设置cell的高度
+ */
+@property (nonatomic,strong) NSNumber *cellHeight;
+/**
+ *  获取cell的高度
+ *
+ *  @return 
+ */
 -(CGFloat)getCellHeight;
-
 @end

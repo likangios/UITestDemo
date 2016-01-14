@@ -19,7 +19,7 @@
 #import <BlocksKit+UIKit.h>
 #import <JSONModel.h>
 #import <TTTAttributedLabel.h>
-#import <SDWebImage/SDImageCache.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 #import <CocoaLumberjack/CocoaLumberjack.h>
 #import <MWPhotoBrowser.h>
 #import <MJRefresh/MJRefresh.h>
@@ -47,7 +47,7 @@
 
 
 
-#define BOX_UAT
+#define BOX_DEVELOPMENT
 
 // 本地开发环境(局域网环境)
 #if defined(BOX_DEVELOPMENT)
