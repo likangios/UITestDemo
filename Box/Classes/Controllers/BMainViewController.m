@@ -38,7 +38,7 @@
     [self initCustomBar];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:KDELETEUUIDNOTIFICATION object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:KADDUUIDNOTIFICATION object:nil];
-
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:KREADMESSAGENOTIFICATION object:nil];
 }
 - (void)refreshData{
     

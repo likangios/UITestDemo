@@ -44,10 +44,19 @@
 #define WxAppID         @"wxbaecac6ac5769e25"
 #define WxAppSecret     @"d6f38e197be80c4c3a1ed5f1f242eaf7"
 
+#define WXFASTLOGINTOKEN @"wxlogintoken"
+
+static NSString *kAuthScope = @"snsapi_message,snsapi_userinfo,snsapi_friend,snsapi_contact,snsapi_base";
+
+static NSString *kAuthOpenID = @"wx9de58e74bfd24da7";
+
+static NSString *kAuthState = @"xxx";
+
+static NSString *CustomMD5Key = @"TLlZTwlZ0nWzSWYKjciawXxs7mraN5LP";
 
 
 
-#define BOX_DEVELOPMENT
+#define BOX_UAT
 
 // 本地开发环境(局域网环境)
 #if defined(BOX_DEVELOPMENT)
@@ -77,9 +86,12 @@ static const int ddLogLevel = DDLogLevelOff;
 #endif
 
 // NOTIFICATION
-
+//删除UUID
 #define KDELETEUUIDNOTIFICATION @"KDELETEUUIDNOTIFICATION"
+//增加UUID
 #define KADDUUIDNOTIFICATION @"KADDUUIDNOTIFICATION"
+//已读消息
+#define KREADMESSAGENOTIFICATION @"KADDUUIDNOTIFICATION"
 
 
 #define CustomNavigationBarHeight 60

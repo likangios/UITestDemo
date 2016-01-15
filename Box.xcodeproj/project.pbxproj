@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		61244EB71C33B50000E2ED3A /* BActionLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 61244EB61C33B50000E2ED3A /* BActionLogin.m */; };
+		612CC00B1C488D3F00C0FD44 /* BWeChatLoginAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 612CC00A1C488D3F00C0FD44 /* BWeChatLoginAction.m */; };
+		612CC00E1C488E7300C0FD44 /* BWeChatFastLoginAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 612CC00D1C488E7300C0FD44 /* BWeChatFastLoginAction.m */; };
+		612CC0111C48E4F200C0FD44 /* BReadMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 612CC0101C48E4F200C0FD44 /* BReadMessage.m */; };
 		6134CAF71C4484F700669097 /* BTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6134CAF61C4484F700669097 /* BTestVC.m */; };
 		6134CAF91C44852A00669097 /* BTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6134CAF81C44852900669097 /* BTestVC.xib */; };
 		6134CAFB1C448C5E00669097 /* bg_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 6134CAFA1C448C5E00669097 /* bg_blue.png */; };
@@ -161,6 +164,12 @@
 /* Begin PBXFileReference section */
 		61244EB51C33B50000E2ED3A /* BActionLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BActionLogin.h; sourceTree = "<group>"; };
 		61244EB61C33B50000E2ED3A /* BActionLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BActionLogin.m; sourceTree = "<group>"; };
+		612CC0091C488D3F00C0FD44 /* BWeChatLoginAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWeChatLoginAction.h; sourceTree = "<group>"; };
+		612CC00A1C488D3F00C0FD44 /* BWeChatLoginAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWeChatLoginAction.m; sourceTree = "<group>"; };
+		612CC00C1C488E7300C0FD44 /* BWeChatFastLoginAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWeChatFastLoginAction.h; sourceTree = "<group>"; };
+		612CC00D1C488E7300C0FD44 /* BWeChatFastLoginAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWeChatFastLoginAction.m; sourceTree = "<group>"; };
+		612CC00F1C48E4F200C0FD44 /* BReadMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BReadMessage.h; sourceTree = "<group>"; };
+		612CC0101C48E4F200C0FD44 /* BReadMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BReadMessage.m; sourceTree = "<group>"; };
 		6134CAF51C4484F700669097 /* BTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTestVC.h; sourceTree = "<group>"; };
 		6134CAF61C4484F700669097 /* BTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTestVC.m; sourceTree = "<group>"; };
 		6134CAF81C44852900669097 /* BTestVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTestVC.xib; sourceTree = "<group>"; };
@@ -532,6 +541,12 @@
 				6134CB0C1C44E51600669097 /* BGetUUIDRelationListAction.m */,
 				C838B6651C4688CF00CF39DC /* BGetMessageInfoList.h */,
 				C838B6661C4688CF00CF39DC /* BGetMessageInfoList.m */,
+				612CC0091C488D3F00C0FD44 /* BWeChatLoginAction.h */,
+				612CC00A1C488D3F00C0FD44 /* BWeChatLoginAction.m */,
+				612CC00C1C488E7300C0FD44 /* BWeChatFastLoginAction.h */,
+				612CC00D1C488E7300C0FD44 /* BWeChatFastLoginAction.m */,
+				612CC00F1C48E4F200C0FD44 /* BReadMessage.h */,
+				612CC0101C48E4F200C0FD44 /* BReadMessage.m */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -910,7 +925,7 @@
 				TargetAttributes = {
 					61B28B771C165EA6009731FE = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = GDGZ2H4K6A;
+						DevelopmentTeam = E5EJ3R9VNE;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1056,6 +1071,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				612CC00E1C488E7300C0FD44 /* BWeChatFastLoginAction.m in Sources */,
 				C86D5CB31C4261F3008C69AD /* BBeforeClassModel.m in Sources */,
 				6134CB0A1C44DE3B00669097 /* BAddUIDIRelation.m in Sources */,
 				615C63981C16DC7500FD4082 /* BUntil.m in Sources */,
@@ -1084,6 +1100,7 @@
 				61EEDC541C3CAEF3007CD6B9 /* BWXApiRequestHandler.m in Sources */,
 				6134CAF71C4484F700669097 /* BTestVC.m in Sources */,
 				61E6D3C61C39FA2700A55C34 /* UINavigationItem+BMargin.m in Sources */,
+				612CC00B1C488D3F00C0FD44 /* BWeChatLoginAction.m in Sources */,
 				C89DBC051C43EF6700921FA2 /* BUserBaseModel.m in Sources */,
 				C86D5C7A1C40E4F8008C69AD /* BSettingViewController.m in Sources */,
 				C86D5C9B1C4218A2008C69AD /* BBeforeClassCell.m in Sources */,
@@ -1116,6 +1133,7 @@
 				61BDEE231C3BA09300E9625B /* BTestViewController.m in Sources */,
 				61BDEE1C1C3B4CAD00E9625B /* BConfirmCodeAction.m in Sources */,
 				C86D5C861C4104BC008C69AD /* BBlureEffectView.m in Sources */,
+				612CC0111C48E4F200C0FD44 /* BReadMessage.m in Sources */,
 				C8C0311B1C3FF7C300DDF007 /* BMainCardCell.m in Sources */,
 				61BDEE1F1C3B9E4900E9625B /* BQRAlertView.m in Sources */,
 				61CC09C81C17BF1E0038349A /* BBaseTableViewController.m in Sources */,
@@ -1238,7 +1256,7 @@
 					"$(PROJECT_DIR)/Box/Resources/lib/GtSdkLib",
 					"$(PROJECT_DIR)/Box/Resources/lib/SDK1.6.2",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.XueXueCanBox.xuexuecanbox;
+				PRODUCT_BUNDLE_IDENTIFIER = com.XueXueCanBox.xuexuecan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1262,7 +1280,7 @@
 					"$(PROJECT_DIR)/Box/Resources/lib/GtSdkLib",
 					"$(PROJECT_DIR)/Box/Resources/lib/SDK1.6.2",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.XueXueCanBox.xuexuecanbox;
+				PRODUCT_BUNDLE_IDENTIFIER = com.XueXueCanBox.xuexuecan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

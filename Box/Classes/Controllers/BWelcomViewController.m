@@ -42,6 +42,9 @@
 - (void)Autologin{
     NSString *acc  =  [BStoreService sharedStoreService].Account;
     NSString *pwd  =  [BStoreService sharedStoreService].Password;
+    NSUserDefaults *defau = [NSUserDefaults standardUserDefaults];
+    NSString *wxtoken = [defau stringForKey:WXFASTLOGINTOKEN];
+    
     if (acc.length&&pwd.length){
         BActionLogin *action = [[BActionLogin alloc]initWithPhoneNumber:acc Password:pwd];
         [BUntil showHUDAddedTo:self.view];
@@ -56,6 +59,8 @@
         } Failure:^(BActionBase *action, NSError *error, NSURLSessionDataTask *operation) {
             [BUntil hideAllHUDsForView:self.view];
         }];
+    }else if(wxtoken){
+    [(AppDelegate *)[UIApplication sharedApplication].delegate wxFastLogin:wxtoken];
     }
         
 }

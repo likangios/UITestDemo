@@ -20,5 +20,9 @@
 
 -(void) OnSignoutSuccessful;
 
+- (void)WeChatLoginCode:(NSString *)code sign:(NSString *)sign;
+
+- (void)wxFastLogin:(NSString *)token;
+
 @end
 

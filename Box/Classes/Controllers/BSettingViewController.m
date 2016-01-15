@@ -10,6 +10,7 @@
 #import "BModifyPasswordViewController.h"
 #import "BCourseCardCell.h"
 #import "AppDelegate.h"
+#import "BSignoutAction.h"
 //
 #import "BDeleteUIDIRelationAction.h"
 
@@ -184,7 +185,20 @@
     [self.navigationController pushViewController:[[BModifyPasswordViewController alloc]initWithNib] animated:YES];
 }
 - (void)loginOutAction{
-[(AppDelegate *)[UIApplication sharedApplication].delegate OnSignoutSuccessful];
+    BSignoutAction *action = [[BSignoutAction alloc]init];
+    [BUntil showHUDAddedTo:self.view];
+    [action DoActionWithSuccess:^(BActionBase *action, id responseObject, NSURLSessionDataTask *operation) {
+        [BUntil hideAllHUDsForView:self.view];
+        BResponeResult *result = [BResponeResult createWithResponeObject:responseObject];
+        if (result.get_error_code == kServerErrorCode_OK) {
+            [(AppDelegate *)[UIApplication sharedApplication].delegate OnSignoutSuccessful];
+        }else{
+            [BUntil showErrorHUDViewAtView:self.view WithTitle:result.get_messge];
+        }
+    } Failure:^(BActionBase *action, NSError *error, NSURLSessionDataTask *operation) {
+        [BUntil hideAllHUDsForView:self.view];
+    }];
+    
 }
 - (void)didReceiveMemoryWarning {
     

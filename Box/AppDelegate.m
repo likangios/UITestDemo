@@ -15,6 +15,8 @@
 #import "BMainViewController.h"
 #import "ViewController.h"
 #import "BStoreService.h"
+#import "BWeChatLoginAction.h"
+#import "BWeChatFastLoginAction.h"
 
 
 
@@ -122,6 +124,73 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
     BCustomNaViewController *nav = [[BCustomNaViewController alloc]initWithRootViewController:[[BWelcomViewController alloc]initWithNibName:@"BWelcomViewController" bundle:nil]];
     nav.navigationBar.hidden = YES;
     self.window.rootViewController = nav;
+}
+#pragma mark 微信自动登录
+
+- (void)wxFastLogin:(NSString *)token{
+    
+    NSString *sign =[BUntil MD5:[NSString stringWithFormat:@"%@-%@",token,CustomMD5Key]];
+    BWeChatFastLoginAction *action = [[BWeChatFastLoginAction alloc]initWithToken:token sign:sign];
+    [action DoActionWithSuccess:^(BActionBase *action, id responseObject, NSURLSessionDataTask *operation) {
+        BResponeResult *result = [BResponeResult createWithResponeObject:responseObject];
+        if ([result get_error_code]== kServerErrorCode_OK) {
+            DDLogDebug(@"自动登录成功");
+            //更新wxtoken
+            NSDictionary *dic = [result get_first_object];
+            [self WxFastLoginSuccessfulNowToken:dic[@"wechat_token"]];
+        }else{
+            [BUntil showErrorHUDViewAtView:self.window WithTitle:[result get_messge]];
+            [self OnSignoutSuccessful];
+            
+        }
+    } Failure:^(BActionBase *action, NSError *error, NSURLSessionDataTask *operation) {
+        [BUntil showErrorHUDViewAtView:self.window WithTitle:@"网络出错"];
+            [self OnSignoutSuccessful];
+    }];
+
+    
+}
+#pragma mark 微信授权完成--服务器返回用户信息 登陆成功
+
+- (void)WeChatLoginCode:(NSString *)code sign:(NSString *)sign{
+    
+    BWeChatLoginAction *action = [[BWeChatLoginAction alloc]initWithCode:code sign:sign];
+    
+    [BUntil showHUDAddedTo:self.window.rootViewController.view];
+    
+    [action DoActionWithSuccess:^(BActionBase *action, id responseObject, NSURLSessionDataTask *operation) {
+        BResponeResult *respon = [BResponeResult createWithResponeObject:responseObject];
+        if (respon.get_error_code == kServerErrorCode_OK) {
+            
+            NSDictionary *dic = [respon get_first_object];
+            
+            [self WxFastLoginSuccessfulNowToken:dic[@"we_chat_fast_login_token"]];
+            
+        }else{
+            [BUntil showErrorHUDViewAtView:self.window.rootViewController.view WithTitle:respon.get_messge];
+        }
+
+        
+    } Failure:^(BActionBase *action, NSError *error, NSURLSessionDataTask *operation) {
+        [BUntil hideAllHUDsForView:self.window.rootViewController.view];
+    }];
+
+}
+#pragma mark 微信登录成功
+- (void)WxFastLoginSuccessfulNowToken:(NSString *)nowToken{
+    
+    NSUserDefaults *defau = [NSUserDefaults standardUserDefaults];
+    [defau setValue:nowToken forKey:WXFASTLOGINTOKEN];
+    [defau synchronize];
+    
+    [self signInSuccessConfig:nowToken];
+}
+#pragma mark 登录成功配置
+- (void)signInSuccessConfig:(NSString *)token{
+    BCustomNaViewController *nav = [[BCustomNaViewController alloc]initWithRootViewController:[[BMainViewController alloc]initWithNibName:@"BMainViewController" bundle:nil]];
+    self.window.rootViewController = nav;
+//微信登陆
+    [MobClick profileSignInWithPUID:token provider:@"wx_login"];
 }
 #pragma mark - 用户通知(推送) _自定义方法
 

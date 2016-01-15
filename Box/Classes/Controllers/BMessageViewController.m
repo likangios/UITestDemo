@@ -12,13 +12,16 @@
 #import "BClassRoomPerformanceCell.h"
 #import "BBeforeClassCell.h"
 #import "BDateTimeCell.h"
-
 #import "BGetMessageInfoList.h"
+//action
+#import "BReadMessage.h"
 
 @interface BMessageViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,strong) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *messageListData;
+@property (nonatomic,strong) NSMutableArray *messageOriginListData;
+
 @end
 
 @implementation BMessageViewController
@@ -30,7 +33,7 @@
     [self initCell];
     self.barTitle = @"王宇飞";
     _messageListData = [NSMutableArray array];
-    
+    _messageOriginListData = [NSMutableArray array];
     __weak typeof(self) _weakself = self;
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [_weakself refreshData];
@@ -51,6 +54,7 @@
             [array bk_each:^(id obj) {
                 BMessageInfo *info = [[BMessageInfo alloc]initWithDictionary:obj error:nil];
                 [_messageListData addObject:info];
+                [_messageOriginListData addObject:info];
             }];
             [self dealMessageListData];
             
@@ -68,12 +72,29 @@
 - (void)refreshData{
     NSLog(@"刷新");
     _messageListData = [NSMutableArray array];
+    _messageOriginListData = [NSMutableArray array];
     [self getMessageInfoListWithOffset:@0 Limit:Limit_count];
 }
 - (void)upLoadData{
     NSLog(@"加载");
     [self.tableView.mj_footer beginRefreshing];
-    [self getMessageInfoListWithOffset:@0 Limit:Limit_count];
+    [self getMessageInfoListWithOffset:[NSNumber numberWithInteger:_messageOriginListData.count] Limit:Limit_count];
+}
+- (void)setMessageReaded:(NSString *)messageUuid_id{
+    BReadMessage *action = [[BReadMessage alloc]initWithMessage_ID:messageUuid_id];
+    [BUntil showHUDAddedTo:self.view];
+    [action DoActionWithSuccess:^(BActionBase *action, id responseObject, NSURLSessionDataTask *operation) {
+        [BUntil hideAllHUDsForView:self.view];
+        BResponeResult *result = [BResponeResult createWithResponeObject:responseObject];
+        if (result.get_error_code == kServerErrorCode_OK) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:KREADMESSAGENOTIFICATION object:nil];
+        }
+        else{
+            [BUntil showErrorHUDViewAtView:self.view WithTitle:result.get_messge];
+        }
+    } Failure:^(BActionBase *action, NSError *error, NSURLSessionDataTask *operation) {
+        [BUntil hideAllHUDsForView:self.view];
+    }];
 }
 #pragma mark UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -106,6 +127,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSArray *array = _messageListData[indexPath.section];
     BMessageInfo  *info = array[indexPath.row];
+    [self setMessageReaded:info.messageUuid_id];
     NSLog(@"info %@",info);
 }
 #pragma mark views

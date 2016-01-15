@@ -78,7 +78,8 @@
 }
 - (IBAction)wxloginBtnClick:(id)sender{
     DDLogError(@"微信登录");
-[BWXApiRequestHandler sendAuthRequestScope:@"snsapi_userinfo" State:@"login" OpenID:@"" InViewController:self];
+[BWXApiRequestHandler sendAuthRequestScope:kAuthScope State:kAuthState OpenID:kAuthOpenID InViewController:self];
+    
 }
 - (IBAction)forgetPasswordBtnClick:(id)sender{
         DDLogError(@"忘记密码");
@@ -91,7 +92,9 @@
 #pragma mark  -- AuthResponse -- 
 - (void)managerDidRecvAuthResponse:(SendAuthResp *)response{
     
-    DDLogDebug(@"response -- %@",response.description);
+  NSString *sign =[BUntil MD5:[NSString stringWithFormat:@"%@-%@",response.code,CustomMD5Key]];
+    
+    [(AppDelegate *)[UIApplication sharedApplication].delegate WeChatLoginCode:response.code sign:sign];
 }
 #pragma mark UITextFieldDelegate 
 

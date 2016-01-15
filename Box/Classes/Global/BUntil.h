@@ -134,4 +134,6 @@
 + (void)hideAllHUDsForView:(UIView *)view;
 
 + (BOOL)checkPhoneNumInput:(NSString *)phone;
+
++ (NSString*)MD5:(NSString *) srcString;
 @end
