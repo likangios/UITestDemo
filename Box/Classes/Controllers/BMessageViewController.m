@@ -21,6 +21,8 @@
 @property (nonatomic,strong) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *messageListData;
 @property (nonatomic,strong) NSMutableArray *messageOriginListData;
+@property (nonatomic,strong) UILabel *studentNameLabel;
+@property (nonatomic,strong) UILabel *studentClassLabel;;
 
 @end
 
@@ -32,6 +34,7 @@
     [self addRedBackItem];
     [self initCell];
     self.barTitle = @"王宇飞";
+    [self creatTitleView];
     _messageListData = [NSMutableArray array];
     _messageOriginListData = [NSMutableArray array];
     __weak typeof(self) _weakself = self;
@@ -42,6 +45,12 @@
     self.tableView.mj_footer = [MJRefreshFooter footerWithRefreshingBlock:^{
         [_weakself upLoadData];
     }];
+}
+- (void)creatTitleView{
+    UIView *view  = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 150, CustomNavigationBarHeight)];
+    view.backgroundColor = [UIColor orangeColor];
+    [self addTitleView:view];
+    
 }
 - (void)getMessageInfoListWithOffset:(NSNumber *)offset Limit:(NSNumber *)limit_count{
     
