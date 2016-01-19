@@ -10,7 +10,7 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BCustonNavBar">
             <rect key="frame" x="0.0" y="0.0" width="537" height="60"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="0.62887191030366407" green="0.65659745484024779" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="392.5" y="139.5"/>

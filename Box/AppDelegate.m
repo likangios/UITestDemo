@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "WXApi.h"
 #import <UMengAnalytics-NO-IDFA/MobClick.h>
+#import "UMessage.h"
 #import "BWXApiManager.h"
 #import "BCustomNaViewController.h"
 #import "BWelcomViewController.h"
@@ -32,11 +33,11 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     [self initSDImageCache];
-    [self initGeTui:launchOptions];
+//    [self initGeTui:launchOptions];
+    [self NotificationSettings:launchOptions];
     [self initWXLogin];
-    [self initUM];
+//    [self initUM];
     self.window = [[UIWindow alloc]initWithFrame:ScreenBounds];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
@@ -47,6 +48,56 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+#pragma mark UM 推送
+- (void)NotificationSettings:(NSDictionary *)launchOptions{
+    
+    //推送
+    [UMessage removeAllTags:^(id responseObject, NSInteger remain, NSError *error) {
+#if defined(BOX_TEST)
+        [UMessage addTag:@"dev_test" response:^(id responseObject, NSInteger remain, NSError *error) {
+        }];
+#elif defined(BOX_UAT)
+        [UMessage addTag:@"dev_uat" response:^(id responseObject, NSInteger remain, NSError *error) {
+        }];
+#elif defined(BOX_PRODUCTION)
+        [UMessage addTag:@"pro" response:^(id responseObject, NSInteger remain, NSError *error) {
+        }];
+        [MobClick startWithAppkey:UMAPK reportPolicy:BATCH channelId:nil];
+#endif
+    }];
+    
+    //程序在前台是否推送
+    [UMessage setAutoAlert:NO];
+    if(SYSTEM_VERSION_LESS_THAN(@"8.0")){
+        [UMessage startWithAppkey:UMAPK launchOptions:launchOptions];
+        [UMessage registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge
+         |UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert];
+        [UMessage setLogEnabled:NO];
+    }else{
+        //    register remoteNotification types （iOS 8.0及其以上版本）
+        UIMutableUserNotificationAction *action1 = [[UIMutableUserNotificationAction alloc] init];
+        action1.identifier = @"action1_identifier";
+        action1.title=@"Accept";
+        action1.activationMode = UIUserNotificationActivationModeForeground;//当点击的时候启动程序
+        
+        UIMutableUserNotificationAction *action2 = [[UIMutableUserNotificationAction alloc] init];  //第二按钮
+        action2.identifier = @"action2_identifier";
+        action2.title=@"Reject";
+        action2.activationMode = UIUserNotificationActivationModeBackground;//当点击的时候不启动程序，在后台处理
+        action2.authenticationRequired = YES;//需要解锁才能处理，如果action.activationMode = UIUserNotificationActivationModeForeground;则这个属性被忽略；
+        action2.destructive = YES;
+        
+        UIMutableUserNotificationCategory *categorys = [[UIMutableUserNotificationCategory alloc] init];
+        categorys.identifier = @"category1";//这组动作的唯一标示
+        [categorys setActions:@[action1,action2] forContext:(UIUserNotificationActionContextDefault)];
+        
+        UIUserNotificationSettings *userSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge|UIUserNotificationTypeSound|UIUserNotificationTypeAlert
+                                                                                     categories:[NSSet setWithObject:categorys]];
+        [UMessage registerRemoteNotificationAndUserNotificationSettings:userSettings];
+    }
+    
+    //    如需关闭推送，请使用[UMessage unregisterForRemoteNotifications]
 }
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
     
@@ -93,10 +144,10 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
     }
 #endif
 }
-- (void)initGeTui:(NSDictionary *)launchOptions{
-    [GeTuiSdk startSdkWithAppId:kGtAppId appKey:kGtAppKey appSecret:kGtAppSecret delegate:self];
-    [self registerRemoteNotification];
-}
+//- (void)initGeTui:(NSDictionary *)launchOptions{
+//    [GeTuiSdk startSdkWithAppId:kGtAppId appKey:kGtAppKey appSecret:kGtAppSecret delegate:self];
+//    [self registerRemoteNotification];
+//}
 - (void)initWXLogin{
     
     [WXApi registerApp:WxAppID withDescription:@"Box Login"];
@@ -195,6 +246,7 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
 #pragma mark - 用户通知(推送) _自定义方法
 
 /** 注册远程通知 */
+/*
 - (void)registerRemoteNotification {
     
 #ifdef __IPHONE_8_0
@@ -245,12 +297,12 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:apn_type];
 #endif
 }
-
+*/
 #pragma mark - background fetch  唤醒
 - (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
     
     //[5] Background Fetch 恢复SDK 运行
-    [GeTuiSdk resume];
+//    [GeTuiSdk resume];
     
     completionHandler(UIBackgroundFetchResultNewData);
 }
@@ -263,14 +315,19 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
     token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
     NSLog(@"deviceToken:%@", token);
     
+    [UMessage registerDeviceToken:deviceToken];
+
+
     // [3]:向个推服务器注册deviceToken
-    [GeTuiSdk registerDeviceToken:token];
+//    [GeTuiSdk registerDeviceToken:token];
 }
 
 /** 远程通知注册失败委托 */
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    
     // [3-EXT]:如果APNS注册失败，通知个推服务器
-    [GeTuiSdk registerDeviceToken:@""];
+//    [GeTuiSdk registerDeviceToken:@""];
+    
 //    [_viewController logMsg:[NSString stringWithFormat:@"didFailToRegisterForRemoteNotificationsWithError:%@", [error localizedDescription]]];
 }
 #pragma mark - APP运行中接收到通知(推送)处理
@@ -280,6 +337,8 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
     
     // [4-EXT]:处理APN
     NSString *record = [NSString stringWithFormat:@"[APN]%@, %@", [NSDate date], userInfo];
+    [UMessage didReceiveRemoteNotification:userInfo];
+    
 //    [_viewController logMsg:record];
 }
 
@@ -292,39 +351,41 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
     
     completionHandler(UIBackgroundFetchResultNewData);
 }
+
 #pragma mark -- GeTuiDelegate --
 /** SDK启动成功返回cid */
-- (void)GeTuiSdkDidRegisterClient:(NSString *)clientId {
-    // [4-EXT-1]: 个推SDK已注册，返回clientId
-    DDLogDebug(@"\n>>>[GeTuiSdk RegisterClient]:%@\n\n", clientId);
-}
-
-/** SDK遇到错误回调 */
-- (void)GeTuiSdkDidOccurError:(NSError *)error {
-    // [EXT]:个推错误报告，集成步骤发生的任何错误都在这里通知，如果集成后，无法正常收到消息，查看这里的通知。
-    DDLogDebug(@"\n>>>[GexinSdk error]:%@\n\n", [error localizedDescription]);
-}
+//- (void)GeTuiSdkDidRegisterClient:(NSString *)clientId {
+//    // [4-EXT-1]: 个推SDK已注册，返回clientId
+//    DDLogDebug(@"\n>>>[GeTuiSdk RegisterClient]:%@\n\n", clientId);
+//}
+//
+///** SDK遇到错误回调 */
+//- (void)GeTuiSdkDidOccurError:(NSError *)error {
+//    // [EXT]:个推错误报告，集成步骤发生的任何错误都在这里通知，如果集成后，无法正常收到消息，查看这里的通知。
+//    DDLogDebug(@"\n>>>[GexinSdk error]:%@\n\n", [error localizedDescription]);
+//}
 /** SDK收到透传消息回调 */
-- (void)GeTuiSdkDidReceivePayload:(NSString *)payloadId andTaskId:(NSString *)taskId andMessageId:(NSString *)aMsgId andOffLine:(BOOL)offLine fromApplication:(NSString *)appId {
-    
-    // [4]: 收到个推消息
-    NSData *payload = [GeTuiSdk retrivePayloadById:payloadId];
-    NSString *payloadMsg = nil;
-    if (payload) {
-        payloadMsg = [[NSString alloc] initWithBytes:payload.bytes length:payload.length encoding:NSUTF8StringEncoding];
-    }
-    
-    NSString *msg = [NSString stringWithFormat:@" payloadId=%@,taskId=%@,messageId:%@,payloadMsg:%@%@",payloadId,taskId,aMsgId,payloadMsg,offLine ? @"<离线消息>" : @""];
-    NSLog(@"\n>>>[GexinSdk ReceivePayload]:%@\n\n", msg);
-    
-    /**
-     *汇报个推自定义事件
-     *actionId：用户自定义的actionid，int类型，取值90001-90999。
-     *taskId：下发任务的任务ID。
-     *msgId： 下发任务的消息ID。
-     *返回值：BOOL，YES表示该命令已经提交，NO表示该命令未提交成功。注：该结果不代表服务器收到该条命令
-     **/
-    [GeTuiSdk sendFeedbackMessage:90001 taskId:taskId msgId:aMsgId];
-}
+//- (void)GeTuiSdkDidReceivePayload:(NSString *)payloadId andTaskId:(NSString *)taskId andMessageId:(NSString *)aMsgId andOffLine:(BOOL)offLine fromApplication:(NSString *)appId {
+//    
+//    // [4]: 收到个推消息
+//    NSData *payload = [GeTuiSdk retrivePayloadById:payloadId];
+//    NSString *payloadMsg = nil;
+//    if (payload) {
+//        payloadMsg = [[NSString alloc] initWithBytes:payload.bytes length:payload.length encoding:NSUTF8StringEncoding];
+//    }
+//    
+//    NSString *msg = [NSString stringWithFormat:@" payloadId=%@,taskId=%@,messageId:%@,payloadMsg:%@%@",payloadId,taskId,aMsgId,payloadMsg,offLine ? @"<离线消息>" : @""];
+//    NSLog(@"\n>>>[GexinSdk ReceivePayload]:%@\n\n", msg);
+//    
+//    /**
+//     *汇报个推自定义事件
+//     *actionId：用户自定义的actionid，int类型，取值90001-90999。
+//     *taskId：下发任务的任务ID。
+//     *msgId： 下发任务的消息ID。
+//     *返回值：BOOL，YES表示该命令已经提交，NO表示该命令未提交成功。注：该结果不代表服务器收到该条命令
+//     **/
+//    [GeTuiSdk sendFeedbackMessage:90001 taskId:taskId msgId:aMsgId];
+//}
+
 
 @end

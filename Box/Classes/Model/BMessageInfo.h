@@ -19,6 +19,6 @@
 @property (nonatomic,strong) NSString *messageTag_name;
 @property (nonatomic,strong) NSString *messageUuid_id;
 @property (nonatomic,strong) NSString *messageUuid_status;
-
+@property (nonatomic,strong) NSString *message_detail_url;
 @end
 
