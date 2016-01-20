@@ -13,6 +13,7 @@
 #import "BBeforeClassCell.h"
 #import "BDateTimeCell.h"
 #import "BGetMessageInfoList.h"
+#import "BMessageDetailViewController.h"
 //action
 #import "BReadMessage.h"
 
@@ -152,7 +153,9 @@
     [action DoActionWithSuccess:^(BActionBase *action, id responseObject, NSURLSessionDataTask *operation) {
         [BUntil hideAllHUDsForView:self.view];
         BResponeResult *result = [BResponeResult createWithResponeObject:responseObject];
+        
         if (result.get_error_code == kServerErrorCode_OK) {
+            [self refreshData];
             [[NSNotificationCenter defaultCenter] postNotificationName:KREADMESSAGENOTIFICATION object:nil];
         }
         else{
@@ -193,6 +196,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSArray *array = _messageListData[indexPath.section];
     BMessageInfo  *info = array[indexPath.row];
+    
+    BMessageDetailViewController *detail  =  [[BMessageDetailViewController alloc]initWithNib];
+    detail.webUrl = info.message_detail_url;
+    [self.navigationController pushViewController:detail animated:YES];
+    
     [self setMessageReaded:info.messageUuid_id];
     NSLog(@"info %@",info);
 }
