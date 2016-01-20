@@ -18,6 +18,7 @@
 #import "BReadMessage.h"
 
 @interface BMessageViewController ()<UITableViewDataSource,UITableViewDelegate>
+@property (nonatomic,strong) IBOutlet UIView    *bg_view;
 
 @property (nonatomic,strong) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *messageListData;
@@ -126,6 +127,13 @@
                 [_messageOriginListData addObject:info];
             }];
             [self dealMessageListData];
+            if (_messageListData.count) {
+                self.tableView.hidden = NO;
+                self.bg_view.hidden = YES;
+            }else{
+                self.tableView.hidden = YES;
+                self.bg_view.hidden = NO;
+            }
             
             [_tableView reloadData];
         }else{

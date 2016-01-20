@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BMainViewController">
             <connections>
                 <outlet property="TableView" destination="e2z-Vk-DMG" id="7VU-S2-Yu1"/>
+                <outlet property="bg_view" destination="RHc-wV-cnw" id="XrH-3t-W5G"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,16 +25,65 @@
                         <outlet property="delegate" destination="-1" id="LmM-rT-3Gt"/>
                     </connections>
                 </tableView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RHc-wV-cnw" userLabel="bg_view">
+                    <rect key="frame" x="0.0" y="80" width="375" height="587"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_empty1" translatesAutoresizingMaskIntoConstraints="NO" id="8fz-KK-ut9">
+                            <rect key="frame" x="113" y="100" width="150" height="170"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="170" id="9PG-P1-6MB"/>
+                                <constraint firstAttribute="width" constant="150" id="aLn-GN-G5i"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击左上角加好添加课程" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUe-Ua-3wQ">
+                            <rect key="frame" x="50" y="337" width="275" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="15" id="Mg1-cE-R4F"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="可选择扫码二维码或者输入课程码" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xg2-7p-Agl">
+                            <rect key="frame" x="0.0" y="357" width="375" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="I0m-zj-fbm"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="nUe-Ua-3wQ" firstAttribute="leading" secondItem="RHc-wV-cnw" secondAttribute="leading" constant="50" id="46H-kQ-D1i"/>
+                        <constraint firstItem="8fz-KK-ut9" firstAttribute="top" secondItem="RHc-wV-cnw" secondAttribute="top" constant="100" id="P3N-4q-jdG"/>
+                        <constraint firstItem="nUe-Ua-3wQ" firstAttribute="top" secondItem="8fz-KK-ut9" secondAttribute="bottom" constant="67" id="PCv-f4-w6H"/>
+                        <constraint firstAttribute="trailing" secondItem="nUe-Ua-3wQ" secondAttribute="trailing" constant="50" id="QGV-Cq-Rae"/>
+                        <constraint firstItem="Xg2-7p-Agl" firstAttribute="leading" secondItem="RHc-wV-cnw" secondAttribute="leading" id="YjS-lk-Gs1"/>
+                        <constraint firstItem="Xg2-7p-Agl" firstAttribute="centerX" secondItem="RHc-wV-cnw" secondAttribute="centerX" id="krx-BO-6Ef"/>
+                        <constraint firstItem="8fz-KK-ut9" firstAttribute="centerX" secondItem="RHc-wV-cnw" secondAttribute="centerX" id="tX8-Ge-snD"/>
+                        <constraint firstItem="Xg2-7p-Agl" firstAttribute="top" secondItem="nUe-Ua-3wQ" secondAttribute="bottom" constant="5" id="tti-sW-zoN"/>
+                        <constraint firstAttribute="trailing" secondItem="Xg2-7p-Agl" secondAttribute="trailing" id="xcs-FM-XFE"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="RHc-wV-cnw" secondAttribute="trailing" id="DCX-P4-f2k"/>
+                <constraint firstItem="RHc-wV-cnw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="KPT-Xe-HQ8"/>
+                <constraint firstAttribute="bottom" secondItem="RHc-wV-cnw" secondAttribute="bottom" id="O2i-j1-hHA"/>
                 <constraint firstItem="e2z-Vk-DMG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PEa-KY-qr1"/>
                 <constraint firstAttribute="trailing" secondItem="e2z-Vk-DMG" secondAttribute="trailing" id="icQ-ol-ItF"/>
                 <constraint firstItem="e2z-Vk-DMG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="l8l-pu-vqJ"/>
                 <constraint firstAttribute="bottom" secondItem="e2z-Vk-DMG" secondAttribute="bottom" id="nl7-Wl-WM5"/>
+                <constraint firstItem="RHc-wV-cnw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oHD-gW-eiR"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <point key="canvasLocation" x="257.5" y="295.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="img_empty1" width="150" height="171"/>
+    </resources>
 </document>

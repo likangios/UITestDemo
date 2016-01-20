@@ -26,6 +26,8 @@
 {
     NSMutableArray *_tableDataList;
 }
+@property (nonatomic,strong) IBOutlet UIView    *bg_view;
+
 @property (nonatomic,strong) IBOutlet UITableView  *TableView;
 @end
 
@@ -55,6 +57,13 @@
                 BUUIDinfoModel *model = [[BUUIDinfoModel alloc]initWithDictionary:obj error:nil];
                 [_tableDataList addObject:model];
             }];
+            if (_tableDataList.count) {
+                self.TableView.hidden = NO;
+                self.bg_view.hidden = YES;
+            }else{
+                self.TableView.hidden = YES;
+                self.bg_view.hidden = NO;
+            }
             [self.TableView reloadData];
             [self.TableView.mj_header endRefreshing];
         }else{
