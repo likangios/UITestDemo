@@ -10,7 +10,7 @@
 /**
  登出请求
  */
-@interface BSignoutAction : BActionGetBase
+@interface BSignoutAction : BActionPostBase
 /**
  *  new 并且初始化对象
  *

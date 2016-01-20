@@ -14,4 +14,5 @@
 @interface BDateTimeCell : BBaseCell
 
 @property (nonatomic,strong) NSString *dateString;
+@property (nonatomic,assign) BOOL hasUnReadMessage;
 @end

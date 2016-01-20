@@ -97,7 +97,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     BUUIDinfoModel *model = (BUUIDinfoModel *)_tableDataList[indexPath.row];
     BMessageViewController *message = [[BMessageViewController alloc]initWithNib];
-    message.uuid = model.uuid;
+    message.model = model;
     [self.navigationController pushViewController:message animated:YES];
 }
 #pragma mark private 
@@ -132,7 +132,9 @@
         [qr setQRCodeBlocks:^(BOOL rect,NSString *courseInfo) {
             if (rect) {
                 [self dismissViewControllerAnimated:NO completion:^{
-                [self.navigationController pushViewController:[[BInfoConfirmViewController alloc]initWithNib] animated:YES];
+            BInfoConfirmViewController *info = [[BInfoConfirmViewController alloc]initWithNib];
+                    info.uuid = courseInfo;
+                [self.navigationController pushViewController:info animated:YES];
                 }];
             }else{
                 [self dismissViewControllerAnimated:NO completion:NULL];

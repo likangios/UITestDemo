@@ -12,7 +12,7 @@
 
 -(id) init
 {
-    self = [super initWithActionURLString:@"/api/v1/user/parent/logout.json"];
+    self = [super initWithActionURLString:@"/api/v1/user/logout.json"];
     if( self )
     {
         self.isValid = YES;

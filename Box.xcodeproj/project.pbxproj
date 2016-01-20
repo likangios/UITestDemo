@@ -76,6 +76,7 @@
 		C86C4D2A1C4E764400C735EA /* BMessageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C86C4D281C4E764400C735EA /* BMessageDetailViewController.m */; };
 		C86C4D2B1C4E764400C735EA /* BMessageDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C86C4D291C4E764400C735EA /* BMessageDetailViewController.xib */; };
 		C86C4D2F1C4E83FF00C735EA /* libUMessage_Sdk_1.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C86C4D2D1C4E83FF00C735EA /* libUMessage_Sdk_1.1.0.a */; };
+		C86C4D321C4FCC3300C735EA /* BUpdateToken.m in Sources */ = {isa = PBXBuildFile; fileRef = C86C4D311C4FCC3300C735EA /* BUpdateToken.m */; };
 		C86D5C7A1C40E4F8008C69AD /* BSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C86D5C781C40E4F8008C69AD /* BSettingViewController.m */; };
 		C86D5C7B1C40E4F8008C69AD /* BSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C86D5C791C40E4F8008C69AD /* BSettingViewController.xib */; };
 		C86D5C7F1C40E56F008C69AD /* BCourseCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C86D5C7D1C40E56F008C69AD /* BCourseCardCell.m */; };
@@ -285,6 +286,8 @@
 		C86C4D291C4E764400C735EA /* BMessageDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMessageDetailViewController.xib; sourceTree = "<group>"; };
 		C86C4D2D1C4E83FF00C735EA /* libUMessage_Sdk_1.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.1.0.a; sourceTree = "<group>"; };
 		C86C4D2E1C4E83FF00C735EA /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
+		C86C4D301C4FCC3300C735EA /* BUpdateToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BUpdateToken.h; sourceTree = "<group>"; };
+		C86C4D311C4FCC3300C735EA /* BUpdateToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BUpdateToken.m; sourceTree = "<group>"; };
 		C86D5C771C40E4F8008C69AD /* BSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSettingViewController.h; sourceTree = "<group>"; };
 		C86D5C781C40E4F8008C69AD /* BSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSettingViewController.m; sourceTree = "<group>"; };
 		C86D5C791C40E4F8008C69AD /* BSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSettingViewController.xib; sourceTree = "<group>"; };
@@ -532,6 +535,8 @@
 				61244EB61C33B50000E2ED3A /* BActionLogin.m */,
 				61BDEE141C3B4BFD00E9625B /* BSignoutAction.h */,
 				61BDEE151C3B4BFD00E9625B /* BSignoutAction.m */,
+				C86C4D301C4FCC3300C735EA /* BUpdateToken.h */,
+				C86C4D311C4FCC3300C735EA /* BUpdateToken.m */,
 				61BDEE1A1C3B4CAD00E9625B /* BConfirmCodeAction.h */,
 				61BDEE1B1C3B4CAD00E9625B /* BConfirmCodeAction.m */,
 				6134CB021C44CFA700669097 /* BGetUUIDInfoAction.h */,
@@ -1165,6 +1170,7 @@
 				61BDEE131C3B4A9A00E9625B /* BSignupWithPhoneAction.m in Sources */,
 				C86D5C7F1C40E56F008C69AD /* BCourseCardCell.m in Sources */,
 				C86D5CAA1C425887008C69AD /* BMainCardModel.m in Sources */,
+				C86C4D321C4FCC3300C735EA /* BUpdateToken.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1268,7 +1274,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Kang Li (4Z9ZCQB5XG)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = Box/Box.pch;
@@ -1283,7 +1289,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.XueXueCanBox.xuexuecanbox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f2088ec3-2801-4062-b02a-cdf00cec3fdd";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1293,7 +1299,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Kang Li (4Z9ZCQB5XG)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = Box/Box.pch;
@@ -1308,7 +1314,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.XueXueCanBox.xuexuecanbox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f2088ec3-2801-4062-b02a-cdf00cec3fdd";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

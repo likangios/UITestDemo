@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9531"/>
@@ -24,7 +24,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Tqq-ye-nFK" secondAttribute="bottom" id="LCB-AH-IRR"/>
-                <constraint firstItem="Tqq-ye-nFK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="UxK-LR-YAB"/>
+                <constraint firstItem="Tqq-ye-nFK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="UxK-LR-YAB"/>
                 <constraint firstAttribute="trailing" secondItem="Tqq-ye-nFK" secondAttribute="trailing" id="VUl-Yg-aQh"/>
                 <constraint firstItem="Tqq-ye-nFK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ssU-WH-Dje"/>
             </constraints>

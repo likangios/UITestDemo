@@ -36,7 +36,6 @@
     [self addCustomNavBar];
     [self addRedBackItem];
     [self initCell];
-    self.barTitle = @"王宇飞";
     [self creatTitleView];
     _messageListData = [NSMutableArray array];
     _messageOriginListData = [NSMutableArray array];
@@ -51,46 +50,48 @@
 }
 - (void)creatTitleView{
     UIView *view  = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 150, CustomNavigationBarHeight)];
-    view.backgroundColor = [UIColor orangeColor];
+    view.backgroundColor = [UIColor clearColor];
     
     _studentNameLabel = [[UILabel alloc]init];
     _studentNameLabel.textAlignment = NSTextAlignmentCenter;
-    _studentNameLabel.font = [UIFont systemFontOfSize:14];
+    _studentNameLabel.font = [UIFont systemFontOfSize:16];
     _studentNameLabel.textColor=  color_black;
-    _studentNameLabel.text = @"哈哈哈";
+    _studentNameLabel.text = self.model.student_name;
     [view addSubview:_studentNameLabel];
     
     [_studentNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.left.right.mas_equalTo(0);
-        make.height.mas_equalTo(15);
-        make.top.mas_equalTo(10);
+        make.height.mas_equalTo(22.5);
+        make.top.mas_equalTo(12);
     }];
     
     _studentClassLabel = [[UILabel alloc]init];
     _studentClassLabel.textAlignment = NSTextAlignmentCenter;
     _studentClassLabel.font = [UIFont systemFontOfSize:12];
-    _studentClassLabel.textColor = color_gray;
-    _studentClassLabel.text = @"哈哈哈";
+    _studentClassLabel.textColor = B_color(153, 153, 153);
+    _studentClassLabel.text = self.model.class_name;
     [view addSubview:_studentClassLabel];
     [_studentClassLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(0);
-        make.top.equalTo(_studentNameLabel.mas_bottom).with.offset(10);
-        make.height.mas_equalTo(15);
+        make.top.equalTo(_studentNameLabel.mas_bottom).with.offset(1);
+        make.height.mas_equalTo(17);
     }];
     
     [self addTitleView:view];
     
     UIView *customView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 60, 60)];
-    customView.backgroundColor = [UIColor grayColor];
+    customView.backgroundColor = [UIColor clearColor];
     
     _teacherAvatar = [[UIImageView alloc]init];
     [customView addSubview:_teacherAvatar];
-    _teacherAvatar.backgroundColor = [UIColor orangeColor];
+    _teacherAvatar.backgroundColor = [UIColor clearColor];
+    
+    [_teacherAvatar sd_setImageWithURL:[NSURL URLWithString:self.model.teacher_avatar]];
     
     [_teacherAvatar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(customView);
-        make.top.mas_equalTo(8);
+        make.top.mas_equalTo(5);
         make.width.mas_equalTo(30);
         make.height.mas_equalTo(30);
     }];
@@ -100,11 +101,12 @@
     _teacherName = [[UILabel alloc]init];
     _teacherName.textAlignment = NSTextAlignmentCenter;
     _teacherName.font = [UIFont systemFontOfSize:12];
-    _teacherName.text = @"哈哈哈哈";
+    _teacherName.textColor = B_color(102, 102, 102);
+    _teacherName.text = self.model.teacher_name;
     [customView addSubview:_teacherName];
     [_teacherName mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(0);
-        make.top.equalTo(_teacherAvatar.mas_bottom).with.offset(5);
+        make.top.equalTo(_teacherAvatar.mas_bottom).with.offset(3);
         make.height.mas_equalTo(13);
     }];
     
@@ -112,7 +114,7 @@
 }
 - (void)getMessageInfoListWithOffset:(NSNumber *)offset Limit:(NSNumber *)limit_count{
     
-    BGetMessageInfoList *action = [[BGetMessageInfoList alloc]initWithOffset:offset Limit:limit_count WithUUID:self.uuid];
+    BGetMessageInfoList *action = [[BGetMessageInfoList alloc]initWithOffset:offset Limit:limit_count WithUUID:self.model.uuid];
     [action DoActionWithSuccess:^(BActionBase *action, id responseObject, NSURLSessionDataTask *operation) {
         BResponeResult *result = [BResponeResult createWithResponeObject:responseObject];
         if (result.get_error_code == kServerErrorCode_OK) {
@@ -189,6 +191,7 @@
         }else{
         BDateTimeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BDateTimeCell"];
         cell.dateString = (NSString *)rect;
+            cell.hasUnReadMessage = [self checkArray:array];
         cell.selected = NO;
         return cell;
         }
@@ -215,6 +218,19 @@
 }
 #pragma mark -private method--
 
+- (BOOL)checkArray:(NSArray *)array{
+    for (int i  = 1; i<array.count; i++) {
+        id obj = array[i];
+        if ([obj isKindOfClass:[BMessageInfo class]]) {
+            BMessageInfo *info = (BMessageInfo *)obj;
+            if ([info.messageUuid_status isEqualToString:@"unread"]) {
+                return YES;
+                break;
+            }
+        }
+    }
+    return NO;
+}
 - (void)dealMessageListData{
     NSMutableArray *muarray = [NSMutableArray array];
     

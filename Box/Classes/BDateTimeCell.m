@@ -19,6 +19,13 @@
 -(CGFloat)getCellHeight{
     return 32.5;
 }
+- (void)setHasUnReadMessage:(BOOL)hasUnReadMessage{
+    if (hasUnReadMessage) {
+        self.dateLabel.textColor = color_red;
+    }else{
+        self.dateLabel.textColor = B_color(153, 153, 153);
+    }
+}
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code

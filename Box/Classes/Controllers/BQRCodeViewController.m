@@ -39,10 +39,15 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self addCustomNavBar];
     [self addRedBackItem];
+    self.barTitle = @"扫码二维码";
     _captureSession = nil;
     _isReading = NO;
     [self performSelector:@selector(startReadCode) withObject:nil afterDelay:0.2];
+}
+- (void)backAction:(id)sender{
+    [self dismissAction:nil];
 }
 - (void)startReadCode{
     [self startReading];

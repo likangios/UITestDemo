@@ -7,7 +7,10 @@
 //
 
 #import "BBaseViewController.h"
+#import "BUUIDinfoModel.h"
 
 @interface BMessageViewController : BBaseViewController
-@property (nonatomic,strong) NSString *uuid;
+
+@property (nonatomic,strong) BUUIDinfoModel *model;
+
 @end

@@ -11,7 +11,7 @@
 @implementation BChangePasswordAction
 
 - (id)initWithOldPwd:(NSString *)oldPWD AndNewPwd:(NSString *)newpwd{
-    self = [super initWithActionURLString:@""];
+    self = [super initWithActionURLString:@"/api/v1/user/parent/changePassword.json"];
     if (self) {
         
         self.parameters = [NSMutableDictionary dictionaryWithObjectsAndKeys:oldPWD,@"old_password",newpwd,@"new_password", nil];

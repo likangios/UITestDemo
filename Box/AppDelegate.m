@@ -18,7 +18,7 @@
 #import "BStoreService.h"
 #import "BWeChatLoginAction.h"
 #import "BWeChatFastLoginAction.h"
-
+#import "BUpdateToken.h"
 
 
 NSString *const NotificationCategoryIdent = @"ACTIONABLE";
@@ -26,6 +26,10 @@ NSString *const NotificationActionOneIdent = @"ACTION_ONE";
 NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
 
 @interface AppDelegate ()
+{
+    BOOL _isLogin;
+    NSString *_token;
+}
 
 @end
 
@@ -73,7 +77,7 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
         [UMessage startWithAppkey:UMAPK launchOptions:launchOptions];
         [UMessage registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge
          |UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert];
-        [UMessage setLogEnabled:NO];
+        [UMessage setLogEnabled:YES];
     }else{
         //    register remoteNotification types （iOS 8.0及其以上版本）
         UIMutableUserNotificationAction *action1 = [[UIMutableUserNotificationAction alloc] init];
@@ -161,6 +165,8 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
 
 -(void) OnSignInSuccessful:(NSString * )acc WithPassword:(NSString *) password{
     DDLogError(@"登录成功");
+    _isLogin = YES;
+    [self updateDeviceToken];
     [[BStoreService sharedStoreService] saveAccount:acc Password:password];
     BCustomNaViewController *nav = [[BCustomNaViewController alloc]initWithRootViewController:[[BMainViewController alloc]initWithNibName:@"BMainViewController" bundle:nil]];
     self.window.rootViewController = nav;
@@ -171,6 +177,7 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
 }
 -(void) OnSignoutSuccessful{
     DDLogError(@"登出");
+    _isLogin = NO;
     [[BStoreService sharedStoreService] removePassword];
     BCustomNaViewController *nav = [[BCustomNaViewController alloc]initWithRootViewController:[[BWelcomViewController alloc]initWithNibName:@"BWelcomViewController" bundle:nil]];
     nav.navigationBar.hidden = YES;
@@ -211,6 +218,7 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
     
     [action DoActionWithSuccess:^(BActionBase *action, id responseObject, NSURLSessionDataTask *operation) {
         BResponeResult *respon = [BResponeResult createWithResponeObject:responseObject];
+        [BUntil hideAllHUDsForView:self.window.rootViewController.view];
         if (respon.get_error_code == kServerErrorCode_OK) {
             
             NSDictionary *dic = [respon get_first_object];
@@ -238,10 +246,28 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
 }
 #pragma mark 登录成功配置
 - (void)signInSuccessConfig:(NSString *)token{
+    _isLogin = YES;
+    [self updateDeviceToken];
     BCustomNaViewController *nav = [[BCustomNaViewController alloc]initWithRootViewController:[[BMainViewController alloc]initWithNibName:@"BMainViewController" bundle:nil]];
     self.window.rootViewController = nav;
 //微信登陆
     [MobClick profileSignInWithPUID:token provider:@"wx_login"];
+}
+- (void)updateDeviceToken{
+    
+    if (_token.length&&_isLogin){
+    BUpdateToken *action = [[BUpdateToken alloc]initWithToken:_token];
+    [action DoActionWithSuccess:^(BActionBase *action, id responseObject, NSURLSessionDataTask *operation) {
+        BResponeResult *result= [BResponeResult createWithResponeObject:responseObject];
+        if (result.get_error_code == kServerErrorCode_OK) {
+            DDLogDebug(@"发送token成功");
+        }else{
+            DDLogDebug(@"发送token失败");
+        }
+    } Failure:^(BActionBase *action, NSError *error, NSURLSessionDataTask *operation) {
+            DDLogDebug(@"发送token失败");
+    }];
+    }
 }
 #pragma mark - 用户通知(推送) _自定义方法
 
@@ -313,10 +339,13 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     NSString *token = [[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
     token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
+    _token = token;
+    
+    [self updateDeviceToken];
+    
     NSLog(@"deviceToken:%@", token);
     
     [UMessage registerDeviceToken:deviceToken];
-
 
     // [3]:向个推服务器注册deviceToken
 //    [GeTuiSdk registerDeviceToken:token];

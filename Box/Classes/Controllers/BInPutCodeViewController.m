@@ -23,7 +23,7 @@
     [super viewDidLoad];
     [self addCustomNavBar];
     [self addRedBackItem];
-//    self.barTitle = @"输入课程码";
+    self.barTitle = @"输入课程码";
 }
 - (IBAction)confirmCourseCodeClick:(id)sender{
     
