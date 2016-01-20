@@ -22,7 +22,9 @@
 @property (nonatomic,strong) NSMutableArray *messageListData;
 @property (nonatomic,strong) NSMutableArray *messageOriginListData;
 @property (nonatomic,strong) UILabel *studentNameLabel;
-@property (nonatomic,strong) UILabel *studentClassLabel;;
+@property (nonatomic,strong) UILabel *studentClassLabel;
+@property (nonatomic,strong) UIImageView *teacherAvatar;
+@property (nonatomic,strong) UILabel *teacherName;
 
 @end
 
@@ -49,8 +51,63 @@
 - (void)creatTitleView{
     UIView *view  = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 150, CustomNavigationBarHeight)];
     view.backgroundColor = [UIColor orangeColor];
+    
+    _studentNameLabel = [[UILabel alloc]init];
+    _studentNameLabel.textAlignment = NSTextAlignmentCenter;
+    _studentNameLabel.font = [UIFont systemFontOfSize:14];
+    _studentNameLabel.textColor=  color_black;
+    _studentNameLabel.text = @"哈哈哈";
+    [view addSubview:_studentNameLabel];
+    
+    [_studentNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.left.right.mas_equalTo(0);
+        make.height.mas_equalTo(15);
+        make.top.mas_equalTo(10);
+    }];
+    
+    _studentClassLabel = [[UILabel alloc]init];
+    _studentClassLabel.textAlignment = NSTextAlignmentCenter;
+    _studentClassLabel.font = [UIFont systemFontOfSize:12];
+    _studentClassLabel.textColor = color_gray;
+    _studentClassLabel.text = @"哈哈哈";
+    [view addSubview:_studentClassLabel];
+    [_studentClassLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(0);
+        make.top.equalTo(_studentNameLabel.mas_bottom).with.offset(10);
+        make.height.mas_equalTo(15);
+    }];
+    
     [self addTitleView:view];
     
+    UIView *customView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 60, 60)];
+    customView.backgroundColor = [UIColor grayColor];
+    
+    _teacherAvatar = [[UIImageView alloc]init];
+    [customView addSubview:_teacherAvatar];
+    _teacherAvatar.backgroundColor = [UIColor orangeColor];
+    
+    [_teacherAvatar mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(customView);
+        make.top.mas_equalTo(8);
+        make.width.mas_equalTo(30);
+        make.height.mas_equalTo(30);
+    }];
+    _teacherAvatar.layer.masksToBounds = YES;
+    _teacherAvatar.layer.cornerRadius = CGRectGetWidth(_teacherAvatar.frame)/2.0;
+    
+    _teacherName = [[UILabel alloc]init];
+    _teacherName.textAlignment = NSTextAlignmentCenter;
+    _teacherName.font = [UIFont systemFontOfSize:12];
+    _teacherName.text = @"哈哈哈哈";
+    [customView addSubview:_teacherName];
+    [_teacherName mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(0);
+        make.top.equalTo(_teacherAvatar.mas_bottom).with.offset(5);
+        make.height.mas_equalTo(13);
+    }];
+    
+    [self addRightViewWithCustomView:customView];
 }
 - (void)getMessageInfoListWithOffset:(NSNumber *)offset Limit:(NSNumber *)limit_count{
     

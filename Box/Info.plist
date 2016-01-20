@@ -36,6 +36,16 @@
 				<string>wxbaecac6ac5769e25</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>boxbox</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>boxbox</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
