@@ -37,17 +37,17 @@
 }
 -(void)setInfoModel:(BMessageInfo *)infoModel{
     _infoModel = infoModel;
-//    self.content.text = _infoModel.message_content;
-//    [self isReadedWith:[_infoModel.messageUuid_status isEqualToString:@"unread"]];
-//    if (_infoModel.message_resource.count) {
+    self.content.text = _infoModel.message_content;
+    [self isReadedWith:[_infoModel.messageUuid_status isEqualToString:@"unread"]];
+    if (_infoModel.message_resource.count) {
         self.cellHeight = @162;
         BMessageResource *resoure = _infoModel.message_resource[0];
         [self.contentimg sd_setImageWithURL:[NSURL URLWithString:resoure.url]];
-//        self.contentimg.hidden = NO;
-//    }else{
-//        self.contentimg.hidden = YES;
-//        self.cellHeight = @80;
-//    }
+        self.contentimg.hidden = NO;
+    }else{
+        self.contentimg.hidden = YES;
+        self.cellHeight = @80;
+    }
 }
 -(CGFloat)getCellHeight{
     return self.cellHeight.floatValue;

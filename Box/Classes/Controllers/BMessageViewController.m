@@ -40,6 +40,7 @@
     [self creatTitleView];
     _messageListData = [NSMutableArray array];
     _messageOriginListData = [NSMutableArray array];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:KREADMESSAGENOTIFICATION object:nil];
     __weak typeof(self) _weakself = self;
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [_weakself refreshData];
