@@ -24,6 +24,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="Otk-Fi-m2g"/>
                                     <constraint firstAttribute="height" constant="22" id="g3o-SH-P8y"/>
                                 </constraints>
+                                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -33,22 +34,25 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Kl8-Q4-6Ut"/>
                                 </constraints>
+                                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="未读" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vl9-mA-waz">
-                                <rect key="frame" x="297" y="12" width="35" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未读" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vl9-mA-waz">
+                                <rect key="frame" x="313" y="12" width="35" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="YOb-hw-bJS"/>
                                     <constraint firstAttribute="width" constant="35" id="efI-xG-Sev"/>
                                 </constraints>
+                                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bgimg.png" translatesAutoresizingMaskIntoConstraints="NO" id="nNu-sC-bPe">
-                                <rect key="frame" x="12" y="68" width="326" height="53"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgimg.png" translatesAutoresizingMaskIntoConstraints="NO" id="nNu-sC-bPe">
+                                <rect key="frame" x="12" y="68" width="336" height="71"/>
+                                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                             </imageView>
                         </subviews>
                         <constraints>
@@ -83,13 +87,14 @@
                 </constraints>
                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
             </tableViewCellContentView>
+            <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
             <connections>
                 <outlet property="bgview" destination="n4t-Jt-6eb" id="T6B-7i-YJ8"/>
                 <outlet property="content" destination="D4l-fH-HiR" id="oLZ-iy-amP"/>
                 <outlet property="contentimg" destination="nNu-sC-bPe" id="g31-Mp-ISh"/>
                 <outlet property="isRead" destination="vl9-mA-waz" id="p6z-EL-K2r"/>
             </connections>
-            <point key="canvasLocation" x="253" y="214"/>
+            <point key="canvasLocation" x="336" y="203"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -87,7 +87,8 @@
     _teacherAvatar = [[UIImageView alloc]init];
     [customView addSubview:_teacherAvatar];
     _teacherAvatar.backgroundColor = [UIColor clearColor];
-    
+    _teacherAvatar.layer.cornerRadius = 15;
+    _teacherAvatar.layer.masksToBounds = YES;
     [_teacherAvatar sd_setImageWithURL:[NSURL URLWithString:self.model.teacher_avatar]];
     
     [_teacherAvatar mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -96,8 +97,6 @@
         make.width.mas_equalTo(30);
         make.height.mas_equalTo(30);
     }];
-    _teacherAvatar.layer.masksToBounds = YES;
-    _teacherAvatar.layer.cornerRadius = CGRectGetWidth(_teacherAvatar.frame)/2.0;
     
     _teacherName = [[UILabel alloc]init];
     _teacherName.textAlignment = NSTextAlignmentCenter;
@@ -212,7 +211,7 @@
     detail.webUrl = info.message_detail_url;
     [self.navigationController pushViewController:detail animated:YES];
     
-    [self setMessageReaded:info.messageUuid_id];
+//    [self setMessageReaded:info.messageUuid_id];
     NSLog(@"info %@",info);
 }
 #pragma mark views
