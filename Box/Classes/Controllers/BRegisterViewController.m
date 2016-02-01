@@ -46,7 +46,9 @@
             [BUntil hideAllHUDsForView:self.view];
             BResponeResult *result = [BResponeResult createWithResponeObject:responseObject];
             if (result.get_error_code == kServerErrorCode_OK) {
-                [(AppDelegate *)[UIApplication sharedApplication].delegate OnSignInSuccessful:self.phoneTextField.text WithPassword:self.passwordTextField.text];
+                
+                [self.navigationController pushViewController:[[BLoginViewController alloc]initWithNib] animated:YES];
+//                [(AppDelegate *)[UIApplication sharedApplication].delegate OnSignInSuccessful:self.phoneTextField.text WithPassword:self.passwordTextField.text];
 
             }else{
                 [BUntil showErrorHUDViewAtView:self.view WithTitle:result.get_messge];
