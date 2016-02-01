@@ -17,7 +17,14 @@
 //action
 #import "BReadMessage.h"
 
+typedef enum : NSUInteger {
+    refreshData =1,
+    uploadData,
+} refreshType;
+
+
 @interface BMessageViewController ()<UITableViewDataSource,UITableViewDelegate>
+
 @property (nonatomic,strong) IBOutlet UIView    *bg_view;
 
 @property (nonatomic,strong) IBOutlet UITableView *tableView;
@@ -27,7 +34,7 @@
 @property (nonatomic,strong) UILabel *studentClassLabel;
 @property (nonatomic,strong) UIImageView *teacherAvatar;
 @property (nonatomic,strong) UILabel *teacherName;
-
+@property (nonatomic,assign) refreshType reftype;
 @end
 
 @implementation BMessageViewController
@@ -42,10 +49,11 @@
     _messageOriginListData = [NSMutableArray array];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:KREADMESSAGENOTIFICATION object:nil];
     __weak typeof(self) _weakself = self;
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [_weakself refreshData];
-    }];
+    
+    BCustomRefresh *header = [BCustomRefresh headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
+    self.tableView.mj_header = header;
     [self.tableView.mj_header beginRefreshing];
+    
     self.tableView.mj_footer = [MJRefreshFooter footerWithRefreshingBlock:^{
         [_weakself upLoadData];
     }];
@@ -113,6 +121,18 @@
     
     [self addRightViewWithCustomView:customView];
 }
+#pragma mark -action-
+- (void)refreshData{
+    NSLog(@"刷新");
+    _reftype = refreshData;
+    [self getMessageInfoListWithOffset:@0 Limit:Limit_count];
+}
+- (void)upLoadData{
+    NSLog(@"加载");
+    _reftype = uploadData;
+    [self.tableView.mj_footer beginRefreshing];
+    [self getMessageInfoListWithOffset:[NSNumber numberWithInteger:_messageOriginListData.count] Limit:Limit_count];
+}
 - (void)getMessageInfoListWithOffset:(NSNumber *)offset Limit:(NSNumber *)limit_count{
     
     BGetMessageInfoList *action = [[BGetMessageInfoList alloc]initWithOffset:offset Limit:limit_count WithUUID:self.model.uuid];
@@ -121,11 +141,17 @@
         if (result.get_error_code == kServerErrorCode_OK) {
             
             NSArray *array = [result try_get_data_with_array];
+            if (_reftype == refreshData) {
+                _messageListData = [NSMutableArray array];
+                _messageOriginListData = [NSMutableArray array];
+            }
             [array bk_each:^(id obj) {
                 BMessageInfo *info = [[BMessageInfo alloc]initWithDictionary:obj error:nil];
+                
                 [_messageListData addObject:info];
                 [_messageOriginListData addObject:info];
             }];
+            
             [self dealMessageListData];
             if (_messageListData.count) {
                 self.tableView.hidden = NO;
@@ -144,18 +170,6 @@
     } Failure:^(BActionBase *action, NSError *error, NSURLSessionDataTask *operation) {
         
     }];
-}
-#pragma mark -action-
-- (void)refreshData{
-    NSLog(@"刷新");
-    _messageListData = [NSMutableArray array];
-    _messageOriginListData = [NSMutableArray array];
-    [self getMessageInfoListWithOffset:@0 Limit:Limit_count];
-}
-- (void)upLoadData{
-    NSLog(@"加载");
-    [self.tableView.mj_footer beginRefreshing];
-    [self getMessageInfoListWithOffset:[NSNumber numberWithInteger:_messageOriginListData.count] Limit:Limit_count];
 }
 - (void)setMessageReaded:(NSString *)messageUuid_id{
     BReadMessage *action = [[BReadMessage alloc]initWithMessage_ID:messageUuid_id];

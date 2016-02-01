@@ -22,6 +22,7 @@
 //action
 #import "BGetUUIDRelationListAction.h"
 
+
 @interface BMainViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
     NSMutableArray *_tableDataList;
@@ -115,10 +116,9 @@
     self.barImage = [UIImage imageNamed:@"img_logo_"];
     [self addRightViewWithImage:[UIImage imageNamed:@"icon_set_black_"] hightImage:[UIImage imageNamed:@"icon_set_red_"]];
     [self addLeftViewWithImage:[UIImage imageNamed:@"icon_add_black_"] hightImage:[UIImage imageNamed:@"icon_add_red_"]];
-    __weak typeof(self)  _weakself = self;
-    self.TableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [_weakself refreshData];
-    }];
+//    __weak typeof(self)  _weakself = self;
+    BCustomRefresh *header = [BCustomRefresh headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
+    self.TableView.mj_header = header;
     [_TableView.mj_header beginRefreshing];
 }
 #pragma mark action

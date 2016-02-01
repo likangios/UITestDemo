@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BCustonNavBar.h"
 #import "BBaseCell.h"
+#import "BCustomRefresh.h"
 
 @interface BBaseViewController : UIViewController
 {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		610620331C5F1F840061ED89 /* BCustomRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 610620321C5F1F840061ED89 /* BCustomRefresh.m */; };
 		61244EB71C33B50000E2ED3A /* BActionLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 61244EB61C33B50000E2ED3A /* BActionLogin.m */; };
 		612CC00B1C488D3F00C0FD44 /* BWeChatLoginAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 612CC00A1C488D3F00C0FD44 /* BWeChatLoginAction.m */; };
 		612CC00E1C488E7300C0FD44 /* BWeChatFastLoginAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 612CC00D1C488E7300C0FD44 /* BWeChatFastLoginAction.m */; };
@@ -166,6 +167,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		610620311C5F1F840061ED89 /* BCustomRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCustomRefresh.h; sourceTree = "<group>"; };
+		610620321C5F1F840061ED89 /* BCustomRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCustomRefresh.m; sourceTree = "<group>"; };
 		61244EB51C33B50000E2ED3A /* BActionLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BActionLogin.h; sourceTree = "<group>"; };
 		61244EB61C33B50000E2ED3A /* BActionLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BActionLogin.m; sourceTree = "<group>"; };
 		612CC0091C488D3F00C0FD44 /* BWeChatLoginAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWeChatLoginAction.h; sourceTree = "<group>"; };
@@ -892,6 +895,8 @@
 				C86D5C9E1C421979008C69AD /* BDateTimeCell.m */,
 				C86D5C9F1C421979008C69AD /* BDateTimeCell.xib */,
 				C86D5C961C421852008C69AD /* bgimg.png */,
+				610620311C5F1F840061ED89 /* BCustomRefresh.h */,
+				610620321C5F1F840061ED89 /* BCustomRefresh.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1140,6 +1145,7 @@
 				61BDEE101C3B489D00E9625B /* CALayer+BLayerBorderColor.m in Sources */,
 				C8EA7EBB1C377A4A00F0FB39 /* UIViewController+Tracking.m in Sources */,
 				C8965C171C3C082800EA0005 /* BModifyPasswordViewController.m in Sources */,
+				610620331C5F1F840061ED89 /* BCustomRefresh.m in Sources */,
 				615C63A21C16DD1700FD4082 /* BActionBase.m in Sources */,
 				61B28B801C165EA6009731FE /* AppDelegate.m in Sources */,
 				61EEDC511C3CA531007CD6B9 /* BWXApiManager.m in Sources */,
@@ -1274,7 +1280,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: likangios@163.com (693P5FW9H8)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = Box/Box.pch;
@@ -1289,7 +1295,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.XueXueCanBox.xuexuecanbox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "f1ce81bf-884c-4fa7-a048-2aa1e5e02f53";
 			};
 			name = Debug;
 		};
@@ -1299,7 +1305,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: iCan Network Technology Inc. (GDGZ2H4K6A)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = Box/Box.pch;
@@ -1314,7 +1320,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.XueXueCanBox.xuexuecanbox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "50b5f953-0cc3-4924-b378-55cbe98c022a";
 			};
 			name = Release;
 		};
