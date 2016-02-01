@@ -44,10 +44,21 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger count = _tableviewDataList.count;
     if (indexPath.row == 0) {
-        return 25.0;
+        if (count) {
+            return 25.0;
+        }
+        return 0.0;
     }else if (indexPath.row == count+1){
+        AppDelegate *appd = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        if (appd.isWXLogin) {
+            return 0;
+        }
         return 35.0;
     }else if (indexPath.row == count+2){
+        AppDelegate *appd = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        if (appd.isWXLogin) {
+            return 0;
+        }
         return 65.0;
     }else if (indexPath.row == count+3){
         return 75.0;

@@ -26,10 +26,7 @@ NSString *const NotificationActionOneIdent = @"ACTION_ONE";
 NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
 
 @interface AppDelegate ()
-{
-    BOOL _isLogin;
-    NSString *_token;
-}
+
 
 @end
 
@@ -178,7 +175,12 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
 -(void) OnSignoutSuccessful{
     DDLogError(@"登出");
     _isLogin = NO;
+    _isWXLogin = NO;
     [[BStoreService sharedStoreService] removePassword];
+    NSUserDefaults *defau = [NSUserDefaults standardUserDefaults];
+    [defau removeObjectForKey:WXFASTLOGINTOKEN];
+    [defau synchronize];
+    
     BCustomNaViewController *nav = [[BCustomNaViewController alloc]initWithRootViewController:[[BWelcomViewController alloc]initWithNibName:@"BWelcomViewController" bundle:nil]];
     nav.navigationBar.hidden = YES;
     self.window.rootViewController = nav;
@@ -237,7 +239,7 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
 }
 #pragma mark 微信登录成功
 - (void)WxFastLoginSuccessfulNowToken:(NSString *)nowToken{
-    
+    _isWXLogin = YES;
     NSUserDefaults *defau = [NSUserDefaults standardUserDefaults];
     [defau setValue:nowToken forKey:WXFASTLOGINTOKEN];
     [defau synchronize];

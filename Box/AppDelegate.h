@@ -15,8 +15,15 @@
 //@interface AppDelegate : UIResponder <UIApplicationDelegate,GeTuiSdkDelegate>
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-
 @property (strong, nonatomic) UIWindow *window;
+/**
+ *  是否登陆
+ */
+@property (assign, nonatomic) BOOL isLogin;
+
+@property (assign, nonatomic) BOOL isWXLogin;
+
+@property (strong, nonatomic) NSString *token;
 
 -(void) OnSignInSuccessful:(NSString * )acc WithPassword:(NSString *) password;
 
