@@ -10,7 +10,7 @@
 #import "BCustonNavBar.h"
 #import "BBaseCell.h"
 #import "BCustomRefresh.h"
-
+#import "BCustomFoot.h"
 @interface BBaseViewController : UIViewController
 {
     BCustonNavBar *_navBar;

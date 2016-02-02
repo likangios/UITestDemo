@@ -48,15 +48,14 @@ typedef enum : NSUInteger {
     _messageListData = [NSMutableArray array];
     _messageOriginListData = [NSMutableArray array];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:KREADMESSAGENOTIFICATION object:nil];
-    __weak typeof(self) _weakself = self;
+//    __weak typeof(self) _weakself = self;
     
     BCustomRefresh *header = [BCustomRefresh headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
     self.tableView.mj_header = header;
     [self.tableView.mj_header beginRefreshing];
     
-    self.tableView.mj_footer = [MJRefreshFooter footerWithRefreshingBlock:^{
-        [_weakself upLoadData];
-    }];
+    BCustomFoot *foot = [BCustomFoot footerWithRefreshingTarget:self refreshingAction:@selector(upLoadData)];
+    self.tableView.mj_footer = foot;
 }
 - (void)creatTitleView{
     UIView *view  = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 150, CustomNavigationBarHeight)];
@@ -147,8 +146,6 @@ typedef enum : NSUInteger {
             }
             [array bk_each:^(id obj) {
                 BMessageInfo *info = [[BMessageInfo alloc]initWithDictionary:obj error:nil];
-                
-                [_messageListData addObject:info];
                 [_messageOriginListData addObject:info];
             }];
             
@@ -257,9 +254,9 @@ typedef enum : NSUInteger {
     NSMutableArray *muarray = [NSMutableArray array];
     
     NSMutableArray *timeArr = [NSMutableArray array];
-    for (int i = 0; i<_messageListData.count; i++) {
+    for (int i = 0; i<_messageOriginListData.count; i++) {
         NSUInteger index;
-        BMessageInfo *info = _messageListData[i];
+        BMessageInfo *info = _messageOriginListData[i];
         NSString *timeStr =[self DateFormatter:info.message_createdAt];
         index = [timeArr indexOfObject:timeStr];
         if (index == NSNotFound) {
@@ -270,7 +267,7 @@ typedef enum : NSUInteger {
         NSMutableArray *array = [NSMutableArray array];
         NSString *string = timeArr[i];
         [array addObject:string];
-        for (BMessageInfo *info in _messageListData) {
+        for (BMessageInfo *info in _messageOriginListData) {
             NSString *timeStr =[self DateFormatter:info.message_createdAt];
             if ([timeStr isEqualToString:string]) {
                 [array addObject:info];

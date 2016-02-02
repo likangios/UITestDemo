@@ -31,6 +31,7 @@
 		618A53311C3A6A8D00CD6DF7 /* BQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 618A532F1C3A6A8D00CD6DF7 /* BQRCodeViewController.xib */; };
 		618A53331C3A77B400CD6DF7 /* Preview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 618A53321C3A77B400CD6DF7 /* Preview.xib */; };
 		618A53361C3A782C00CD6DF7 /* Preview.m in Sources */ = {isa = PBXBuildFile; fileRef = 618A53351C3A782C00CD6DF7 /* Preview.m */; };
+		61AF11F61C605B7E0065DFB8 /* BCustomFoot.m in Sources */ = {isa = PBXBuildFile; fileRef = 61AF11F51C605B7E0065DFB8 /* BCustomFoot.m */; };
 		61B28B7D1C165EA6009731FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B28B7C1C165EA6009731FE /* main.m */; };
 		61B28B801C165EA6009731FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B28B7F1C165EA6009731FE /* AppDelegate.m */; };
 		61B28B831C165EA6009731FE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B28B821C165EA6009731FE /* ViewController.m */; };
@@ -211,6 +212,8 @@
 		618A53321C3A77B400CD6DF7 /* Preview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Preview.xib; path = Controllers/Preview.xib; sourceTree = "<group>"; };
 		618A53341C3A782C00CD6DF7 /* Preview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Preview.h; path = Controllers/Preview.h; sourceTree = "<group>"; };
 		618A53351C3A782C00CD6DF7 /* Preview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Preview.m; path = Controllers/Preview.m; sourceTree = "<group>"; };
+		61AF11F41C605B7E0065DFB8 /* BCustomFoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCustomFoot.h; sourceTree = "<group>"; };
+		61AF11F51C605B7E0065DFB8 /* BCustomFoot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCustomFoot.m; sourceTree = "<group>"; };
 		61B28B781C165EA6009731FE /* Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Box.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61B28B7C1C165EA6009731FE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		61B28B7E1C165EA6009731FE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -897,6 +900,8 @@
 				C86D5C961C421852008C69AD /* bgimg.png */,
 				610620311C5F1F840061ED89 /* BCustomRefresh.h */,
 				610620321C5F1F840061ED89 /* BCustomRefresh.m */,
+				61AF11F41C605B7E0065DFB8 /* BCustomFoot.h */,
+				61AF11F51C605B7E0065DFB8 /* BCustomFoot.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1166,6 +1171,7 @@
 				C8EA7EB21C3773D400F0FB39 /* BWelcomViewController.m in Sources */,
 				61BDEE231C3BA09300E9625B /* BTestViewController.m in Sources */,
 				61BDEE1C1C3B4CAD00E9625B /* BConfirmCodeAction.m in Sources */,
+				61AF11F61C605B7E0065DFB8 /* BCustomFoot.m in Sources */,
 				C86D5C861C4104BC008C69AD /* BBlureEffectView.m in Sources */,
 				612CC0111C48E4F200C0FD44 /* BReadMessage.m in Sources */,
 				C8C0311B1C3FF7C300DDF007 /* BMainCardCell.m in Sources */,
