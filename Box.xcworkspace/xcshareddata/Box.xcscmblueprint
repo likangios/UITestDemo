@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "657913AB33AD576DB319B62494D32846F1C9A6DF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "657913AB33AD576DB319B62494D32846F1C9A6DF" : 0,
+    "ABD27916728CFF079217FA83043797EEEBAE5BA9" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "3C7D1FD7-96B4-4412-AD24-D69EA96B7CEA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "657913AB33AD576DB319B62494D32846F1C9A6DF" : "Box\/",
+    "ABD27916728CFF079217FA83043797EEEBAE5BA9" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Box",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Box.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/likangios\/Box.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "657913AB33AD576DB319B62494D32846F1C9A6DF"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "h.yueke.me:xxc_box_app_ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ABD27916728CFF079217FA83043797EEEBAE5BA9"
+    }
+  ]
+}
