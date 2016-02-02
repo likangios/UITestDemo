@@ -38,7 +38,7 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
 //    [self initGeTui:launchOptions];
     [self NotificationSettings:launchOptions];
     [self initWXLogin];
-//    [self initUM];
+    [self initUM];
     self.window = [[UIWindow alloc]initWithFrame:ScreenBounds];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
