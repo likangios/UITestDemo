@@ -7,7 +7,7 @@
 //
 
 #import "BActionBase.h"
-
+#import "AppDelegate.h"
 @interface BActionBase ()
 
 @property (nonatomic,strong) NSString *url;
@@ -36,6 +36,24 @@
     
 }
 
+- (BOOL)checkActionClassIsLogined{
+    
+    NSArray *classs = @[@"BActionLogin",@"BSignoutAction",@"BConfirmCodeAction.h",@"BSignupWithPhoneAction",@"BActionFindPWD"];
+    for (NSString *classname in classs) {
+        if ([self isKindOfClass:NSClassFromString(classname)]) {
+            return NO;
+            break;
+        }
+    }
+    return YES;
+    
+}
+- (void)loginout{
+    
+    AppDelegate *appdele = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [appdele OnSignoutSuccessful];
+}
+
 @end
 
 @implementation BActionGetBase
@@ -48,7 +66,12 @@
     [manager GET:self.url parameters:self.parameters progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask *  task, id   responseObject) {
+        BResponeResult *result = [BResponeResult createWithResponeObject:responseObject];
         success(self,responseObject,task);
+        
+        if (result.get_error_code == 10&&[self checkActionClassIsLogined]) {
+        [self performSelector:@selector(loginout) withObject:nil afterDelay:2.0];
+        }
     } failure:^(NSURLSessionDataTask *  task, NSError *  error) {
         failure(self,error,task);
     }];
@@ -69,14 +92,18 @@
     [manager POST:self.url parameters:self.parameters progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        BResponeResult *result = [BResponeResult createWithResponeObject:responseObject];
         success(self,responseObject,task);
+        
+        if (result.get_error_code == 10&&[self checkActionClassIsLogined]) {
+        [self performSelector:@selector(loginout) withObject:nil afterDelay:2.0];
+        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         failure(self,error,task);
     }];
 
     return YES;
 }
-
 @end
 
 @implementation BActionDeleteBase

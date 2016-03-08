@@ -63,6 +63,8 @@ typedef void(^blocks)();
             btn.tag = i+1;
             btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
             [btn setTitleColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.87] forState:UIControlStateNormal];
+            [btn setTitleColor:color_red forState:UIControlStateHighlighted];
+
             [btn setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 15)];
             [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
             

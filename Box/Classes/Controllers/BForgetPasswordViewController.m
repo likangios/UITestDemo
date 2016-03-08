@@ -19,11 +19,17 @@
 @property (weak, nonatomic) IBOutlet UIButton *getConfirmCodeBtn;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (nonatomic,strong) NSTimer *timerForsms;
+@property (nonatomic,strong) IBOutlet UIButton *isShowPwd;
+
 
 @end
 
 @implementation BForgetPasswordViewController
 
+- (IBAction)ShowPwdClick:(id)sender{
+    _isShowPwd.selected = !_isShowPwd.selected;
+    _passwordTextField.secureTextEntry = !_isShowPwd.selected;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addCustomNavBar];

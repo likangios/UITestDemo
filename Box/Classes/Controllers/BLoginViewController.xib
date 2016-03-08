@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BLoginViewController">
             <connections>
                 <outlet property="forgetPasswordBtn" destination="7gU-zl-Dgr" id="1jf-PO-xoS"/>
+                <outlet property="isShowPwd" destination="lO9-s3-5bl" id="Sun-ts-PcZ"/>
                 <outlet property="loginBtn" destination="n8P-fO-ahU" id="B7o-lA-fdG"/>
                 <outlet property="passwordTextField" destination="C2P-PZ-vLA" id="WjD-EJ-mzR"/>
                 <outlet property="phoneTextField" destination="Yfa-lb-LOK" id="wNN-Eu-W5O"/>
@@ -122,7 +123,7 @@
                     <rect key="frame" x="35" y="175" width="305" height="50"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="C2P-PZ-vLA">
-                            <rect key="frame" x="15" y="0.0" width="290" height="50"/>
+                            <rect key="frame" x="15" y="0.0" width="250" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="EJl-wh-6oG"/>
                             </constraints>
@@ -134,13 +135,28 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lO9-s3-5bl">
+                            <rect key="frame" x="270" y="20" width="20" height="10"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="10" id="MQC-IS-tKs"/>
+                                <constraint firstAttribute="width" constant="20" id="p5Z-3T-dBY"/>
+                            </constraints>
+                            <state key="normal" title="Button" image="icon_closeon"/>
+                            <state key="selected" image="icon_opensee"/>
+                            <connections>
+                                <action selector="ShowPwdClick:" destination="-1" eventType="touchUpInside" id="8FY-my-Yve"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="lO9-s3-5bl" secondAttribute="trailing" constant="15" id="7aU-yw-cQx"/>
                         <constraint firstItem="C2P-PZ-vLA" firstAttribute="leading" secondItem="5S4-JX-KmD" secondAttribute="leading" constant="15" id="7cb-Jm-Frp"/>
                         <constraint firstItem="C2P-PZ-vLA" firstAttribute="top" secondItem="5S4-JX-KmD" secondAttribute="top" id="8I4-lC-Pts"/>
                         <constraint firstAttribute="bottom" secondItem="C2P-PZ-vLA" secondAttribute="bottom" id="cii-LY-wKO"/>
                         <constraint firstAttribute="trailing" secondItem="C2P-PZ-vLA" secondAttribute="trailing" id="ecu-Jg-a8D"/>
+                        <constraint firstItem="lO9-s3-5bl" firstAttribute="leading" secondItem="C2P-PZ-vLA" secondAttribute="trailing" constant="5" id="f3C-hh-S4l"/>
                         <constraint firstAttribute="height" constant="50" id="ra9-GL-UI0"/>
+                        <constraint firstItem="lO9-s3-5bl" firstAttribute="centerY" secondItem="5S4-JX-KmD" secondAttribute="centerY" id="zHd-ky-dmC"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
@@ -150,6 +166,11 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="25"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                     </userDefinedRuntimeAttributes>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="ecu-Jg-a8D"/>
+                        </mask>
+                    </variation>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -175,4 +196,8 @@
             <point key="canvasLocation" x="213.5" y="346.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="icon_closeon" width="20" height="10"/>
+        <image name="icon_opensee" width="20" height="11"/>
+    </resources>
 </document>

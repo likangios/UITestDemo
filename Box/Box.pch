@@ -29,7 +29,7 @@
 #import "BStoreService.h"
 #import "BObjectFactory.h"
 
-#define COUNTDOWNTIME 20
+#define COUNTDOWNTIME 120
 
 //友盟统计
 #define UMtongji        @"5689310867e58eee0f002fb4"

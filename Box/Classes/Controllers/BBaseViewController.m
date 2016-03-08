@@ -24,6 +24,10 @@
 - (instancetype)initWithNib{
     return [self initWithNibName:NSStringFromClass(self.class) bundle:nil];
 }
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.delegate = self;
@@ -46,6 +50,15 @@
     [_navBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.mas_equalTo(0);
         make.height.mas_equalTo(CustomNavigationBarHeight+20);
+    }];
+    _img_shadowView = [[UIImageView alloc]init];
+    _img_shadowView.hidden = YES;
+    _img_shadowView.image = [UIImage imageNamed:@"img_shadow"];
+    [_navBar addSubview:_img_shadowView];
+    [_img_shadowView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(0);
+        make.top.equalTo(_navBar.mas_bottom);
+        make.height.mas_equalTo(6);
     }];
 }
 #pragma mark - layout

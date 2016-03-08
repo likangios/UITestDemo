@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface BStoreService : NSObject
+
 + (instancetype)sharedStoreService;
 - (BOOL)saveAccount:(NSString *)account  Password:(NSString *)password;
 - (BOOL)updtePassword:(NSString *)pwd;

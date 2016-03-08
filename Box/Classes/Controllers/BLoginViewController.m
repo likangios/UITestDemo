@@ -22,10 +22,15 @@
 @property (nonatomic,strong) IBOutlet UIButton *wxloginBtn;
 @property (nonatomic,strong) IBOutlet UIButton *forgetPasswordBtn;
 @property (nonatomic,strong) IBOutlet UIButton *xinUserBtn;
+@property (nonatomic,strong) IBOutlet UIButton *isShowPwd;
 @end
 
 @implementation BLoginViewController
 
+- (IBAction)ShowPwdClick:(id)sender{
+    _isShowPwd.selected = !_isShowPwd.selected;
+    _passwordTextField.secureTextEntry = !_isShowPwd.selected;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addCustomNavBar];
@@ -91,10 +96,10 @@
 }
 #pragma mark  -- AuthResponse -- 
 - (void)managerDidRecvAuthResponse:(SendAuthResp *)response{
-    
+    if (response.code.length) {
   NSString *sign =[BUntil MD5:[NSString stringWithFormat:@"%@-%@",response.code,CustomMD5Key]];
-    
     [(AppDelegate *)[UIApplication sharedApplication].delegate WeChatLoginCode:response.code sign:sign];
+    }
 }
 #pragma mark UITextFieldDelegate 
 

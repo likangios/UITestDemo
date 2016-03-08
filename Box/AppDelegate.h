@@ -33,5 +33,6 @@
 
 - (void)wxFastLogin:(NSString *)token;
 
+- (void)testNotification;
 @end
 

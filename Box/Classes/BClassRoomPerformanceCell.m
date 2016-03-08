@@ -11,6 +11,10 @@
 @interface BClassRoomPerformanceCell ()
 
 /**
+ *  标题
+ */
+@property (nonatomic,strong) IBOutlet UILabel *titleType;
+/**
  *  内容
  */
 @property (nonatomic,strong) IBOutlet UIView *bgview;
@@ -48,6 +52,7 @@
         self.contentimg.hidden = YES;
         self.cellHeight = @80;
     }
+    _titleType.text = _infoModel.messageTag_name;
 }
 -(CGFloat)getCellHeight{
     return self.cellHeight.floatValue;
@@ -59,7 +64,7 @@
         _isRead.text = @"未读";
     }else{
         _bgview.layer.borderColor = color_gray.CGColor;
-        _isRead.textColor = color_gray;
+        _isRead.textColor = [UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:1.0];
         _isRead.text = @"已读";
     }
 }

@@ -22,5 +22,5 @@
 @property (nonatomic,strong) NSString *teacher_avatar;
 @property (nonatomic,strong) NSNumber *teacher_id;
 @property (nonatomic,strong) NSString *teacher_name;
-
+@property (nonatomic,strong) NSString *teacher_gender;
 @end

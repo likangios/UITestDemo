@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -47,10 +47,10 @@
                                 </constraints>
                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="0.062745098040000002" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgimg.png" translatesAutoresizingMaskIntoConstraints="NO" id="nNu-sC-bPe">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nNu-sC-bPe">
                                 <rect key="frame" x="12" y="68" width="336" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="vMb-qm-etv"/>
@@ -58,6 +58,7 @@
                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="2.5"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                         </subviews>
@@ -104,11 +105,9 @@
                 <outlet property="content" destination="D4l-fH-HiR" id="oLZ-iy-amP"/>
                 <outlet property="contentimg" destination="nNu-sC-bPe" id="g31-Mp-ISh"/>
                 <outlet property="isRead" destination="vl9-mA-waz" id="p6z-EL-K2r"/>
+                <outlet property="titleType" destination="1tD-G2-qrN" id="hS8-5p-CRW"/>
             </connections>
-            <point key="canvasLocation" x="376" y="198"/>
+            <point key="canvasLocation" x="165" y="198"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="bgimg.png" width="642" height="140"/>
-    </resources>
 </document>

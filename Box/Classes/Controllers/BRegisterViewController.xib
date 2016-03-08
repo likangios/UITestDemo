@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="confirmCodeTextField" destination="ydK-5K-Aul" id="kYv-GU-qsr"/>
                 <outlet property="getConfirmCodeBtn" destination="VSH-8W-hOT" id="jN4-uv-W48"/>
+                <outlet property="isShowPwd" destination="DRj-2a-At3" id="AZm-Hd-yyz"/>
                 <outlet property="passwordTextField" destination="mI9-ee-PpE" id="6yQ-fu-fSs"/>
                 <outlet property="phoneTextField" destination="Isu-CW-9hF" id="vz6-NB-3Hi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -74,7 +75,7 @@
                                 <outlet property="delegate" destination="-1" id="FOw-51-3PN"/>
                             </connections>
                         </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSH-8W-hOT">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSH-8W-hOT">
                             <rect key="frame" x="185" y="0.0" width="120" height="50"/>
                             <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
@@ -123,13 +124,13 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHr-Aj-dmx">
                     <rect key="frame" x="35" y="240" width="305" height="50"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入至少6位字符的密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mI9-ee-PpE">
-                            <rect key="frame" x="15" y="0.0" width="290" height="50"/>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入至少6位字符的密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mI9-ee-PpE">
+                            <rect key="frame" x="15" y="0.0" width="240" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="lLI-fY-3LP"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
                                     <color key="value" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -139,13 +140,28 @@
                                 <outlet property="delegate" destination="-1" id="9f3-YO-fjU"/>
                             </connections>
                         </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DRj-2a-At3">
+                            <rect key="frame" x="270" y="20" width="20" height="10"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="20" id="eWM-Ls-ocK"/>
+                                <constraint firstAttribute="height" constant="10" id="pva-bc-Kne"/>
+                            </constraints>
+                            <state key="normal" title="Button" image="icon_closeon"/>
+                            <state key="selected" image="icon_opensee"/>
+                            <connections>
+                                <action selector="ShowPwdClick:" destination="-1" eventType="touchUpInside" id="Coj-q9-h1c"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
+                        <constraint firstItem="DRj-2a-At3" firstAttribute="leading" secondItem="mI9-ee-PpE" secondAttribute="trailing" constant="5" id="0Rd-4e-Dyg"/>
                         <constraint firstAttribute="trailing" secondItem="mI9-ee-PpE" secondAttribute="trailing" id="0VU-yQ-cWQ"/>
                         <constraint firstItem="mI9-ee-PpE" firstAttribute="top" secondItem="mHr-Aj-dmx" secondAttribute="top" id="2vy-Cw-op8"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="7jh-bZ-DxC"/>
+                        <constraint firstItem="DRj-2a-At3" firstAttribute="centerY" secondItem="mHr-Aj-dmx" secondAttribute="centerY" id="YbK-PC-gt6"/>
                         <constraint firstItem="mI9-ee-PpE" firstAttribute="leading" secondItem="mHr-Aj-dmx" secondAttribute="leading" constant="15" id="eXG-Gh-B7X"/>
                         <constraint firstAttribute="bottom" secondItem="mI9-ee-PpE" secondAttribute="bottom" id="kaQ-4Z-eI4"/>
+                        <constraint firstAttribute="trailing" secondItem="DRj-2a-At3" secondAttribute="trailing" constant="15" id="l7R-Oh-RAk"/>
                         <constraint firstAttribute="height" constant="50" id="vtN-LZ-Ten"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
@@ -156,6 +172,11 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="25"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                     </userDefinedRuntimeAttributes>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="0VU-yQ-cWQ"/>
+                        </mask>
+                    </variation>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kr3-3v-klr">
                     <rect key="frame" x="35" y="305" width="305" height="50"/>
@@ -208,4 +229,8 @@
             <point key="canvasLocation" x="262.5" y="349.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="icon_closeon" width="20" height="10"/>
+        <image name="icon_opensee" width="20" height="11"/>
+    </resources>
 </document>

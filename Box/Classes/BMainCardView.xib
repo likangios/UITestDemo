@@ -12,10 +12,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yki-td-q5D">
-                    <rect key="frame" x="10" y="10" width="470" height="207"/>
+                    <rect key="frame" x="15" y="10" width="460" height="207"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="王亚飞" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHZ-K4-0Fi">
-                            <rect key="frame" x="12" y="12" width="446" height="25"/>
+                            <rect key="frame" x="12" y="12" width="436" height="25"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="25" id="qrf-6U-c3U"/>
                             </constraints>
@@ -24,7 +24,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6岁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Mw-YX-Jdz">
-                            <rect key="frame" x="12" y="37" width="446" height="20"/>
+                            <rect key="frame" x="12" y="37" width="436" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="3TK-W4-3DJ"/>
                             </constraints>
@@ -33,7 +33,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="班级：珊瑚海幼儿" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQ0-dt-d9C">
-                            <rect key="frame" x="12" y="102" width="446" height="16"/>
+                            <rect key="frame" x="12" y="102" width="436" height="16"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="16" id="PS1-kR-cjO"/>
                             </constraints>
@@ -42,7 +42,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上海珊瑚海儿童艺术机构" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgq-hF-Gxw">
-                            <rect key="frame" x="12" y="78" width="446" height="22"/>
+                            <rect key="frame" x="12" y="78" width="436" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="22" id="e9N-Av-Znj"/>
                             </constraints>
@@ -51,14 +51,14 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7sL-GJ-i0h">
-                            <rect key="frame" x="12" y="67" width="446" height="1"/>
+                            <rect key="frame" x="12" y="67" width="436" height="1"/>
                             <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="LEQ-5h-6wT"/>
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="入学时间：2015-2-2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZsS-Wj-fRp">
-                            <rect key="frame" x="12" y="120" width="446" height="16"/>
+                            <rect key="frame" x="12" y="120" width="436" height="16"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="16" id="a5u-HH-SRl"/>
                             </constraints>
@@ -120,8 +120,8 @@
                 <constraint firstAttribute="bottom" secondItem="yki-td-q5D" secondAttribute="bottom" id="4K6-Yv-MGr"/>
                 <constraint firstAttribute="trailing" secondItem="o7Q-dS-HWx" secondAttribute="trailing" constant="7" id="8u9-fX-mv3"/>
                 <constraint firstItem="o7Q-dS-HWx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="3" id="Iqj-tA-Dyc"/>
-                <constraint firstItem="yki-td-q5D" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="OBg-FE-H5I"/>
-                <constraint firstAttribute="trailing" secondItem="yki-td-q5D" secondAttribute="trailing" constant="10" id="oG7-cm-kWU"/>
+                <constraint firstItem="yki-td-q5D" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="OBg-FE-H5I"/>
+                <constraint firstAttribute="trailing" secondItem="yki-td-q5D" secondAttribute="trailing" constant="15" id="oG7-cm-kWU"/>
                 <constraint firstItem="yki-td-q5D" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="tyH-KD-1DY"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
@@ -135,7 +135,7 @@
                 <outlet property="student_name" destination="fHZ-K4-0Fi" id="iNh-7E-8S0"/>
                 <outlet property="unRead_number" destination="o7Q-dS-HWx" id="V6u-sq-d2L"/>
             </connections>
-            <point key="canvasLocation" x="322" y="197.5"/>
+            <point key="canvasLocation" x="300" y="197.5"/>
         </view>
     </objects>
 </document>

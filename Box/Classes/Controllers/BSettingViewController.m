@@ -11,6 +11,7 @@
 #import "BCourseCardCell.h"
 #import "AppDelegate.h"
 #import "BSignoutAction.h"
+#import "BCustomAlertView.h"
 //
 #import "BDeleteUIDIRelationAction.h"
 
@@ -150,9 +151,24 @@
         
         [cell setDeleteCourseBlocks:^(NSIndexPath *indexPaht) {
             
-            BUUIDinfoModel * model = (BUUIDinfoModel *)_tableviewDataList[indexPath.row-1];
-            [_weakself DeleteCourseWithUUID:model];
-            NSLog(@"delete index %ld",(long)indexPath.row);
+            BCustomAlertView *alert = [BCustomAlertView loadSelfWithNibOwner:_weakself];
+            alert.contentLabel.text = @"删除该课程后您将不能再查看到孩子在这堂课程中的相关信息哦，是否确认删除？";
+            [alert.leftBtn setTitle:@"取消" forState:UIControlStateNormal];
+            [alert.rightBtn setTitle:@"确认删除" forState:UIControlStateNormal];
+            [_weakself.view addSubview:alert];
+            [self  showAnimateWithView:alert];
+            [alert mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.right.left.top.bottom.mas_equalTo(0);
+            }];
+            
+            [alert setRightBlocks:^{
+                
+                BUUIDinfoModel * model = (BUUIDinfoModel *)_tableviewDataList[indexPath.row-1];
+                
+                [_weakself DeleteCourseWithUUID:model];
+                NSLog(@"delete index %ld",(long)indexPath.row);
+            }];
+
         }];
         return cell;
     }
@@ -172,7 +188,34 @@
     UIView *view = [[UIView alloc]init];
     return view;
 }
+#pragma mark UIScrollView
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if(scrollView.contentOffset.y>0){
+        _img_shadowView.hidden = NO;
+    }else{
+        _img_shadowView.hidden = YES;
+        
+    }
+}
+//- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+//    _img_shadowView.hidden = NO;
+//}
+//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+//    _img_shadowView.hidden = YES;
+//}
+
 #pragma mark ---
+#pragma mark animate
+- (void)showAnimateWithView:(UIView *)view{
+    [UIView animateWithDuration:0.1 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        view.transform =CGAffineTransformScale(view.transform, 1.1, 1.1);
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.1 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            view.transform = CGAffineTransformIdentity;
+        } completion:^(BOOL finished) {
+        }];
+    }];
+}
 #pragma mark action
 - (void)DeleteCourseWithUUID:(BUUIDinfoModel *)model{
     BDeleteUIDIRelationAction *action = [[BDeleteUIDIRelationAction alloc]initWithUUID:model.uuid];
@@ -196,6 +239,22 @@
     [self.navigationController pushViewController:[[BModifyPasswordViewController alloc]initWithNib] animated:YES];
 }
 - (void)loginOutAction{
+    
+    BCustomAlertView *alert = [BCustomAlertView loadSelfWithNibOwner:self];
+    alert.contentLabel.text = @"您是否确认退出学学看BOX？";
+    [alert.leftBtn setTitle:@"取消" forState:UIControlStateNormal];
+    [alert.rightBtn setTitle:@"确认退出" forState:UIControlStateNormal];
+    [self.view addSubview:alert];
+    [self showAnimateWithView:alert];
+    [alert mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.left.top.bottom.mas_equalTo(0);
+    }];
+    [alert setRightBlocks:^{
+        [self loginOut];
+    }];
+}
+- (void)loginOut{
+
     BSignoutAction *action = [[BSignoutAction alloc]init];
     [BUntil showHUDAddedTo:self.view];
     [action DoActionWithSuccess:^(BActionBase *action, id responseObject, NSURLSessionDataTask *operation) {

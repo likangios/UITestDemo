@@ -21,6 +21,6 @@
         [refreshingImages addObject:image];
     }
     self.refreshingTitleHidden = YES;
-    [self setImages:refreshingImages forState:MJRefreshStateRefreshing];
+    [self setImages:refreshingImages duration:refreshingImages.count*0.15 forState:MJRefreshStateRefreshing];
 }
 @end

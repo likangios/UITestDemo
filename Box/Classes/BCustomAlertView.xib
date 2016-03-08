@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BCustomAlertView">
+            <rect key="frame" x="0.0" y="0.0" width="371" height="340"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n0I-dV-in5">
+                    <rect key="frame" x="20" y="95" width="331" height="150"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="你是否退出xxc" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKk-x6-bBr">
+                            <rect key="frame" x="30" y="30" width="275" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="CaX-gX-wjX"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="OmP-Zl-HTo"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JbE-b8-jWp" userLabel="leftBtn">
+                            <rect key="frame" x="0.0" y="106" width="168" height="44"/>
+                            <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="WWF-cc-sXd"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <state key="normal" title="取消">
+                                <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="LeftBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="Kgb-K3-tey"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sAQ-zc-ZjC" userLabel="rightBtn">
+                            <rect key="frame" x="168" y="106" width="167" height="44"/>
+                            <color key="backgroundColor" red="1" green="0.062745098040000002" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <state key="normal" title="删除退出">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="RightBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="b0v-NK-Xl2"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="6Lg-BD-08r"/>
+                        <constraint firstItem="sAQ-zc-ZjC" firstAttribute="leading" secondItem="JbE-b8-jWp" secondAttribute="trailing" id="GhN-1L-ef0"/>
+                        <constraint firstItem="sAQ-zc-ZjC" firstAttribute="bottom" secondItem="JbE-b8-jWp" secondAttribute="bottom" id="HxG-YV-EAc"/>
+                        <constraint firstItem="VKk-x6-bBr" firstAttribute="leading" secondItem="n0I-dV-in5" secondAttribute="leading" constant="30" id="Ig8-S6-vae"/>
+                        <constraint firstAttribute="trailing" secondItem="sAQ-zc-ZjC" secondAttribute="trailing" id="Tne-HA-HFv"/>
+                        <constraint firstAttribute="bottom" secondItem="JbE-b8-jWp" secondAttribute="bottom" id="ZuE-Ra-G6e"/>
+                        <constraint firstItem="sAQ-zc-ZjC" firstAttribute="leading" secondItem="JbE-b8-jWp" secondAttribute="trailing" id="cQY-lX-cXH"/>
+                        <constraint firstItem="sAQ-zc-ZjC" firstAttribute="width" secondItem="JbE-b8-jWp" secondAttribute="width" id="ehu-L2-OKA"/>
+                        <constraint firstItem="JbE-b8-jWp" firstAttribute="leading" secondItem="n0I-dV-in5" secondAttribute="leading" id="mNa-Y1-huB"/>
+                        <constraint firstAttribute="trailing" secondItem="VKk-x6-bBr" secondAttribute="trailing" constant="30" id="mau-xx-psP"/>
+                        <constraint firstItem="sAQ-zc-ZjC" firstAttribute="height" secondItem="JbE-b8-jWp" secondAttribute="height" id="rxA-W8-h7c"/>
+                        <constraint firstAttribute="width" constant="335" id="tV5-Pa-0mU"/>
+                        <constraint firstItem="VKk-x6-bBr" firstAttribute="top" secondItem="n0I-dV-in5" secondAttribute="top" constant="30" id="wd2-av-vM9"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="tV5-Pa-0mU"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="n0I-dV-in5" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="335:375" id="Rl0-dH-ptL"/>
+                <constraint firstItem="n0I-dV-in5" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="kuA-cR-q58"/>
+                <constraint firstItem="n0I-dV-in5" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="vNP-Wj-8D2"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="contentLabel" destination="VKk-x6-bBr" id="L4h-u0-FDq"/>
+                <outlet property="leftBtn" destination="JbE-b8-jWp" id="k8B-ra-gEd"/>
+                <outlet property="rightBtn" destination="sAQ-zc-ZjC" id="fMa-QT-c6Z"/>
+            </connections>
+            <point key="canvasLocation" x="236.5" y="263"/>
+        </view>
+    </objects>
+</document>

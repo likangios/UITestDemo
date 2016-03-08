@@ -52,10 +52,15 @@ typedef enum : NSUInteger {
     
     BCustomRefresh *header = [BCustomRefresh headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
     self.tableView.mj_header = header;
-    [self.tableView.mj_header beginRefreshing];
     
     BCustomFoot *foot = [BCustomFoot footerWithRefreshingTarget:self refreshingAction:@selector(upLoadData)];
+    foot.stateLabel.text = @"";
+    foot.stateLabel.userInteractionEnabled = NO;
     self.tableView.mj_footer = foot;
+}
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.tableView.mj_header beginRefreshing];
 }
 - (void)creatTitleView{
     UIView *view  = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 150, CustomNavigationBarHeight)];
@@ -97,8 +102,11 @@ typedef enum : NSUInteger {
     _teacherAvatar.backgroundColor = [UIColor clearColor];
     _teacherAvatar.layer.cornerRadius = 15;
     _teacherAvatar.layer.masksToBounds = YES;
-    [_teacherAvatar sd_setImageWithURL:[NSURL URLWithString:self.model.teacher_avatar]];
-    
+    if ([self.model.teacher_gender isEqualToString:@"female"]) {
+        [_teacherAvatar sd_setImageWithURL:[NSURL URLWithString:self.model.teacher_avatar] placeholderImage:[UIImage imageNamed:@"teacher_female"]];
+    }else{
+        [_teacherAvatar sd_setImageWithURL:[NSURL URLWithString:self.model.teacher_avatar] placeholderImage:[UIImage imageNamed:@"teacher_male"]];
+    }
     [_teacherAvatar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(customView);
         make.top.mas_equalTo(5);
@@ -164,6 +172,7 @@ typedef enum : NSUInteger {
         }
         [_tableView.mj_header endRefreshing];
         [_tableView.mj_footer endRefreshing];
+        [_tableView.mj_footer setValue:@"" forKeyPath:@"stateLabel.text"];
     } Failure:^(BActionBase *action, NSError *error, NSURLSessionDataTask *operation) {
         
     }];
@@ -201,6 +210,7 @@ typedef enum : NSUInteger {
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    
         NSArray *array = _messageListData[indexPath.section];
         id  rect = array[indexPath.row];
         if ([rect isKindOfClass:[BMessageInfo class]]) {
@@ -222,9 +232,24 @@ typedef enum : NSUInteger {
     BMessageDetailViewController *detail  =  [[BMessageDetailViewController alloc]initWithNib];
     detail.webUrl = info.message_detail_url;
     [self.navigationController pushViewController:detail animated:YES];
-    
+
 //    [self setMessageReaded:info.messageUuid_id];
     NSLog(@"info %@",info);
+}
+#pragma mark UIScrollView
+//- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+//    _img_shadowView.hidden = NO;
+//}
+//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+//    _img_shadowView.hidden = YES;
+//}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if(scrollView.contentOffset.y>0){
+        _img_shadowView.hidden = NO;
+    }else{
+        _img_shadowView.hidden = YES;
+        
+    }
 }
 #pragma mark views
 

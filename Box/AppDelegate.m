@@ -38,7 +38,6 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
 //    [self initGeTui:launchOptions];
     [self NotificationSettings:launchOptions];
     [self initWXLogin];
-    
     [self initUM];
     self.window = [[UIWindow alloc]initWithFrame:ScreenBounds];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
@@ -168,6 +167,7 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
     [[BStoreService sharedStoreService] saveAccount:acc Password:password];
     BCustomNaViewController *nav = [[BCustomNaViewController alloc]initWithRootViewController:[[BMainViewController alloc]initWithNibName:@"BMainViewController" bundle:nil]];
     self.window.rootViewController = nav;
+    [MobClick event:@"login"];
 //    统计账号来源 本身
     [MobClick profileSignInWithPUID:acc];
     //微信登陆
@@ -198,7 +198,7 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
             DDLogDebug(@"自动登录成功");
             //更新wxtoken
             NSDictionary *dic = [result get_first_object];
-            [self WxFastLoginSuccessfulNowToken:dic[@"wechat_token"]];
+            [self WxFastLoginSuccessfulNowToken:dic[@"we_chat_fast_login_token"]];
         }else{
             [BUntil showErrorHUDViewAtView:self.window WithTitle:[result get_messge]];
             [self OnSignoutSuccessful];
@@ -363,14 +363,16 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
 //    [_viewController logMsg:[NSString stringWithFormat:@"didFailToRegisterForRemoteNotificationsWithError:%@", [error localizedDescription]]];
 }
 #pragma mark - APP运行中接收到通知(推送)处理
-
+- (void)testNotification{
+    [self application:nil didReceiveRemoteNotification:nil];
+}
 /** APP已经接收到“远程”通知(推送) - (App运行在后台/App运行在前台) */
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     
     // [4-EXT]:处理APN
-    NSString *record = [NSString stringWithFormat:@"[APN]%@, %@", [NSDate date], userInfo];
+//    NSString *record = [NSString stringWithFormat:@"[APN]%@, %@", [NSDate date], userInfo];
     [UMessage didReceiveRemoteNotification:userInfo];
-    
+
 //    [_viewController logMsg:record];
 }
 
@@ -378,8 +380,16 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler {
     
     // [4-EXT]:处理APN
-    NSString *record = [NSString stringWithFormat:@"[APN]%@, %@", [NSDate date], userInfo];
+//    NSString *record = [NSString stringWithFormat:@"[APN]%@, %@", [NSDate date], userInfo];
 //    [_viewController logMsg:record];
+    
+    [UMessage didReceiveRemoteNotification:userInfo];
+
+    if (_isLogin) {
+        UINavigationController *nav = (UINavigationController *)self.window.rootViewController;
+        [[NSNotificationCenter defaultCenter] postNotificationName:KADDUUIDNOTIFICATION object:nil];
+        [nav popToRootViewControllerAnimated:YES];
+    }
     
     completionHandler(UIBackgroundFetchResultNewData);
 }

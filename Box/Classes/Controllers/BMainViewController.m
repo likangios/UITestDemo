@@ -34,6 +34,10 @@
 
 @implementation BMainViewController
 
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     _tableDataList = [NSMutableArray array];
@@ -43,12 +47,14 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:KADDUUIDNOTIFICATION object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:KREADMESSAGENOTIFICATION object:nil];
 }
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [_TableView.mj_header beginRefreshing];
+}
 - (void)refreshData{
     
     BGetUUIDRelationListAction *action = [[BGetUUIDRelationListAction alloc]init];
-    [BUntil showHUDAddedTo:self.view];
     [action DoActionWithSuccess:^(BActionBase *action, id responseObject, NSURLSessionDataTask *operation) {
-        [BUntil hideAllHUDsForView:self.view];
         BResponeResult *result = [BResponeResult createWithResponeObject:responseObject];
         if (result.get_error_code == kServerErrorCode_OK) {
             NSArray *array = [result try_get_data_with_array];
@@ -73,7 +79,6 @@
         }
     } Failure:^(BActionBase *action, NSError *error, NSURLSessionDataTask *operation) {
         [self.TableView.mj_header endRefreshing];
-        [BUntil hideAllHUDsForView:self.view];
     }];
     
     NSLog(@"刷新");
@@ -110,16 +115,29 @@
     message.model = model;
     [self.navigationController pushViewController:message animated:YES];
 }
-#pragma mark private 
+#pragma mark UIScrollView
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if(scrollView.contentOffset.y>0){
+        _img_shadowView.hidden = NO;
+    }else{
+        _img_shadowView.hidden = YES;
+        
+    }
+}
+//- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+//    _img_shadowView.hidden = NO;
+//}
+//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+//    _img_shadowView.hidden = YES;
+//}
+#pragma mark private
 - (void)initCustomBar{
     
     self.barImage = [UIImage imageNamed:@"img_logo_"];
     [self addRightViewWithImage:[UIImage imageNamed:@"icon_set_black_"] hightImage:[UIImage imageNamed:@"icon_set_red_"]];
     [self addLeftViewWithImage:[UIImage imageNamed:@"icon_add_black_"] hightImage:[UIImage imageNamed:@"icon_add_red_"]];
-//    __weak typeof(self)  _weakself = self;
     BCustomRefresh *header = [BCustomRefresh headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
     self.TableView.mj_header = header;
-    [_TableView.mj_header beginRefreshing];
 }
 #pragma mark action
 - (void)setBtn{

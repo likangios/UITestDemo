@@ -87,7 +87,7 @@
  *
  *  @return 返回md5
  */
-//+ (NSString*) MD5:(NSString *) srcString;
++ (NSString*) MD5:(NSString *) srcString;
 
 /**
  *  做等比缩放

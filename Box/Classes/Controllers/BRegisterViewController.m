@@ -20,13 +20,17 @@
 @property (weak, nonatomic) IBOutlet UITextField *confirmCodeTextField;
 @property (weak, nonatomic) IBOutlet UIButton *getConfirmCodeBtn;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (nonatomic,strong) IBOutlet UIButton *isShowPwd;
 
 @property (nonatomic,strong) NSTimer *timerForsms;
 @end
 
 @implementation BRegisterViewController
 
-
+- (IBAction)ShowPwdClick:(id)sender{
+    _isShowPwd.selected = !_isShowPwd.selected;
+    _passwordTextField.secureTextEntry = !_isShowPwd.selected;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addCustomNavBar];
@@ -47,8 +51,8 @@
             BResponeResult *result = [BResponeResult createWithResponeObject:responseObject];
             if (result.get_error_code == kServerErrorCode_OK) {
                 
-                [self.navigationController pushViewController:[[BLoginViewController alloc]initWithNib] animated:YES];
-//                [(AppDelegate *)[UIApplication sharedApplication].delegate OnSignInSuccessful:self.phoneTextField.text WithPassword:self.passwordTextField.text];
+//                [self.navigationController pushViewController:[[BLoginViewController alloc]initWithNib] animated:YES];
+                [(AppDelegate *)[UIApplication sharedApplication].delegate OnSignInSuccessful:self.phoneTextField.text WithPassword:self.passwordTextField.text];
 
             }else{
                 [BUntil showErrorHUDViewAtView:self.view WithTitle:result.get_messge];

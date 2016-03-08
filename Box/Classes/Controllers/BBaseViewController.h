@@ -14,6 +14,8 @@
 @interface BBaseViewController : UIViewController
 {
     BCustonNavBar *_navBar;
+    
+    UIImageView *_img_shadowView;
 }
 @property (nonatomic,strong) NSString *barTitle;
 @property (nonatomic,strong) UIImage *barImage;
